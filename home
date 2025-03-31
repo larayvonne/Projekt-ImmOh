@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>ImmOh</title>
+        
+    </head>
+   <body>
+    <h1>ImmOH!</h1>
+    <h3>Services rund um Ihre Immobilie</h3>
+    <h4>Wir machen Ihre Immobilie zu einem besseren Ort.</h4>
+    <div>
+        <!--- hier button noch in link einfügen ( genau ugekehrt wie jetz )-->
+        <nav>
+            <button><a href="login.html">Login</a></button>
+            <button><a href="regis.html">Neu registrieren</a></button>
+        </nav>
+    </div>
+    <div>
+        <img width="1270" height="400" src="https://www.immoh.at/o/imgformat/19845070/hero-slide/max?double=true">
+    </div>
+    <button><a href="https://www.instagram.com/immoh.at/">test</a></button>
+   </body>
