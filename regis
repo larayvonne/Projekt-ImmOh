@@ -38,8 +38,8 @@ OCTYPE html>
             <label for="ort">Ort</label>
             <input id = "ort" name="ort" type="text" placeholder="Wien" required>
         </div>
-        <!-- Emailadresse, Benutzername, Passwort (mit Bestätigung)
- Zahlungsinformationen-->
+        <!-- Emailadresse, Benutzername, Passwort (mit Bestätigung(haben wir noch nicht gelernt))
+ Zahlungsinformationen, könnten wir noch ergänzen-->
         <div>
             <label for="mail">E-Mail</label>
             <input id = "mail" name="mail" type="text" placeholder="e.g. muster@mail.at" required>
