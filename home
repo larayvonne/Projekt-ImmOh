@@ -13,8 +13,12 @@
     <div>
         <!--- hier button noch in link einfügen ( genau ugekehrt wie jetz )-->
         <nav>
-            <button><a href="login.html">Login</a></button>
-            <button><a href="regis.html">Neu registrieren</a></button>
+            <a href="login.html">
+                <button>Login</button>
+                </a>
+
+                <a href="regis.html">
+                    <button>Neu registrieren</button> 
         </nav>
     </div>
     <div>
