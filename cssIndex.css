@@ -1,42 +1,73 @@
-.navbar {
-    margin-left: 150px;
-    margin-right: 150px;
-    padding-bottom: 80px;
-    padding-left: 30px;
+.style {
+    background-image: url(immoh.webp);
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin: auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(50, 0, 50, 0.4),
+        rgba(0, 0, 50, 0.9)
+    );
+    clip-path: polygon(72% 0, 100% 0, 100% 100%, 30% 100%);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    height: 90px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: rgb(232, 250, 215);
+    box-shadow: 0px 5px 13px 2px #000050;
 }
-.buttonBox a{
+.headerLinks {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+.headerLinks a{
     text-decoration: none;
-    color:inherit;
+    color: #000050;
 }
-.grid {
+.headerButtons{
+    margin-left: 10px;
+}
+.immohGrid {
     display: grid;
     grid-auto-flow: column;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 50px;
-    position: fixed;
 }
-.grid a {
+.immohGrid a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
-.grid #imm {
+.immohGrid #imm {
     margin-top: 10px;
+    margin-left: 20px;
     color: #000050;
 }
-.grid #O {
-    margin-top: 8px;
+.immohGrid #O,
+.immohGrid #H,
+.immohGrid #Rufzeichen {
     color: #a4bc9b;
-
 }
-.grid #H {
-    margin-top: 3px;
-    color: #a4bc9b;
-
-}
-.grid #Rufzeichen {
-    margin-top: 0px;
-    color: #a4bc9b;
-    margin-right: 250px;
-}
+.immohGrid #O { margin-top: 8px; }
+.immohGrid #H { margin-top: 3px; }
+.immohGrid #Rufzeichen { margin-top: 0; }
