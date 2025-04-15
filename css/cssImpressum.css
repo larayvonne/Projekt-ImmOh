@@ -3,22 +3,23 @@ body {
     height: 100%;
     margin: 0;
 }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     /* „volle Höhe“ des Viewports */
 }
+
 main {
     flex: 1;
 }
+
 .navbar {
     box-shadow: 0px 5px 13px 2px #000050;
     z-index: 1;
 }
-.replace-bg-light {
-    background-color: rgb(232, 250, 215)
-}
+
 .immohGrid {
     display: grid;
     grid-auto-flow: column;
@@ -55,15 +56,19 @@ main {
     margin-top: none;
 }
 
+/* bis hierher header*/
+.replace-text-primary {
+    color: #000050;
+    font-weight: 500;
+}
 
+.replace-table-info {
+    background-color: #eeeeee !important;
+}
 
-.overlay {
-    background: linear-gradient(to bottom,
-            rgba(50, 0, 50, 0.4),
-            rgba(0, 0, 50, 0.9));
-    clip-path: polygon(0% 40%, 100% 40%, 100% 100%, 0% 100%);
-    pointer-events: none;
-    /* optional: verhindert, dass Overlay Klicks blockiert */
+/* ab hier Footer */
+.replace-bg-light {
+    background-color: rgb(232, 250, 215)
 }
 
 .text-container {
@@ -71,6 +76,7 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    margin-top: -1rem;
     gap: 1rem;
 }
 
@@ -81,6 +87,6 @@ main {
 }
 
 .footer-darkblue {
-    background-color:  rgba(0, 0, 50);
+    background-color: rgba(0, 0, 50);
     color: white;
 }
