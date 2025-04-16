@@ -1,92 +1,10 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* „volle Höhe“ des Viewports */
-}
-
-main {
-    flex: 1;
-}
-
-.navbar {
-    box-shadow: 0px 5px 13px 2px #000050;
-    z-index: 1;
-}
-
-.immohGrid {
-    display: grid;
-    grid-auto-flow: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 2.5rem;
-}
-
-.immohGrid a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.immohGrid #imm {
-    margin-top: 0.9rem;
-    color: #000050;
-}
-
-.immohGrid #O,
-.immohGrid #H,
-.immohGrid #Rufzeichen {
-    color: #a4bc9b;
-}
-
-.immohGrid #O {
-    margin-top: 8px;
-}
-
-.immohGrid #H {
-    margin-top: 3px;
-}
-
-.immohGrid #Rufzeichen {
-    margin-top: none;
-}
-
-/* bis hierher header*/
 .replace-text-primary {
     color: #000050;
     font-weight: 500;
 }
-
 .replace-table-info {
     background-color: #eeeeee !important;
 }
-
-/* ab hier Footer */
-.replace-bg-light {
-    background-color: rgb(232, 250, 215)
-}
-
-.text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: -1rem;
-    gap: 1rem;
-}
-
-@media (orientation: landscape) {
-    .text-container {
-        margin-top: -5rem;
-    }
-}
-
-.footer-darkblue {
-    background-color: rgba(0, 0, 50);
-    color: white;
+.replace-link-dark {
+    color: #000050;
 }

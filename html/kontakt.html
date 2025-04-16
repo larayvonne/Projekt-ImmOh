@@ -9,77 +9,78 @@
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssKontakt.css">
+  <link rel="stylesheet" href="../css/cssLayout.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+  <div id="include-header"></div>
 
-  <header>
-    <nav class="navbarStyle navbar navbar-expand-lg navbar-light replace-bg-light">
-      <div class="container-fluid">
-        <div class="immohGrid">
-          <span id="imm"><a href="index.html">imm</a></span>
-          <span id="O"><a href="index.html">O</a></span>
-          <span id="H"><a href="index.html">H</a></span>
-          <span id="Rufzeichen"><a href="index.html">!</a></span>
-        </div>
-      </div>
-    </nav>
+  <main>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none" href="index.html">
+          <a class="text-decoration-none replace-link-dark" href="index.html">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          Kontakt
-        </li>
+          Kontakt </li>
       </ol>
     </nav>
-  </header>
+    <div class="ms-3">
+      <h1 class="replace-text-primary">Kontakt</h1>
+      <br>
+      <div>
+        <h5 class="replace-text-primary">immOH!</h5>
+        <p>Verwaltung mit System, Service mit Herz</p>
+        <p class="mb-0">FH Technikum 1200 Wien</p>
+        <p class="mb-0">Österreich</p>
+        <table class="table mt-3">
+          <tbody>
+            <tr>
+              <td class="replace-table-info">Fön</td>
+              <td class="replace-table-info"><a href="tel:+4301000000">+43 01 00000-0</a></td>
+            </tr>
+            <tr>
+              <td>Fax</td>
+              <td>+43 (0)1 11111-22222</td>
+            </tr>
+            <tr>
+              <td class="replace-table-info">E-Mail</td>
+              <td class="replace-table-info"><a href="mailto:laramanuel@immoh.at">laramanuel@immoh.at</a></td>
+            </tr>
+            <tr>
+              <td>Web</td>
+              <td><a href="index.html">www.immoh.at</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h3 class="text-center replace-text-primary">So finden Sie uns</h3>
+    <iframe class="mx-3"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d153.54051299106976!2d16.37863275089828!3d48.23873332031876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sde!2sat!4v1744795879486!5m2!1sde!2sat"
+      width="90%" height="30%" style="border:0; margin-bottom: 8rem;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">test</iframe>
 
-  <main>
-    <div class="hero-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis assumenda alias
-      ullam
-      qui incidunt, sed dicta error. Nobis, omnis quisquam corrupti unde, minima incidunt, eius et est eligendi
-      vitae
-      mollitia.</div>
   </main>
 
-  <footer class="footer-darkblue text-white pt-4 pb-3 mt-5">
-    <div class="d-flex justify-content-center gap-3 mb-3">
-      <a href="https://at.linkedin.com/company/immoh" class="btn btn-outline-light btn-md rounded-circle border-2"
-        aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100090517007322"
-        class="btn btn-outline-light btn-md rounded-circle border-2" style="width: 2.5rem;" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </div>
-    <div class="container text-center">
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-        <a href="kontakt.html" class="btn btn-outline-light btn-sm">Kontakt</a>
-        <a href="agb" class="btn btn-outline-light btn-sm">AGB</a>
-        <a href="datenschutz.html" class="btn btn-outline-light btn-sm">Datenschutz</a>
-        <a href="impressum.html" class="btn btn-outline-light btn-sm">Impressum</a>
-      </div>
-      <div class="small">
-        © 2025 immOH! - Alle Rechte vorbehalten.
-      </div>
-    </div>
-    <div class="text-center mt-3">
-      <button onclick="scrollToTop()" class="btn btn-outline-light btn-sm">
-        ↑ Nach oben
-      </button>
-    </div>
-  </footer>
+  <div id="include-footer"></div>
 
   <script>
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    async function loadIncludes() {
+      const [header, footer] = await Promise.all([
+        fetch("../components/header.html").then(res => res.text()),
+        fetch("../components/footer.html").then(res => res.text()),
+      ]);
+      document.getElementById("include-header").innerHTML = header;
+      document.getElementById("include-footer").innerHTML = footer;
+    }
+    loadIncludes();
   </script>
 </body>
 

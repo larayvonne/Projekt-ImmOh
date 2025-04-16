@@ -9,44 +9,33 @@
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssImpressum.css">
+  <link rel="stylesheet" href="../css/cssLayout.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+  <div id="include-header"></div>
 
-  <header>
-    <nav class="navbarStyle navbar navbar-expand-lg navbar-light replace-bg-light">
-      <div class="container-fluid">
-        <div class="immohGrid">
-          <span id="imm"><a href="index.html">imm</a></span>
-          <span id="O"><a href="index.html">O</a></span>
-          <span id="H"><a href="index.html">H</a></span>
-          <span id="Rufzeichen"><a href="index.html">!</a></span>
-        </div>
-      </div>
-    </nav>
+  <main>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none" href="index.html">
+          <a class="text-decoration-none replace-link-dark" href="index.html">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          Impressum
-        </li>
+          Impressum </li>
       </ol>
     </nav>
-  </header>
 
-  <main>
     <div class="text-center px-3 px-md-5">
       <h3 class="replace-text-primary text-center mb-3 mt-3">Impressum</h3>
       <div class="text-start">
         <p>Für den Inhalt verantwortlich</p>
         <p class="mb-0">immOH!</p>
         <p class="mb-0">Energie und Gebäudemanagement GmbH</p>
-        <p class="mb-0">Spittelauer Lände 45, 1090 Wien</p>
+        <p class="mb-0">FH Technikum, 1200 Wien</p>
         <p class="mb-0">Österreich</p>
       </div>
       <table class="table mt-3">
@@ -94,40 +83,21 @@
     </div>
   </main>
 
-  <footer class="footer-darkblue text-white pt-4 pb-3 mt-5">
-    <div class="d-flex justify-content-center gap-3 mb-3">
-      <a href="https://at.linkedin.com/company/immoh" class="btn btn-outline-light btn-md rounded-circle border-2"
-        aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100090517007322"
-        class="btn btn-outline-light btn-md rounded-circle border-2" style="width: 2.5rem;" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </div>
-    <div class="container text-center">
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-        <a href="kontakt.html" class="btn btn-outline-light btn-sm">Kontakt</a>
-        <a href="agb" class="btn btn-outline-light btn-sm">AGB</a>
-        <a href="datenschutz.html" class="btn btn-outline-light btn-sm">Datenschutz</a>
-        <a href="impressum.html" class="btn btn-outline-light btn-sm">Impressum</a>
+  <div id="include-footer"></div>
 
-      </div>
-      <div class="small">
-        © 2025 immOH! - Alle Rechte vorbehalten.
-      </div>
-    </div>
-    <div class="text-center mt-3">
-      <button onclick="scrollToTop()" class="btn btn-outline-light btn-sm">
-        ↑ Nach oben
-      </button>
-    </div>
-
-  </footer>
   <script>
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    async function loadIncludes() {
+      const [header, footer] = await Promise.all([
+        fetch("../components/header.html").then(res => res.text()),
+        fetch("../components/footer.html").then(res => res.text()),
+      ]);
+      document.getElementById("include-header").innerHTML = header;
+      document.getElementById("include-footer").innerHTML = footer;
+    }
+    loadIncludes();
   </script>
 </body>
 
