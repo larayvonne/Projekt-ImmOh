@@ -1,0 +1,8 @@
+.overlay {
+    background: linear-gradient(to bottom,
+            rgba(50, 0, 50, 0.4),
+            rgba(0, 0, 50, 0.9));
+    clip-path: polygon(0% 40%, 100% 40%, 100% 100%, 0% 100%);
+    pointer-events: none;
+    /* optional: verhindert, dass Overlay Klicks blockiert */
+}
