@@ -11,10 +11,10 @@
   
   <div class="container text-center">
     <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-      <a href="../html/kontakt.html" class="btn btn-outline-light btn-sm">Kontakt</a>
-      <a href="../html/agb.html" class="btn btn-outline-light btn-sm">AGB</a>
-      <a href="../html/datenschutz.html" class="btn btn-outline-light btn-sm">Datenschutz</a>
-      <a href="../html/impressum.html" class="btn btn-outline-light btn-sm">Impressum</a>
+      <a href="../php/kontakt.php" class="btn btn-outline-light btn-sm">Kontakt</a>
+      <a href="../php/agb.php" class="btn btn-outline-light btn-sm">AGB</a>
+      <a href="../php/datenschutz.php" class="btn btn-outline-light btn-sm">Datenschutz</a>
+      <a href="../php/impressum.php" class="btn btn-outline-light btn-sm">Impressum</a>
     </div>
 
     <div class="small">
