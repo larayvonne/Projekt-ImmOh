@@ -11,10 +11,10 @@
   
   <div class="container text-center">
     <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-      <a href="kontakt.html" class="btn btn-outline-light btn-sm">Kontakt</a>
-      <a href="agb.html" class="btn btn-outline-light btn-sm">AGB</a>
-      <a href="datenschutz.html" class="btn btn-outline-light btn-sm">Datenschutz</a>
-      <a href="impressum.html" class="btn btn-outline-light btn-sm">Impressum</a>
+      <a href="../html/kontakt.html" class="btn btn-outline-light btn-sm">Kontakt</a>
+      <a href="../html/agb.html" class="btn btn-outline-light btn-sm">AGB</a>
+      <a href="../html/datenschutz.html" class="btn btn-outline-light btn-sm">Datenschutz</a>
+      <a href="../html/impressum.html" class="btn btn-outline-light btn-sm">Impressum</a>
     </div>
 
     <div class="small">
@@ -24,7 +24,7 @@
 
   <div class="container mt-3"></div>
   <div class="d-flex justify-content-between">
-    <a href="admin.html" class="btn btn-outline-light btn-sm ms-5">Admin</a>
+    <a href="../html/admin.html" class="btn btn-outline-light btn-sm ms-5">Admin</a>
     <button onclick="scrollToTop()" class="btn btn-outline-light btn-sm me-5 d-lg-none" id="back-to-top">↑ Nach oben </button>
   </div>
 </footer>
