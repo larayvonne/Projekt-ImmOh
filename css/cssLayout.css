@@ -23,6 +23,9 @@ main {
 .replace-bg-light {
     background-color: rgb(232, 250, 215)
 }
+.replace-bg-dark {
+    background-color: #E8E8E8;
+}
 
 .immohGrid {
     display: grid;
