@@ -1,3 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color:#000050;
+  }
+  
+  .section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 50px;
+    background-color: #f7f1f1;
+  }
+  
+  .text, .image {
+    flex:  50%;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .image img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin:  auto;
+    
+  }
+  .headline {
+    text-align: center;
+    padding: 50px;
+    width: 100%;
+  
+  }
+  .end {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 50px;
+  }
+  
+  /* Für abwechselnde Reihenfolge */
+  .reverse {
+    flex-direction: row-reverse;
+    background-color: #E8E8E8;
+  }
+  
+  /* Mobile Ansicht */
+  @media (max-width: 768px) {
+    .headline{
+      padding: 5%;
+      text-align: center;
+    }
+    .section {
+      flex-direction: column;
+      padding: 5%;
+      text-align: center;
+    }
+    .end{
+        flex-direction: column;
+        text-align: center;
+        padding: 0%;
+    }
+
+
+  }
+  
 .replace-text-primary {
     color: #000050;
     font-weight: 500;
@@ -5,3 +72,86 @@
 .img {
     width: 10rem;
 }
+.carousel-inner {
+    height: 500px; /* oder was passt */
+  }
+  
+.carousel-item > div {
+    max-width: 20rem;
+    height: 100%;
+    flex:  50%;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .slideshow-container {
+    position: relative;
+    background: #f1f1f1f1;
+    
+  }
+  
+  /* Slides */
+  .carousel-slide {
+    display: none;
+    padding: 80px;
+    text-align: center;
+    
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Add an italic font style to all quotes */
+  q {font-style: italic;}
+  
+  /* Add a blue color to the author */
+  .author {color: cornflowerblue;}
