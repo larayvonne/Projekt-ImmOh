@@ -30,10 +30,7 @@
     </nav>
 
     <h3>Login</h3>
-    <div>
-      <label for="user">Benutzername</label>
-      <input id="user" name="user" type="text" placeholder="e.g. User123" required>
-    </div>
+    <form action="function" method="post"></form>
     <div>
       <label for="mail">E-Mail</label>
       <input id="mail" name="mail" type="text" placeholder="e.g. muster@mail.at" required>
@@ -46,6 +43,7 @@
       <button type="submit">Login</button>
       <button><a href="regis.html">Konto erstellen</a></button>
     </div>
+    </form>
   </main>
 
   <?php include("../components/footer.php"); ?>
