@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rothneusiedl</title>
+  <title>Wohnungen</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
@@ -27,20 +27,37 @@
           </a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          Bauprojekt Rothneusiedl </li>
+        ImmOH! KlimaWohnungen  </li>
       </ol>
     </nav>
     <div class="headline">
-      <h1 class="replace-text-primary">Rothneusiedl – Ein neuer Stadtteil für Wien </h1>
-      <p>Im Süden Wiens entsteht mit Rothneusiedl eines der spannendsten Stadtentwicklungsprojekte der kommenden Jahre. Das Ziel: ein lebendiger, durchmischter Stadtteil mit Platz für Wohnen, Arbeiten, Bildung, Freizeit und Natur – nachhaltig geplant und zukunftsorientiert umgesetzt. </p>
+      <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
+      <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun.  </p>
       <br>
     </div>
     <div class="Rothbox">
 
       <div class="section reverse">
         <div class="text">
-          <h2>Was entsteht in Rothneusiedl?</h2>
-          <p>Das neue Stadtgebiet soll Wohnraum für rund 20.000 bis 25.000 Menschen bieten – leistbar, modern und umgeben von großzügigen Grünflächen. Geplant sind auch Kindergärten, Schulen, Einkaufsmöglichkeiten, Arbeitsplätze sowie ein vielfältiges Freizeitangebot. Der Mensch steht im Mittelpunkt: kurze Wege, gute Erreichbarkeit, hoher Wohn- und Lebenskomfort. </p>
+          <h2>Familienwohnung mit Gartenzugang</h2>
+          <h2>(4-Zimmer, 95 m²)</h2>
+          <h5>Ideal für Familien, die naturnah und dennoch urban wohnen möchten.</h5>
+
+        <p> ⋅ Großzügiger Wohn-Essbereich mit offener Küche</p>
+
+        <p> ⋅ Drei Schlafzimmer, ideal für Kinder oder Homeoffice</p>
+
+        <p> ⋅ Direktzugang zum privaten Gartenanteil</p>
+
+        <p> ⋅ Barrierefrei & mit hochwertiger Holzbauweise</p>
+
+        <p> ⋅ Nur wenige Gehminuten zu Kindergarten und Schule</p>
+
+        <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
+
+        <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
+  	    <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
+        
         </div>
         <div class="image">
           <img src=".../resources/wohnung1.jpg" alt="Bild 2">
@@ -50,8 +67,22 @@
 
       <div class="section">
         <div class="text">
-          <h2>Gut angebunden – umweltfreundlich unterwegs</h2>
-          <p>Ein zentraler Bestandteil des Projekts ist die geplante Verlängerung der U-Bahn-Linie U1 bis Rothneusiedl. Gemeinsam mit einem dichten Netz an Rad- und Fußwegen soll so umweltfreundliche Mobilität gefördert und der Verkehr nachhaltig entlastet werden.</p>
+          <h2>Smart-Apartment für Singles oder Paare</h2>
+          <h2>(2-Zimmer, 52 m²)</h2>
+          <h5>Perfekt für Berufstätige, Studierende oder Paare mit modernem Lebensstil.</h5>
+
+          <p> ⋅ Effiziente Raumaufteilung mit viel Stauraum</p>
+
+          <p> ⋅ Wohnküche mit Zugang zur Loggia mit Grünblick</p>
+
+          <p> ⋅ Nachhaltige Materialien wie Lehmputz und Ziegel</p>
+
+          <p> ⋅ Nähe zur U1-Endstation: 15 Minuten in die City</p>
+
+          <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
+
+          <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
+          <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
           <img src="../resources/wohnung2.jpg" alt="Bild 2">
@@ -61,8 +92,23 @@
 
       <div class="section reverse">
         <div class="text">
-          <h2>Nachhaltig und klimaresilient gebaut</h2>
-          <p>Rothneusiedl steht für zukunftsfähiges Bauen: energieeffiziente Gebäude, innovative Konzepte für Energieversorgung und Wassermanagement sowie ein klimaangepasstes Stadtklima. Begrünte Dächer, Regenwassernutzung und viel Platz für Bäume und Pflanzen schaffen eine lebenswerte Umgebung für kommende Generationen. </p>
+          <h2>Dachgeschoss-Loft mit Weitblick</h2>
+          <h2>(3-Zimmer, 78 m²)</h2>
+          <h5>Für Individualisten, Kreative oder Paare mit Wunsch nach etwas Besonderem.</h5>
+
+          <p> ⋅ Offenes Loft-Design mit sichtbaren Holzbalken</p>
+
+          <p> ⋅ Große Dachterrasse mit Blick über die Grünräume Rothneusiedls</p>
+
+          <p> ⋅ Begrüntes Dach sorgt für gutes Mikroklima</p>
+
+          <p> ⋅ Smart-Home-Steuerung für Licht, Heizung, Sicherheit</p>
+
+          <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
+
+          <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
+          <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
+
         </div>
         <div class="image">
           <img src="../resources/wohnung3.jpg" alt="Bild 2">
@@ -72,9 +118,22 @@
 
       <div class="section">
         <div class="text">
-          <h2>Zeitplan und Ausblick </h2>
-          <p>Die städtebaulichen Planungen sind weit fortgeschritten. Der Start für erste Erschließungsmaßnahmen ist für 2025 geplant. Schritt für Schritt entsteht hier ein neuer Stadtteil, der nicht nur Wohnraum schafft, sondern auch Maßstäbe für modernes, nachhaltiges Stadtleben setzt.</p>
-          <a >RothNEUsiedl Startschuss </a>
+          <h2>Generationenwohnung – barrierefrei & gemeinschaftsnah</h2>
+          <h2>(3-Zimmer, 68 m²)</h2>
+          <h5>Für Senioren oder generationenübergreifendes Wohnen mit Komfort.</h5>
+
+          <p> ⋅ Ebenerdig mit Zugang zu gemeinschaftlichem Innenhof & Garten</p>
+
+          <p> ⋅ Zwei Schlafzimmer und ein flexibel nutzbarer Raum</p>
+
+          <p> ⋅ Nähe zu Nahversorgung, medizinischer Betreuung & Freizeitangeboten</p>
+
+          <p> ⋅ Teil eines "Mehrgenerationenhauses" mit Gemeinschaftsräumen</p>
+
+          <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
+
+          <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
+          <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
           <img src="../resources/wohnung2.jpg" alt="Bild 2">

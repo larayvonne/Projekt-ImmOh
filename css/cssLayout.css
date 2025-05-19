@@ -1,7 +1,7 @@
-html,
 body {
     height: 100%;
     margin: 0;
+    
 }
 
 body {
@@ -20,15 +20,12 @@ main {
     z-index: 1;
 }
 
+
 .replace-bg-light {
     background-color: rgb(232, 250, 215)
 }
 .replace-bg-dark {
-<<<<<<< HEAD
     background-color: #E8E8E8;
-=======
-    background-color: #e8e8e8;
->>>>>>> f05e90948859a3f359bc6a281ed0e8729de2b875
 }
 
 .immohGrid {

@@ -22,13 +22,15 @@
     <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div class="text-container position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end align-items-center text-center text-white p-3">
       <h5>Verwaltung mit System, Service mit Herz</h5>
-      <a href="../php/team.php" class="btn btn-outline-light btn-sm">Mehr Infos</a>
+      <a class="btn btn-outline-light btn-sm">Mehr Infos</a>
     </div>
   </div>
 
   <main>
-    <div class="">
-      
+    <div class="hero-section">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis assumenda alias ullam
+      qui incidunt, sed dicta error. Nobis, omnis quisquam corrupti unde, minima incidunt, eius et est eligendi vitae mollitia.
+    </div>
   </main>
 
   <?php include("../components/footer.php"); ?>
