@@ -60,7 +60,7 @@
         
         </div>
         <div class="image">
-          <img src=".../resources/wohnung1.jpg" alt="Bild 2">
+          <img src="../resources/wohnung1.jpg" alt="Bild 1">
         </div>
       </div>
 
