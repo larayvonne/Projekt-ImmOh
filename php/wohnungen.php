@@ -27,7 +27,7 @@
           </a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-        ImmOH! KlimaWohnungen  </li>
+        KlimaWohnungen  </li>
       </ol>
     </nav>
     <div class="headline">

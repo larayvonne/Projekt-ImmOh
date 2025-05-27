@@ -30,10 +30,25 @@
     </nav>
 
     <h3>Login</h3>
-    <form action="function" method="post"></form>
+    <?php
+
+    session_start();
+
+    if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
+        echo "Hallo " . $_SESSION["username"];
+    ?>
+        <form action="logout.php" method="post">
+            <input type="submit" value="Logout">
+        </form>
+    <?php
+
+    } else {
+      
+    ?>
+    <form action="loginphp.php" method="post"></form>
     <div>
-      <label for="mail">E-Mail</label>
-      <input id="mail" name="mail" type="text" placeholder="e.g. muster@mail.at" required>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" required>
     </div>
     <div>
       <label for="password">Passwort</label>
@@ -44,6 +59,9 @@
       <button><a href="regis.html">Konto erstellen</a></button>
     </div>
     </form>
+    <?php
+    }
+    ?>
   </main>
 
   <?php include("../components/footer.php"); ?>
