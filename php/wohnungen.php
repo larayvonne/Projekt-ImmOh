@@ -56,7 +56,7 @@
         <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
 
         <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
-  	    <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
+  	    <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
         
         </div>
         <div class="image">
@@ -82,7 +82,7 @@
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
+          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
           <img src="../resources/wohnung2.jpg" alt="Bild 2">
@@ -107,7 +107,7 @@
           <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
+          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
 
         </div>
         <div class="image">
@@ -133,7 +133,7 @@
           <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
+          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
           <img src="../resources/wohnung2.jpg" alt="Bild 2">

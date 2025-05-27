@@ -1,0 +1,18 @@
+form div {
+    margin-bottom: .3rem;
+}
+
+label {
+    display: inline-block;
+    width: 10rem;
+}
+
+input,
+select {
+    width: 12.5rem;
+}
+
+.btn-compact {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}

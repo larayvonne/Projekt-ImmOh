@@ -80,7 +80,7 @@
             </label>
           </div>
 
-          <button class="btn btn-outline-dark btn-compact me-2" type="submit">Registrierung durchführen</button>
+          <button class="btn btn-outline-dark border-2 btn-compact me-2" type="submit">Registrierung durchführen</button>
 
         </div>
 
