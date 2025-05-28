@@ -1,18 +1,70 @@
-form div {
-    margin-bottom: .3rem;
+
+.regis-title {
+    text-align: center;
+    color: rgba(0, 0, 50);
+    margin-bottom: 1rem;
 }
 
-label {
-    display: inline-block;
-    width: 10rem;
+/* Formulargruppen */
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
-input,
-select {
-    width: 12.5rem;
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-.btn-compact {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.875rem;
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.regis-box {
+     width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Titel-Design für Regis */
+.regis-title {
+    text-align: center;
+    color: rgba(0, 0, 50);
+    margin-bottom: 1rem;
+}
+
+/* Regis-Button (gleicher Stil wie Login) */
+.regis-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 50);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.regis-btn:hover {
+    background-color: rgb(59, 59, 95);
+}
+
+/* AGB-Checkbox */
+.form-check-label a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-check-label a:hover {
+    text-decoration: underline;
 }

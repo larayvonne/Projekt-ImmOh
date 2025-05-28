@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -8,93 +9,85 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
-  <link rel="stylesheet" href="../css/cssRegis.css">
   <link rel="stylesheet" href="../css/cssLayout.css">
+  <link rel="stylesheet" href="../css/cssRegis.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="replace-bg-dark">
   <?php include("../components/header.php"); ?>
 
-  <main>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mt-3 ms-2">
-        <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.html">
-            <i class="fas fa-home"></i> ImmOH!
-          </a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Registrierung </li>
-      </ol>
-    </nav>
+  <main class="regis-container">
+      <div class="regis-box">
+        <h3 class="regis-title">Registrierung</h3>
+        <form action="function" method="post">
+          <div class="form-group">
+            <label for="anrede">Anrede</label>
+            <select id="anrede" name="anrede" class="form-select">
+              <option value="Herr">Herr</option>
+              <option value="Frau">Frau</option>
+              <option value="divers">Divers</option>
+            </select>
+          </div>
 
-    <body>
-      <form class="ms-3" method="post" action="#">
-        <h3 class="mb-4">Registrierung</h3>
-        <div>
-          <label for="anrede">Anrede</label>
-          <select name="anrede" id="anrede">
-            <option value="Herr">Herr</option>
-            <option value="Frau">Frau</option>
-            <option value="divers">Divers</option>
-          </select>
-        </div>
-        <div>
-          <label for="vorname">Vorname</label>
-          <input id="vorname" name="firstname" type="text" placeholder="Vorname" required>
-        </div>
-        <div>
-          <label for="nachname">Nachname</label>
-          <input type="text" name="nachname" id="nachname" placeholder="Nachname" required>
-        </div>
-        <div>
-          <label for="adresse">Adresse</label>
-          <input type="text" name="adresse" id="adresse" placeholder="Adresse" required>
-        </div>
-        <div>
-          <label for="plz">PLZ</label>
-          <input type="text" name="plz" id="plz" placeholder="1200" pattern="\d{4}" required>
-        </div>
-        <div>
-          <label for="ort">Ort</label>
-          <input type="text" name="ort" id="ort" placeholder="Wien" required>
-        </div>
-        <div>
-          <label for="mail">Mail</label>
-          <input type="email" name="mail" id="mail" placeholder="example@mail.at" required>
-        </div>
-        <div class="mt-4">
-          <label for="username">Benutzername</label>
-          <input type="text" name="username" id="username" placeholder="Benutzername" required>
-        </div>
-        <div>
-          <label for="password">Passwort</label>
-          <input type="password" name="password" id="password" placeholder="********" minlength="8" required>
-        </div>
-        <div class="d-flex align-items-center justify-content-between mt-4 gap-3 flex-wrap">
-          <div class="form-check m-0">
+          <div class="form-group">
+            <label for="vorname">Vorname</label>
+            <input id="vorname" name="firstname" type="text" placeholder="Vorname" required>
+          </div>
+
+          <div class="form-group">
+            <label for="nachname">Nachname</label>
+            <input id="nachname" name="nachname" type="text" placeholder="Nachname" required>
+          </div>
+
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input id="adresse" name="adresse" type="text" placeholder="Adresse" required>
+          </div>
+
+          <div class="form-group">
+            <label for="plz">PLZ</label>
+            <input id="plz" name="plz" type="text" placeholder="1200" pattern="\d{4}" required>
+          </div>
+
+          <div class="form-group">
+            <label for="ort">Ort</label>
+            <input id="ort" name="ort" type="text" placeholder="Wien" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mail">E-Mail</label>
+            <input id="mail" name="mail" type="email" placeholder="example@mail.at" required>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Benutzername</label>
+            <input id="username" name="username" type="text" placeholder="Benutzername" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Passwort</label>
+            <input id="password" name="password" type="password" placeholder="********" minlength="8" required>
+          </div>
+
+          <div class="form-check mt-3 mb-3">
             <input class="form-check-input" type="checkbox" id="agb" required>
             <label class="form-check-label" for="agb">
-              Ich akzeptiere die <a class="text-decoration-none" href="../html/agb.html">AGB</a>'s
+              Ich akzeptiere die <a href="../html/agb.html" class="text-decoration-none">AGB</a>'s
             </label>
           </div>
 
-          <button class="btn btn-outline-dark btn-compact me-2" type="submit">Registrierung durchführen</button>
-
-        </div>
-
-      </form>
+          <button type="submit" class="regis-btn">Registrierung durchführen</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <?php include("../components/footer.php"); ?>
 
   <script>
     function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>

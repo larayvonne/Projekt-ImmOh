@@ -60,7 +60,7 @@
         
         </div>
         <div class="image">
-          <img src=".../resources/wohnung1.jpg" alt="Bild 2">
+         <img src="../resources/wohnung2.jpg" alt="Bild 2">
         </div>
       </div>
 
@@ -85,7 +85,7 @@
           <button id="addToList" type="button" class="btn btn-outline-dark"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
-          <img src="../resources/wohnung2.jpg" alt="Bild 2">
+          <img src="../resources/wohnung1.jpg" alt="Bild 2">
         </div>
       </div>
 
