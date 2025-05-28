@@ -40,7 +40,6 @@
     </div>
 
     <div class="box">
-
       <div class="section reverse">
         <div class="text">
           <h2> Bauvorhaben "Simmering"</h2>
@@ -51,12 +50,12 @@
             Geschäften des täglichen Bedarfs, Schulen und dem Simmeringer Markt machen dieses Projekt zu einem besonders
             attraktiven Standort. Die ruhige, aber gleichzeitig zentrale Lage ermöglicht es, das urbane Leben in Wien in
             vollen Zügen zu genießen.</p>
+          <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/greenliving.png">
         </div>
       </div>
-
 
       <div class="section">
         <div class="text">
@@ -64,8 +63,8 @@
           <p>In diesem einzigartigen Projekt entstanden 20 frei finanzierte Wohnungen im Herzen des 12. Bezirks. Mit
             Wohnungsgrößen von 44-79 m² bietet es zahlreiche Optionen für ein individuelles Wohnen. Durch die
             ausgezeichnete öffentliche Verkehrsanbindung (U4/U6) und umliegende Infrastruktur (Meidlinger Markt,
-            Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien.
-          </p>
+            Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien</p>
+          <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/gutenberg.png">
@@ -81,9 +80,8 @@
             höchstes Wohngefühl. Alle Apartments verfügen über eine Freifläche (Garten/Balkon/Loggia/Terrasse) und haben
             damit entweder direkten Zugang oder Blick ins Grüne. Zusätzlich verfügen jene Wohnungen mit eigenem Garten
             über eine Pergola. Besonders hervorzuheben ist die große Freifläche im Süden des Grundstücks, wo ein
-            Erholungsareal für alle Bewohner*innen geschaffen wird.
-
-          </p>
+            Erholungsareal für alle Bewohner*innen geschaffen wird.</p>
+          <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/moedling.png">
@@ -92,7 +90,6 @@
     </div>
 
     <div class="end">
-      <h2>Jetzt Voranmelden und nachhaltig Wohnen - hier wird noch Link zum Anmeldeform. ergänzt</h2>
       <div class="container end">
         <div class="row row-cols-1 row-cols-md-3">
           <div class="col">
@@ -122,8 +119,8 @@
                   d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z" />
               </svg>
               Ganzheitliche Betrachtung</h5>
-            <P>Berücksichtigung der gesamten Lebensdauer eines Gebäudes, von der Planung bis zur Entsorgung, und
-              Optimierung von Ressourcenverbrauch, Flächennutzung und CO2-Ausstoß.</P>
+            <p>Berücksichtigung der gesamten Lebensdauer eines Gebäudes, von der Planung bis zur Entsorgung, und
+              Optimierung von Ressourcenverbrauch, Flächennutzung und CO2-Ausstoß.</p>
           </div>
         </div>
       </div>
@@ -139,5 +136,4 @@
     }
   </script>
 </body>
-
 </html>

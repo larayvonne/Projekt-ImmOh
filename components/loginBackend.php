@@ -4,12 +4,12 @@ require_once("dbaccess.php");
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
+    $username = $_POST['email'];
     $password = $_POST['password'];
 
     // SICHERE Variante mit Prepared Statement
-    $stmt = $db_obj->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-    $stmt->bind_param("ss", $username, $password);
+    $stmt = $db_obj->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+    $stmt->bind_param("ss", $email, $password);
     $stmt->execute();
     $result = $stmt->get_result();
 

@@ -77,10 +77,18 @@
             </label>
           </div>
 
+<<<<<<< HEAD
+          <button class="btn btn-outline-dark border-2 btn-compact me-2" type="submit">Registrierung durchführen</button>
+
+        </div>
+
+      </form>
+=======
           <button type="submit" class="regis-btn">Registrierung durchführen</button>
         </form>
       </div>
     </div>
+>>>>>>> e4ac21ec29fce050bc3ab5f70dc46d9a3787b2fa
   </main>
 
   <?php include("../components/footer.php"); ?>
