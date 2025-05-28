@@ -82,7 +82,9 @@
                 <img src="../resources/news5.png" class="card-img-top" alt="Kooperation mit Klimaschutzagentur">
                 <div class="card-body">
                 <h5 class="card-title">ImmOH startet Kooperation mit Klimaschutzagentur</h5>
-                <p class="card-text">Gemeinsam mit der Klimaschutzagentur startet ImmOH eine Initiative zur Förderung klimaneutraler Projekte – mit Beratung direkt ab der Planungsphase.</p>
+                <p class="card-text">Gemeinsam mit der Klimaschutzagentur startet ImmOH eine Initiative zur Förderung klimaneutraler Projekte – mit Beratung direkt ab der Planungsphase.
+                  
+                </p>
                 </div>
             </div>
             </div>
