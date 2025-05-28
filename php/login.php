@@ -17,7 +17,17 @@
 
 <body class="replace-bg-dark">
   <?php include("../components/header.php"); ?>
- 
+     <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mt-3 ms-2">
+        <li class="breadcrumb-item">
+          <a class="text-decoration-none replace-link-dark" href="index.html">
+            <i class="fas fa-home"></i> ImmOH!
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Login </li>
+      </ol>
+    </nav>
   
     <main class="login-container">
   
@@ -43,59 +53,7 @@
         </div>
       </form>
         </div>
-  
-
-<<<<<<< HEAD
-</main>
-=======
-  <main>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mt-3 ms-2">
-        <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.html">
-            <i class="fas fa-home"></i> ImmOH!
-          </a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Login </li>
-      </ol>
-    </nav>
-
-    <h3>Login</h3>
-    <?php
-
-    session_start();
-
-    if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
-        echo "Hallo " . $_SESSION["username"];
-    ?>
-        <form action="logout.php" method="post">
-            <input type="submit" value="Logout">
-        </form>
-    <?php
-
-    } else {
-      
-    ?>
-    <form action="loginphp.php" method="post"></form>
-    <div>
-      <label for="username">Username</label>
-      <input id="username" name="username" type="text" required>
-    </div>
-    <div>
-      <label for="password">Passwort</label>
-      <input id="password" name="password" type="password" required>
-    </div>
-    <div>
-      <button type="submit">Login</button>
-      <button><a href="regis.html">Konto erstellen</a></button>
-    </div>
-    </form>
-    <?php
-    }
-    ?>
   </main>
->>>>>>> 4ee26c90624adc207ed673175e0960630c7e2154
 
   <?php include("../components/footer.php"); ?>
 
