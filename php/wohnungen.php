@@ -27,7 +27,7 @@
           </a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-        ImmOH! KlimaWohnungen  </li>
+        KlimaWohnungen  </li>
       </ol>
     </nav>
     <div class="headline">
@@ -60,7 +60,11 @@
         
         </div>
         <div class="image">
+<<<<<<< HEAD
          <img src="../resources/wohnung2.jpg" alt="Bild 2">
+=======
+          <img src="../resources/wohnung1.jpg" alt="Bild 1">
+>>>>>>> 4ee26c90624adc207ed673175e0960630c7e2154
         </div>
       </div>
 

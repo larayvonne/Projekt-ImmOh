@@ -35,7 +35,7 @@
             <!-- News 1 -->
             <div class="col-md-6">
             <div class="card">
-                <img src="../resources/news1.jpg" class="card-img-top" alt="Klimaneutrale Neubauten">
+                <img src="../resources/news1.png" class="card-img-top" alt="Klimaneutrale Neubauten">
                 <div class="card-body">
                 <h5 class="card-title">Klimaneutrale Neubauten werden Standard ab 2026</h5>
                 <p class="card-text">Ab dem Jahr 2026 sollen alle Neubauten einen klimaneutralen Standard erfüllen. Neue Förderprogramme unterstützen Bauherr:innen auf dem Weg zur CO₂-neutralen Immobilie.</p>
@@ -46,7 +46,7 @@
             <!-- News 2 -->
             <div class="col-md-6">
             <div class="card">
-                <img src="../resources/news2.jpg" class="card-img-top" alt="Solarpflicht für Neubauten">
+                <img src="../resources/news2.png" class="card-img-top" alt="Solarpflicht für Neubauten">
                 <div class="card-body">
                 <h5 class="card-title">Solarpflicht für Neubaugebiete beschlossen</h5>
                 <p class="card-text">Photovoltaik wird Pflicht: Neubauten in Österreich müssen künftig mit Solaranlagen ausgestattet sein. Ein großer Schritt in Richtung Energiewende im Wohnbau.</p>
@@ -57,7 +57,7 @@
             <!-- News 3 -->
             <div class="col-md-6">
             <div class="card">
-                <img src="../resources/news3.jpg" class="card-img-top" alt="Holzbauten in Städten">
+                <img src="../resources/news3.png" class="card-img-top" alt="Holzbauten in Städten">
                 <div class="card-body">
                 <h5 class="card-title">Städtischer Wohnbau setzt auf Holz statt Beton</h5>
                 <p class="card-text">In Wien und Graz entstehen neue Wohnbauten komplett aus Holz. Ziel ist die Reduktion von CO₂ in der Bauphase bei gleichzeitig hoher Wohnqualität.</p>
@@ -68,7 +68,7 @@
             <!-- News 4 -->
             <div class="col-md-6">
             <div class="card">
-                <img src="../resources/news4.jpg" class="card-img-top" alt="Energieeffizienz gefragt">
+                <img src="../resources/news4.png" class="card-img-top" alt="Energieeffizienz gefragt">
                 <div class="card-body">
                 <h5 class="card-title">Immobilienkäufer fragen verstärkt nach Energieeffizienz</h5>
                 <p class="card-text">Immer mehr Käufer:innen achten auf niedrige Betriebskosten. Immobilien mit guter Energiebilanz, Solartechnik und Wärmepumpe stehen hoch im Kurs.</p>
@@ -79,7 +79,7 @@
             <!-- News 5 -->
             <div class="col-md-6">
             <div class="card">
-                <img src="../resources/news5.jpg" class="card-img-top" alt="Kooperation mit Klimaschutzagentur">
+                <img src="../resources/news5.png" class="card-img-top" alt="Kooperation mit Klimaschutzagentur">
                 <div class="card-body">
                 <h5 class="card-title">ImmOH startet Kooperation mit Klimaschutzagentur</h5>
                 <p class="card-text">Gemeinsam mit der Klimaschutzagentur startet ImmOH eine Initiative zur Förderung klimaneutraler Projekte – mit Beratung direkt ab der Planungsphase.
@@ -92,7 +92,7 @@
             <!-- News 6 -->
             <div class="col-md-6">
             <div class="card">
-                <img src="../resources/news6.jpg" class="card-img-top" alt="Gründächer in Wien">
+                <img src="../resources/news6.png" class="card-img-top" alt="Gründächer in Wien">
                 <div class="card-body">
                 <h5 class="card-title">Grüne Dachflächen werden in Wien zur Pflicht für Neubauten</h5>
                 <p class="card-text">
