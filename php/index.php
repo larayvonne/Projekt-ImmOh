@@ -13,9 +13,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body class="replace-bg-dark">
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    const toastEl = document.getElementById('toastRegistrierung');
+    if (toastEl) {
+      const toast = new bootstrap.Toast(toastEl, {
+        delay: 3000
+      });
+      toast.show();
+    }
+  });
+</script>
 
+<body>
   <?php include("../components/header.php"); ?>
+
+  <?php if (isset($_GET['registrierung']) && $_GET['registrierung'] === 'ok'): ?>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="toastRegistrierung" class="toast toast-custom-success align-items-center border-0 show"
+        role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            Registrierung erfolgreich!
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
 
   <div class="position-relative overflow-hidden">
     <img src="../resources/immoh.webp" class="w-100 h-100 object-fit-cover z-n1" alt="Hintergrundbild">
@@ -26,9 +51,8 @@
     </div>
   </div>
 
-  <main>
-    <div class="">
-      
+  <main class="replace-bg-dark">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quae nemo aut, corrupti quidem ipsum saepe cupiditate quas ea ad debitis eligendi architecto sit esse ullam voluptate. Veniam, incidunt earum?</p>
   </main>
 
   <?php include("../components/footer.php"); ?>

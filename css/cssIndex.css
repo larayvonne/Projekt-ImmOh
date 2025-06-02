@@ -6,3 +6,7 @@
     pointer-events: none;
     /* optional: verhindert, dass Overlay Klicks blockiert */
 }
+.toast-custom-success {
+  background-color:  #a4bc9b !important;
+  color: #000050 !important;
+}
