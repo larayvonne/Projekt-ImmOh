@@ -1,14 +1,12 @@
 <?php
-
 $host = "localhost";
-$dbname = "immoh";
-$dbuser = "root";
-$dbpass = "";
+$dbname = "immoh";         // Deine Datenbank
+$dbuser = "root";          // XAMPP-Standardnutzer
+$dbpass = "";              // Kein Passwort in XAMPP
 
-$db_obj = new mysqli($host,$dbuser,$dbpass,$dbname);
-if ($db_obj->connect_error)
-{
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $db_obj->connect_error);
+$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
+
+// Verbindung prüfen
+if ($conn->connect_error) {
+    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
 }
-
-?>
