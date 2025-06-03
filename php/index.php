@@ -28,18 +28,18 @@
 <body>
   <?php include("../components/header.php"); ?>
 
-  <?php if (isset($_GET['registrierung']) && $_GET['registrierung'] === 'ok'): ?>
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-      <div id="toastRegistrierung" class="toast toast-custom-success align-items-center border-0 show"
-        role="alert" aria-live="assertive" aria-atomic="true">
+  <?php if (isset($_SESSION['meldung'])): ?>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div class="toast show align-items-center toast-custom-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body">
-            Registrierung erfolgreich!
+            <?= htmlspecialchars($_SESSION['meldung']) ?>
           </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          <button type="button" class="btn-close custom-close-blue me-2 m-auto" data-bs-dismiss="toast" aria-label="Schließen"></button>
         </div>
       </div>
     </div>
+    <?php unset($_SESSION['meldung']); ?>
   <?php endif; ?>
 
   <div class="position-relative overflow-hidden">
@@ -68,3 +68,5 @@
 </body>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>

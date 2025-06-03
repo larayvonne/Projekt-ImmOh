@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../components/dbaccess.php";
 
 $meldung = null;
@@ -50,7 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       if ($stmt) {
         $stmt->bind_param("ssssssss", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $hashedPassword);
         if ($stmt->execute()) {
-          header("Location: index.php?registrierung=ok");
+          $_SESSION['meldung'] = "Registrierung erfolgreich!";
+          header("Location: index.php");
           exit;
         } else {
           $meldung = "Fehler beim Speichern: " . $stmt->error;
@@ -68,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -165,4 +168,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
   </script>
 </body>
+
 </html>

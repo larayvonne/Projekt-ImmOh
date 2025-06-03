@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $_SESSION['rolle'] = $rolle;
           $_SESSION['vorname'] = $vorname;
 
+          $_SESSION['meldung'] = "$vorname wurde erfolgreich eingeloggt!";
 
           header("Location: index.php");
           exit;
