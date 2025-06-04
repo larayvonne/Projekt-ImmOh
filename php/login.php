@@ -1,26 +1,49 @@
 <?php
 session_start();
-require_once("../components/dbaccess.php");
-$message = '';
+require_once "../components/dbaccess.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['passwort'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $email = trim($_POST['mail'] ?? '');
+  $password = $_POST['password'] ?? '';
 
-    // SICHERE Variante mit Prepared Statement
-    $stmt = $db_obj->prepare("SELECT * FROM user WHERE email = ? AND passwort = ?");
-    $stmt->bind_param("ss", $email, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
+  if (empty($email) || empty($password)) {
+    $meldung = "Bitte E-Mail und Passwort eingeben.";
+  } else {
+    $stmt = $conn->prepare("SELECT id, vorname, password, rolle FROM user WHERE email = ?");
+    if ($stmt) {
+      $stmt->bind_param("s", $email);
+      $stmt->execute();
+      $stmt->store_result();
 
-    if ($result && $result->num_rows > 0) {
-        $message = "Login erfolgreich! 🟢";// hier dan verlinkung zu KD login
+      if ($stmt->num_rows === 1) {
+        $stmt->bind_result($userid, $vorname, $hashedPassword, $rolle);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashedPassword)) {
+          $_SESSION['user_id'] = $userid;
+          $_SESSION['user_email'] = $email;
+          $_SESSION['rolle'] = $rolle;
+          $_SESSION['vorname'] = $vorname;
+
+          $_SESSION['meldung'] = "$vorname wurde erfolgreich eingeloggt!";
+
+          header("Location: index.php");
+          exit;
+        } else {
+          $meldung = "Falsches Passwort.";
+        }
+      } else {
+        $meldung = "E-Mail nicht gefunden.";
+      }
+      $stmt->close();
     } else {
-        $message = "User nicht vorhanden!"; 
+      $meldung = "Datenbankfehler.";
     }
-    $stmt->close();
+  }
+  $conn->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -31,30 +54,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
- 
-  <link rel="stylesheet" href="../css/cssLayout.css">
   <link rel="stylesheet" href="../css/cssLogin.css">
+  <link rel="stylesheet" href="../css/cssLayout.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <?php include("../components/header.php"); ?>
 
 <body class="replace-bg-dark">
-     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mt-3 ms-2">
-        <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.php">
-            <i class="fas fa-home"></i> ImmOH!
-          </a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Login </li>
-      </ol>
-    </nav>
+  <?php include("../components/header.php"); ?>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-3 ms-2">
+      <li class="breadcrumb-item">
+        <a class="text-decoration-none replace-link-dark" href="index.html">
+          <i class="fas fa-home"></i> ImmOH!
+        </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Login </li>
+    </ol>
+  </nav>
 
-    <main class="login-container">
+  <main class="login-container">
+    <?php if (isset($meldung)) echo "<script>alert('$meldung');</script>"; ?>
+
     <div class="login-box">
       <h3 class="login-title">Login</h3>
-      <form action="function" method="post">
+      <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
         <div class="form-group">
           <label for="email">E-Mail</label>
           <input id="email" name="email" type="email" placeholder="e.g. muster@mail.at" required>
@@ -73,10 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <a href="regis.php">Konto erstellen</a>
         </div>
       </form>
-        </div>
-         <p><?= htmlspecialchars($message) ?></p>
+    </div>
+
+
   </main>
- 
+
   <?php include("../components/footer.php"); ?>
 
   <script src="../jslogin.js"></script>

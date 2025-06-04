@@ -1,4 +1,4 @@
-<footer class="footer-darkblue text-white py-3">
+<footer class="footer-darkblue text-white pt-3">
   <div class="d-flex justify-content-center gap-3 mb-3">
     <a href="https://at.linkedin.com/company/immoh" class="btn btn-outline-light btn-md rounded-circle border-2"
       aria-label="LinkedIn">
@@ -23,7 +23,7 @@
   </div>
 
   <div class="container mt-3"></div>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mb-3">
     <a href="../php/admin.php" class="btn btn-outline-light btn-sm ms-5">Admin</a>
     <button onclick="scrollToTop()" class="btn btn-outline-light btn-sm me-5 d-lg-none" id="back-to-top">↑ Nach oben </button>
   </div>

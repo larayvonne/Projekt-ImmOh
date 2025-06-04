@@ -86,7 +86,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
+          <button id="addToList" type="button" class="btn replace-btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 2">

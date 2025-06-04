@@ -1,8 +1,11 @@
 <?php
+session_start();
+session_unset();
+session_destroy();
 
-    session_start();
-    session_unset();
-    session_destroy();
+// Toast-Meldung für erfolgreichen Logout
+session_start(); // neue Session starten, um die Meldung zu setzen
+$_SESSION['meldung'] = "Du wurdest erfolgreich ausgeloggt.";
 
-header("Location: index.php")
-?>
+header("Location: index.php");
+exit;

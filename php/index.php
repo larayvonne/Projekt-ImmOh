@@ -13,9 +13,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body class="replace-bg-dark">
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    const toastEl = document.getElementById('toastRegistrierung');
+    if (toastEl) {
+      const toast = new bootstrap.Toast(toastEl, {
+        delay: 3000
+      });
+      toast.show();
+    }
+  });
+</script>
 
+<body>
   <?php include("../components/header.php"); ?>
+
+  <?php if (isset($_SESSION['meldung'])): ?>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div class="toast show align-items-center toast-custom-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            <?= htmlspecialchars($_SESSION['meldung']) ?>
+          </div>
+          <button type="button" class="btn-close custom-close-blue me-2 m-auto" data-bs-dismiss="toast" aria-label="Schließen"></button>
+        </div>
+      </div>
+    </div>
+    <?php unset($_SESSION['meldung']); ?>
+  <?php endif; ?>
 
   <div class="position-relative overflow-hidden">
     <img src="../resources/immoh.webp" class="w-100 h-100 object-fit-cover z-n1" alt="Hintergrundbild">
@@ -26,9 +51,8 @@
     </div>
   </div>
 
-  <main>
-    <div class="">
-      
+  <main class="replace-bg-dark">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quae nemo aut, corrupti quidem ipsum saepe cupiditate quas ea ad debitis eligendi architecto sit esse ullam voluptate. Veniam, incidunt earum?</p>
   </main>
 
   <?php include("../components/footer.php"); ?>
@@ -44,3 +68,5 @@
 </body>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>

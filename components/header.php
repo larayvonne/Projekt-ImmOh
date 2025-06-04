@@ -1,9 +1,16 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+  if (!isset($conn)) require_once "../components/dbaccess.php";
+}
+?>
+
 <header>
   <nav class="navbar navbar-expand-lg navbar-light replace-bg-light sticky-top">
     <div class="container-fluid">
-      
+
       <!-- Logo immOH! -->
-        <div class="immohGrid">
+      <div class="immohGrid">
         <span id="imm"><a href="../php/index.php">imm</a></span>
         <span id="O"><a href="../php/index.php">O</a></span>
         <span id="H"><a href="../php/index.php">H</a></span>
@@ -62,10 +69,56 @@
         </ul>
 
         <!-- Login & Registrieren -->
-        <div class="d-flex">
-          <a class="text-decoration-none me-3" href="../php/login.php">Login</a>
-          <a class="text-decoration-none" href="../php/regis.php">Registrieren</a>
-        </div>
+        <ul class="navbar-nav ms-auto">
+          <?php if (isset($_SESSION['user_email'])): ?>
+            <li class="nav-item">
+              <span class="nav-link disabled">
+                Willkommen, <?= htmlspecialchars($_SESSION['vorname'] ?? 'Nutzer') ?>!
+              </span>
+            </li>
+
+            <!-- Profilbild laden -->
+            <?php
+            if (!isset($conn)) require_once "../components/dbaccess.php";
+
+            $profilbild = 'default.png';
+            if (isset($_SESSION['user_id'])) {
+              $stmt = $conn->prepare("SELECT profilbild FROM user WHERE id = ?");
+              $stmt->bind_param("i", $_SESSION['user_id']);
+              $stmt->execute();
+              $stmt->bind_result($bild);
+              if ($stmt->fetch() && $bild) {
+                $profilbild = $bild;
+              }
+              $stmt->close();
+            }
+            ?>
+
+            <li class="nav-item">
+              <img src="../uploads/<?= htmlspecialchars($profilbild) ?>"
+                alt="Profilbild"
+                class="rounded-circle"
+                style="width: 40px; height: 40px; object-fit: cover; margin-left: .5rem; margin-right: .5rem;">
+            </li>
+
+
+            <?php if (isset($_SESSION['user_id'])): ?>
+              <li class="nav-item">
+                <a class="nav-link" href="profil.php">Mein Profil</a>
+              </li>
+            <?php endif; ?>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="logout.php">Logout</a>
+            </li>
+          <?php else: ?>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="login.php">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="regis.php">Registrieren</a>
+            </li>
+          <?php endif; ?>
+        </ul>
       </div>
     </div>
   </nav>
@@ -74,4 +127,3 @@
 <!-- Bootstrap JS notwendig für Dropdown -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
