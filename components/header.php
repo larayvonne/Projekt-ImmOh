@@ -1,9 +1,9 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
+  if (!isset($conn)) require_once "../components/dbaccess.php";
 }
 ?>
-
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-light replace-bg-light sticky-top">
@@ -72,6 +72,37 @@ if (session_status() === PHP_SESSION_NONE) {
                 Willkommen, <?= htmlspecialchars($_SESSION['vorname'] ?? 'Nutzer') ?>!
               </span>
             </li>
+
+            <!-- Profilbild laden -->
+            <?php
+            if (!isset($conn)) require_once "../components/dbaccess.php";
+
+            $profilbild = 'default.png';
+            if (isset($_SESSION['user_id'])) {
+              $stmt = $conn->prepare("SELECT profilbild FROM user WHERE id = ?");
+              $stmt->bind_param("i", $_SESSION['user_id']);
+              $stmt->execute();
+              $stmt->bind_result($bild);
+              if ($stmt->fetch() && $bild) {
+                $profilbild = $bild;
+              }
+              $stmt->close();
+            }
+            ?>
+
+            <li class="nav-item">
+              <img src="../uploads/<?= htmlspecialchars($profilbild) ?>"
+                alt="Profilbild"
+                class="rounded-circle"
+                style="width: 40px; height: 40px; object-fit: cover; margin-left: .5rem; margin-right: .5rem;">
+            </li>
+
+
+            <?php if (isset($_SESSION['user_id'])): ?>
+              <li class="nav-item">
+                <a class="nav-link" href="profil.php">Mein Profil</a>
+              </li>
+            <?php endif; ?>
             <li class="nav-item">
               <a class="nav-link text-primary" href="logout.php">Logout</a>
             </li>
@@ -83,9 +114,7 @@ if (session_status() === PHP_SESSION_NONE) {
               <a class="nav-link text-primary" href="regis.php">Registrieren</a>
             </li>
           <?php endif; ?>
-
         </ul>
-
       </div>
     </div>
   </nav>
