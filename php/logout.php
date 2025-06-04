@@ -1,5 +1,8 @@
 <?php
 session_start();
+$_SESSION['meldung'] = "Du wurdest erfolgreich ausgeloggt.";
+
+header("Location: index.php");
 session_unset();
 session_destroy();
 

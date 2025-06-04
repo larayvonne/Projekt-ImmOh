@@ -1,6 +1,7 @@
 <footer class="footer-darkblue text-white pt-3">
   <div class="d-flex justify-content-center gap-3 mb-3">
-    <a href="https://at.linkedin.com/company/immoh" class="btn btn-outline-light btn-md rounded-circle border-2"
+    <a href="https://at.linkedin.com/company/immoh"
+      class="btn btn-outline-light btn-md rounded-circle border-2" style="width: 2.5rem;"
       aria-label="LinkedIn">
       <i class="fab fa-linkedin-in"></i></a>
 
