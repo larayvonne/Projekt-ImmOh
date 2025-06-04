@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <link rel="stylesheet" href="../css/cssLayout.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
+<?php include("../components/header.php"); ?>
 
 <body class="replace-bg-dark">
   <?php include("../components/header.php"); ?>
@@ -81,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <h3 class="login-title">Login</h3>
       <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
         <div class="form-group">
-          <label for="mail">E-Mail</label>
-          <input id="mail" name="mail" type="email" placeholder="e.g. muster@mail.at" required>
+          <label for="email">E-Mail</label>
+          <input id="email" name="email" type="email" placeholder="e.g. muster@mail.at" required>
         </div>
         <div class="form-group">
           <label for="password">Passwort</label>

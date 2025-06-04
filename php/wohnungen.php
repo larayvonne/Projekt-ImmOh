@@ -1,3 +1,6 @@
+<?php
+require_once "../components/dbaccess.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +40,7 @@
     </div>
     <div class="Rothbox">
 
+      <?php require($_page.".php"); ?>
       <div class="section reverse">
         <div class="text">
           <h2>Familienwohnung mit Gartenzugang</h2>
@@ -60,7 +64,7 @@
         
         </div>
         <div class="image">
-          <img src="../resources/wohnung1.jpg" alt="Bild 1">
+         <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
         </div>
       </div>
 
@@ -85,7 +89,7 @@
           <button id="addToList" type="button" class="btn replace-btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
-          <img src="../resources/wohnung1.jpg" alt="Bild 2">
+          <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
         </div>
       </div>
 
@@ -111,7 +115,7 @@
 
         </div>
         <div class="image">
-          <img src="../resources/wohnung3.jpg" alt="Bild 2">
+          <img src="../resources/products/wohnung3.jpg" alt="Bild 2">
         </div>
       </div>
 
@@ -136,7 +140,7 @@
           <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
         </div>
         <div class="image">
-          <img src="../resources/wohnung2.jpg" alt="Bild 2">
+          <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
         </div>
       </div>
     </div>
