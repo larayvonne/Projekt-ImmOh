@@ -70,19 +70,19 @@ if (!$profilbild) {
           <label for="nachname" class="form-label">Nachname</label>
           <input type="text" class="form-control" name="nachname" id="nachname" value="<?= htmlspecialchars($nachname) ?>" required>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
           <label for="adresse" class="form-label">Adresse</label>
           <input type="text" class="form-control" name="adresse" id="adresse" value="<?= htmlspecialchars($adresse) ?>" required>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <label for="plz" class="form-label">PLZ</label>
           <input type="text" class="form-control" name="plz" id="plz" value="<?= htmlspecialchars($plz) ?>" required>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <label for="ort" class="form-label">Ort</label>
           <input type="text" class="form-control" name="ort" id="ort" value="<?= htmlspecialchars($ort) ?>" required>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label for="land" class="form-label">Land</label>
           <select name="land" id="land" class="form-select" required>
             <option value="AT" <?= $land === 'AT' ? 'selected' : '' ?>>Österreich</option>
@@ -97,6 +97,10 @@ if (!$profilbild) {
         <div class="col-md-6">
           <label for="new_password" class="form-label">Neues Passwort (optional)</label>
           <input type="password" class="form-control" name="new_password" id="new_password">
+        </div>
+        <div class="col-md-6">
+          <label for="new_password_repeat" class="form-label">Neues Passwort wiederholen</label>
+          <input type="password" class="form-control" name="new_password_repeat" id="new_password_repeat">
         </div>
         <div class="col-md-12">
           <label for="profilbild" class="form-label">Profilbild ändern</label>
@@ -120,6 +124,18 @@ if (!$profilbild) {
       });
     }
   </script>
+  <?php if (isset($_GET['update']) && $_GET['update'] === 'success' && isset($_SESSION['vorname'])): ?>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="profilToast" class="toast align-items-center toast-custom-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            Dein Profil wurde erfolgreich aktualisiert.
+          </div>
+          <button type="button" class="btn-close toast-custom-success me-2 m-auto" data-bs-dismiss="toast" aria-label="Schließen"></button>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
 
 </body>
 
