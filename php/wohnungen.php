@@ -40,7 +40,6 @@ require_once "../components/dbaccess.php";
     </div>
     <div class="Rothbox">
 
-      <?php require($_page.".php"); ?>
       <div class="section reverse">
         <div class="text">
           <h2>Familienwohnung mit Gartenzugang</h2>

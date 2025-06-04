@@ -25,16 +25,32 @@ if (!$profilbild) {
 
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil bearbeiten</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/cssLayout.css">
+  <link rel="stylesheet" href="../css/cssLogin.css">
 </head>
 
+<?php include("../components/header.php"); ?>
+
 <body class="replace-bg-dark">
-  <?php include("../components/header.php"); ?>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-3 ms-2">
+      <li class="breadcrumb-item">
+        <a class="text-decoration-none replace-link-dark" href="index.html">
+          <i class="fas fa-home"></i> ImmOH!
+        </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        mein Profil </li>
+    </ol>
+  </nav>
+
+
 
   <div class="container py-5">
     <h2 class="mb-4">Profil bearbeiten</h2>
@@ -87,12 +103,23 @@ if (!$profilbild) {
         </div>
       </div>
 
-      <div class="mt-4">
-        <button type="submit" class="btn btn-success">Änderungen speichern</button>
+      <div class="mt-5">
+        <button type="submit" class="btn login-btn">Änderungen speichern</button>
       </div>
     </form>
   </div>
 
   <?php include("../components/footer.php"); ?>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
 </body>
-</html>
+
+</html>F
