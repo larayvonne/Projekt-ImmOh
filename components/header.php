@@ -53,7 +53,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../php/warenkorb.php">Warenkorb</a>
+            <a class="nav-link" href="../php/cart.php">Warenkorb</a>
           </li>
 
           <li class="nav-item">

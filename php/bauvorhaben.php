@@ -36,6 +36,7 @@
         wirtschaftliche Aspekte miteinander verbindet. Das bedeutet, dass Wien nicht nur versucht, Emissionen zu
         reduzieren und erneuerbare Energien zu nutzen, sondern auch eine Stadt schafft, die für alle Menschen lebenswert
         ist und die Ressourcen schonend behandelt. </p>
+        <h4> Jetzt Anteile zum gewünschten Bauvorhaben zu nur 100€/mq² sichern! </h4>
       <br>
     </div>
 
@@ -53,7 +54,7 @@
           <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
-          <img src="../resources/greenliving.png">
+          <img src="../resources/bau/greenliving.png">
         </div>
       </div>
 
@@ -63,11 +64,11 @@
           <p>In diesem einzigartigen Projekt entstanden 20 frei finanzierte Wohnungen im Herzen des 12. Bezirks. Mit
             Wohnungsgrößen von 44-79 m² bietet es zahlreiche Optionen für ein individuelles Wohnen. Durch die
             ausgezeichnete öffentliche Verkehrsanbindung (U4/U6) und umliegende Infrastruktur (Meidlinger Markt,
-            Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien</p>
+            Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien.</p>
           <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
-          <img src="../resources/gutenberg.png">
+          <img src="../resources/bau/gutenberg.png">
         </div>
       </div>
 
@@ -84,7 +85,7 @@
           <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
-          <img src="../resources/moedling.png">
+          <img src="../resources/bau/moedling.png">
         </div>
       </div>
     </div>

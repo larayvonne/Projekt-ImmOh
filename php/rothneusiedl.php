@@ -43,7 +43,7 @@
           <p>Das neue Stadtgebiet soll Wohnraum für rund 20.000 bis 25.000 Menschen bieten – leistbar, modern und umgeben von großzügigen Grünflächen. Geplant sind auch Kindergärten, Schulen, Einkaufsmöglichkeiten, Arbeitsplätze sowie ein vielfältiges Freizeitangebot. Der Mensch steht im Mittelpunkt: kurze Wege, gute Erreichbarkeit, hoher Wohn- und Lebenskomfort. </p>
         </div>
         <div class="image">
-          <img src="../resources/rothstadtplan.webp" alt="Bild 2">
+          <img src="../resources/roth/rothstadtplan.webp" alt="Bild 2">
         </div>
       </div>
 
@@ -54,7 +54,7 @@
           <p>Ein zentraler Bestandteil des Projekts ist die geplante Verlängerung der U-Bahn-Linie U1 bis Rothneusiedl. Gemeinsam mit einem dichten Netz an Rad- und Fußwegen soll so umweltfreundliche Mobilität gefördert und der Verkehr nachhaltig entlastet werden.</p>
         </div>
         <div class="image">
-          <img src="../resources/rothmobil.png" alt="Bild 2">
+          <img src="../resources/roth/rothmobil.png" alt="Bild 2">
         </div>
       </div>
 
@@ -65,7 +65,7 @@
           <p>Rothneusiedl steht für zukunftsfähiges Bauen: energieeffiziente Gebäude, innovative Konzepte für Energieversorgung und Wassermanagement sowie ein klimaangepasstes Stadtklima. Begrünte Dächer, Regenwassernutzung und viel Platz für Bäume und Pflanzen schaffen eine lebenswerte Umgebung für kommende Generationen. </p>
         </div>
         <div class="image">
-          <img src="../resources/rothklima.png" alt="Bild 2">
+          <img src="../resources/roth/rothklima.png" alt="Bild 2">
         </div>
       </div>
 
@@ -78,7 +78,7 @@
             RothNEUsiedl Startschuss </a>
         </div>
         <div class="image">
-          <img src="../resources/Rothbild.jpg" alt="Bild 2">
+          <img src="../resources/roth/Rothbild.jpg" alt="Bild 2">
         </div>
       </div>
     </div>
