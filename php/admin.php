@@ -28,8 +28,7 @@
                     Admin </li>
             </ol>
         </nav>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam accusantium similique, cum ad porro nesciunt aut, voluptas deserunt veritatis a beatae? Doloribus, incidunt! Totam dolores dolore accusantium deleniti ipsa quibusdam!
-        </p>
+        <p>Das ist die Adminseite</p>
     </main>
 
     <?php include("../components/footer.php"); ?>

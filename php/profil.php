@@ -33,7 +33,7 @@ if (!$profilbild) {
   <link rel="stylesheet" href="../css/cssLayout.css">
 </head>
 
-<body>
+<body class="replace-bg-dark">
   <?php include("../components/header.php"); ?>
 
   <div class="container py-5">
@@ -43,7 +43,7 @@ if (!$profilbild) {
       <img src="../uploads/<?= htmlspecialchars($profilbild) ?>" alt="Profilbild" class="rounded-circle" width="120">
     </div>
 
-    <form action="profil_update.php" method="post" enctype="multipart/form-data">
+    <form action="profilUpdate.php" method="post" enctype="multipart/form-data">
       <div class="row g-3">
         <div class="col-md-6">
           <label for="vorname" class="form-label">Vorname</label>
