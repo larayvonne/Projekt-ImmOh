@@ -2,7 +2,7 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hauptseite</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" href="resources/immohIcon.png" />
   <link rel="stylesheet" href="../css/cssLayout.css" />
   <link rel="stylesheet" href="../css/cssIndex.css" />
+  <link rel="stylesheet" href="../css/cssParalax.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -43,7 +44,9 @@
   <?php endif; ?>
 
   <div class="position-relative overflow-hidden">
-    <img src="../resources/immoh.webp" class="w-100 h-100 object-fit-cover z-n1" alt="Hintergrundbild">
+    <div class="geo-bg">
+    <img src="../resources/immoh.webp" class="w-100 h-100 object-fit-cover z-n1" draggable="false">
+    </div>
     <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div class="text-container position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end align-items-center text-center text-white p-3">
       <h5>Verwaltung mit System, Service mit Herz</h5>
@@ -64,7 +67,7 @@
       });
     }
   </script>
-
+  <script src="../js/parallax.js"></script>
 </body>
 
 </html>
