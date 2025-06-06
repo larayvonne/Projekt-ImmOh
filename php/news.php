@@ -29,7 +29,7 @@
       </ol>
     <div>
         <section class="container my-5">
-        <h2 class="mb-4">Aktuelles aus Klimaschutz & Immobilien</h2>
+        <h2 class="mb-4 replace-text-primary">Aktuelles aus Klimaschutz & Immobilien</h2>
 
         <div class="row g-4">
             <!-- News 1 -->

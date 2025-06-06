@@ -2,6 +2,24 @@
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
   if (!isset($conn)) require_once "../components/dbaccess.php";
+  
+  if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
+    $decoded = base64_decode($_COOKIE['remember_me']);
+    if ($decoded && strpos($decoded, ':') !== false) {
+        list($cookieUserId, $cookieHash) = explode(':', $decoded, 2);
+        $stmt = $conn->prepare("SELECT id, vorname, rolle, passwort FROM user WHERE id = ?");
+        $stmt->bind_param("i", $cookieUserId);
+        $stmt->execute();
+        $stmt->bind_result($id, $vorname, $rolle, $passwort);
+        if ($stmt->fetch() && $passwort === $cookieHash) {
+            $_SESSION['user_id'] = $id;
+            $_SESSION['vorname'] = $vorname;
+            $_SESSION['rolle'] = $rolle;
+        }
+        $stmt->close();
+    }
+}
+
 }
 ?>
 

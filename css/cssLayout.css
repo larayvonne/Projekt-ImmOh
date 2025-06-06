@@ -59,6 +59,11 @@ main {
     margin-top: none;
 }
 
+.replace-text-primary {
+    color: #000050;
+    font-weight: 500;
+}
+
 .replace-link-dark {
     color: #000050
 }
