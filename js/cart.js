@@ -4,12 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
       const id = this.dataset.id;
       const name = this.dataset.name;
       const price = this.dataset.price;
+
       fetch('../php/cart_api.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'add', id, name, price })
-      }).then(r => r.json()).then(() => {
-        alert(`${name} wurde dem Warenkorb hinzugefügt.`);
+      })
+      .then(response => {
+        if (response.ok) {
+          alert(`${name} wurde dem Warenkorb hinzugefügt.`);
+        } else {
+          alert('Fehler beim Hinzufügen zum Warenkorb.');
+        }
       });
     });
   });
@@ -17,12 +23,18 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.removeFromCart').forEach(btn => {
     btn.addEventListener('click', function () {
       const id = this.dataset.id;
+
       fetch('cart_api.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'remove', id })
-      }).then(r => r.json()).then(() => {
-        location.reload();
+      })
+      .then(response => {
+        if (response.ok) {
+          location.reload();
+        } else {
+          alert('Fehler beim Entfernen aus dem Warenkorb.');
+        }
       });
     });
   });

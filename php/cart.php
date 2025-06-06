@@ -37,8 +37,9 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Artikel</th>
-            <th>Menge</th>
+            <th>Name</th>
+            <th>Anteile</th>
+            <th>Beschreibung</th>
             <th>Preis</th>
             <th>Summe</th>
             <th></th>
