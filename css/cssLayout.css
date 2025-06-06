@@ -1,14 +1,9 @@
 body {
     height: 100%;
     margin: 0;
-    
-}
-
-body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* „volle Höhe“ des Viewports */
 }
 
 main {
@@ -20,10 +15,10 @@ main {
     z-index: 1;
 }
 
-
 .replace-bg-light {
     background-color: rgb(232, 250, 215)
 }
+
 .replace-bg-dark {
     background-color: #E8E8E8;
 }
@@ -104,7 +99,8 @@ main {
         display: none;
     }
 }
+
 .toast-custom-success {
-  background-color:  #a4bc9b !important;
-  color: #000050 !important;
+    background-color: #a4bc9b !important;
+    color: #000050 !important;
 }

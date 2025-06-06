@@ -26,8 +26,8 @@
   });
 </script>
 
-<body>
-  <?php include("../components/header.php"); ?>
+<?php include("../components/header.php"); ?>
+<body class="replace-bg-dark">
 
   <?php if (isset($_SESSION['meldung'])): ?>
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <main class="replace-bg-dark">
+  <main>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quae nemo aut, corrupti quidem ipsum saepe cupiditate quas ea ad debitis eligendi architecto sit esse ullam voluptate. Veniam, incidunt earum?</p>
   </main>
 
@@ -69,7 +69,4 @@
   </script>
   <script src="../js/parallax.js"></script>
 </body>
-
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
