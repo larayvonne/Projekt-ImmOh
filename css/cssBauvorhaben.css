@@ -60,3 +60,20 @@
   color: #000050 !important;
   font-weight: 500;
 }
+
+button {
+  background-color: #000050;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 250px;
+  height: 45px;
+  transition: 0.3s; 
+}
+
+button:hover {
+  background-color: #000050;
+  box-shadow: 0 0 0 5px #00005043;
+  color: #fff;
+}

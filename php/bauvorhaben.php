@@ -51,7 +51,7 @@
             Geschäften des täglichen Bedarfs, Schulen und dem Simmeringer Markt machen dieses Projekt zu einem besonders
             attraktiven Standort. Die ruhige, aber gleichzeitig zentrale Lage ermöglicht es, das urbane Leben in Wien in
             vollen Zügen zu genießen.</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
+          <button class="addToCart button" data-id="3">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/greenliving.png">
@@ -65,7 +65,7 @@
             Wohnungsgrößen von 44-79 m² bietet es zahlreiche Optionen für ein individuelles Wohnen. Durch die
             ausgezeichnete öffentliche Verkehrsanbindung (U4/U6) und umliegende Infrastruktur (Meidlinger Markt,
             Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien.</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
+          <button class="addToCart button" data-id="3">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/gutenberg.png">
@@ -82,7 +82,7 @@
             damit entweder direkten Zugang oder Blick ins Grüne. Zusätzlich verfügen jene Wohnungen mit eigenem Garten
             über eine Pergola. Besonders hervorzuheben ist die große Freifläche im Süden des Grundstücks, wo ein
             Erholungsareal für alle Bewohner*innen geschaffen wird.</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2">Jetzt Anteile kaufen</button>
+          <button class="addToCart button" data-id="3">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/moedling.png">
