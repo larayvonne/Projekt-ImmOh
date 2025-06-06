@@ -61,10 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php include("../components/header.php"); ?>
 
 <body class="replace-bg-dark">
-<<<<<<< HEAD
-
-=======
->>>>>>> 6f49574f05e44bb92ce8e2ec6e79ac8181d27ecf
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb mt-3 ms-2">
       <li class="breadcrumb-item">
