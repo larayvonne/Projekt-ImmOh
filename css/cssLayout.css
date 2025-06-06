@@ -104,3 +104,7 @@ main {
         display: none;
     }
 }
+.toast-custom-success {
+  background-color:  #a4bc9b !important;
+  color: #000050 !important;
+}

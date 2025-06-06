@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <label for="plz">PLZ</label>
           <input id="plz" name="plz" type="text" pattern="\d{4,5}" maxlength="5"
             class="form-control <?= in_array('plz', $fehlerFelder) ? 'is-invalid' : '' ?>"
-            value="<?= htmlspecialchars($adresse ?? '') ?>"
+            value="<?= htmlspecialchars($plz ?? '') ?>"
             required>
         </div>
         <div class="form-group">
