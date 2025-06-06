@@ -31,6 +31,7 @@ if (!$profilbild) {
   <title>Profil bearbeiten</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/cssLayout.css">
+  <link rel="stylesheet" href="../css/cssLogin.css">
 </head>
 
 <body class="replace-bg-dark">
@@ -88,7 +89,7 @@ if (!$profilbild) {
       </div>
 
       <div class="mt-4">
-        <button type="submit" class="btn btn-success">Änderungen speichern</button>
+        <button type="submit" class="btn login-btn">Änderungen speichern</button>
       </div>
     </form>
   </div>

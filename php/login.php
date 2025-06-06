@@ -3,7 +3,7 @@ session_start();
 require_once "../components/dbaccess.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $email = trim($_POST['mail'] ?? '');
+  $email = trim($_POST['email'] ?? '');
   $password = $_POST['password'] ?? '';
 
   if (empty($email) || empty($password)) {
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php include("../components/header.php"); ?>
 
 <body class="replace-bg-dark">
-  <?php include("../components/header.php"); ?>
+
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb mt-3 ms-2">
       <li class="breadcrumb-item">

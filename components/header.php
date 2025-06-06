@@ -62,10 +62,6 @@ if (session_status() === PHP_SESSION_NONE) {
           <li class="nav-item">
             <a class="nav-link" href="../php/cart.php">Warenkorb</a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="../php/usermenu.php">Mein Konto</a>
-          </li>
         </ul>
 
         <!-- Login & Registrieren -->

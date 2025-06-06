@@ -152,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             class="form-control <?= in_array('password', $fehlerFelder) ? 'is-invalid' : '' ?>"
             placeholder="********" required>
         </div>
-        <button type="submit" class="login-btn">Registrierung durchführen</button>
+        <button type="submit" class="btn login-btn">Registrierung durchführen</button>
       </form>
     </div>
   </main>
