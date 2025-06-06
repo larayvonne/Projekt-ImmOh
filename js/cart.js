@@ -3,12 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', function () {
       const id = this.dataset.id;
       const name = this.dataset.name;
+      const description  = this.dataset.description;
       const price = this.dataset.price;
 
       fetch('../php/cart_api.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ action: 'add', id, name, price })
+        body: new URLSearchParams({ action: 'add', id, description, name, price })
       })
       .then(response => {
         if (response.ok) {

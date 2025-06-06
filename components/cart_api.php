@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (!isset($_SESSION['cart'])) {
+if (!isset($_SESSION['products'])) {
     $_SESSION['cart'] = [];
 }
 
@@ -10,6 +10,7 @@ $id = $_POST['id'] ?? '';
 
 if ($action === 'add') {
     $name = $_POST['name'] ?? '';
+    $description = $_POST['description'] ?? '';
     $price = (float)($_POST['price'] ?? 0);
 
     if ($id !== '') {
