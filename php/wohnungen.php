@@ -22,7 +22,7 @@ require_once "../components/dbaccess.php";
 
   <main>
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mt-3">
+      <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
           <a class="text-decoration-none replace-link-dark" href="index.html">
             <i class="fas fa-home"></i> ImmOH!
