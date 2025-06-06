@@ -27,6 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           $_SESSION['meldung'] = "$vorname wurde erfolgreich eingeloggt!";
 
+          if (isset($_POST['remember'])) {
+            $cookieWert = base64_encode("$user_id:$passwort_hash");
+            setcookie('remember_me', $cookieWert, time() + (30 * 24 * 60 * 60), "/");
+          }
+
           header("Location: index.php");
           exit;
         } else {
@@ -87,9 +92,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <label for="password">Passwort</label>
           <input id="password" name="password" type="password" minlength="8" required>
         </div>
-        <div class="form-remember">
-          <input type="checkbox" id="remember" name="remember">
-          <label for="remember">Angemeldet bleiben</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="remember" id="remember">
+          <label class="form-check-label" for="remember">
+            Angemeldet bleiben
+          </label>
         </div>
         <button type="submit" class="login-btn">Login</button>
         <div class="register-link">
