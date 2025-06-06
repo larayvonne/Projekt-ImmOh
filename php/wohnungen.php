@@ -63,7 +63,7 @@ require_once "../components/dbaccess.php";
 
         </div>
         <div class="image">
-          <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
+          <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
         </div>
       </div>
 
@@ -88,7 +88,7 @@ require_once "../components/dbaccess.php";
           <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
-          <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
+          <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
         </div>
       </div>
 
@@ -139,7 +139,7 @@ require_once "../components/dbaccess.php";
           <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
-          <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
+          <img src="../resources/products/wohnung4.jpg" alt="Bild 2">
         </div>
       </div>
     </div>
