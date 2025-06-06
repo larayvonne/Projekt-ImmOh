@@ -1,5 +1,7 @@
 <?php
 require_once "../components/dbaccess.php";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +24,9 @@ require_once "../components/dbaccess.php";
 
   <main>
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mt-3">
+      <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.html">
+          <a class="text-decoration-none replace-link-dark " href="index.html">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
@@ -37,7 +39,7 @@ require_once "../components/dbaccess.php";
       <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
       <br>
     </div>
-    <div class="Rothbox">
+    <div class="box">
       <div class="section reverse">
         <div class="text">
           <h2>Familienwohnung mit Gartenzugang</h2>
@@ -57,7 +59,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
+          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
 
         </div>
         <div class="image">
@@ -83,7 +85,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-          <button id="addToList" type="button" class="btn replace-btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
+          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
@@ -108,7 +110,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
+          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
 
         </div>
         <div class="image">
@@ -134,7 +136,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-          <button id="addToList" type="button" class="btn btn-outline-dark border-2"> Zum Warenkorb hinzufügen </button>
+          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 2">

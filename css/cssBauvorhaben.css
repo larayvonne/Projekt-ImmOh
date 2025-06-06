@@ -1,10 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color:#000050;
-}
-
 .section {
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +10,7 @@ body {
   flex:  50%;
   padding: 0px;
   box-sizing: border-box;
+  color: #000050 !important;
 }
 
 .image img {
@@ -61,4 +55,8 @@ body {
       text-align: center;
       padding: 0%;
   }
+}
+.replace-text-primary {
+  color: #000050 !important;
+  font-weight: 500;
 }
