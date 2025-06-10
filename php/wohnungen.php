@@ -59,7 +59,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
-          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-price="1250">Zum Warenkorb hinzufügen</button>
 
         </div>
         <div class="image">
@@ -85,7 +85,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-price="790">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
@@ -110,7 +110,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-price="1150">Zum Warenkorb hinzufügen</button>
 
         </div>
         <div class="image">
@@ -136,7 +136,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-price="880">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 2">
@@ -184,6 +184,7 @@ require_once "../components/dbaccess.php";
       });
     }
   </script>
+  <script src="../js/cart.js"></script>
 </body>
 
 </html>
