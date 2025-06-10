@@ -50,6 +50,7 @@
             <tr>
               <td><?= htmlspecialchars($item['name']) ?></td>
               <td><?= (int)$item['qty'] ?></td>
+              <td><?= htmlspecialchars($item['description']) ?></td>
               <td>€<?= number_format($item['price'], 2, ',', '.') ?></td>
               <td>€<?= number_format($sum, 2, ',', '.') ?></td>
               <td><button class="btn btn-sm btn-danger removeFromCart" data-id="<?= htmlspecialchars($item['id']) ?>">Entfernen</button></td>

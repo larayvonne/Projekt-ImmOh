@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (!isset($_SESSION['products'])) {
+if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
