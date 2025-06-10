@@ -15,7 +15,10 @@
 
 <body class="replace-bg-dark">
 
-  <?php include("../components/header.php"); ?>
+  <?php
+  include("../components/header.php");
+  $cart = $_SESSION['cart'] ?? [];
+  ?>
 
   <main>
     <nav aria-label="breadcrumb">
@@ -29,12 +32,40 @@
           Warenkorb</li>
       </ol>
     </nav>
-    <div class="ShoppingList" id="ShoppingList">
-   <h2>Warenkorb</h2>
-
-
-
-
+    <div class="container py-4">
+      <h2>Warenkorb</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Artikel</th>
+            <th>Menge</th>
+            <th>Preis</th>
+            <th>Summe</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php $total = 0; foreach ($cart as $item): $sum = $item['price'] * $item['qty']; $total += $sum; ?>
+            <tr>
+              <td><?= htmlspecialchars($item['name']) ?></td>
+              <td><?= (int)$item['qty'] ?></td>
+              <td>€<?= number_format($item['price'], 2, ',', '.') ?></td>
+              <td>€<?= number_format($sum, 2, ',', '.') ?></td>
+              <td><button class="btn btn-sm btn-danger removeFromCart" data-id="<?= htmlspecialchars($item['id']) ?>">Entfernen</button></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="3" class="text-end">Gesamt:</th>
+            <th id="cart-total">€<?= number_format($total, 2, ',', '.') ?></th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="text-end">
+        <button class="btn btn-primary" <?= empty($cart) ? 'disabled' : '' ?>>Zur Kasse</button>
+      </div>
     </div>
   </main>
 
@@ -48,6 +79,7 @@
       });
     }
   </script>
+  <script src="../js/cart.js"></script>
 
 </body>
 
