@@ -35,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           header("Location: index.php");
           exit;
         } else {
-          $meldung = "Falsches Passwort.";
+          $meldung = "E-Mail oder Passwort falsch";
         }
       } else {
-        $meldung = "E-Mail nicht gefunden.";
+        $meldung = "E-Mail oder Passwort falsch";
       }
       $stmt->close();
     } else {
@@ -105,8 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
       </form>
     </div>
-
-
+u
   </main>
 
   <?php include("../components/footer.php"); ?>
