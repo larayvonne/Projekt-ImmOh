@@ -80,7 +80,27 @@ button {
   transition: 0.3s; 
 }
 
+.button {
+  background-color: #000050;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 250px;
+  height: 45px;
+  transition: 0.3s;
+  text-decoration: none;
+  padding: .7rem .9rem;
+  margin-right: .5rem;
+}
+
 button:hover {
+  background-color: #000050;
+  box-shadow: 0 0 0 5px #00005043;
+  color: #fff;
+}
+
+.button:hover {
   background-color: #000050;
   box-shadow: 0 0 0 5px #00005043;
   color: #fff;
