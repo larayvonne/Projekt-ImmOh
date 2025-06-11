@@ -28,7 +28,9 @@
                     Admin </li>
             </ol>
         </nav>
+
         <p>Das ist die Adminseite</p>
+        
     </main>
 
     <?php include("../components/footer.php"); ?>
