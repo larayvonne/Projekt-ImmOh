@@ -46,18 +46,26 @@
           </tr>
         </thead>
         <tbody>
-          <?php $total = 0;
-          foreach ($cart as $item): $sum = $item['price'] * $item['qty'];
-            $total += $sum; ?>
+          <?php
+          $total = 0;
+          if (empty($cart)) : ?>
             <tr>
-              <td><?= htmlspecialchars($item['name']) ?></td>
-              <td><?= (int)$item['qty'] ?></td>
-              <td><?= htmlspecialchars($item['description']) ?></td>
-              <td>€<?= number_format($item['price'], 2, ',', '.') ?></td>
-              <td>€<?= number_format($sum, 2, ',', '.') ?></td>
-              <td><button class="btn btn-sm btn-danger removeFromCart" data-id="<?= htmlspecialchars($item['id']) ?>">Entfernen</button></td>
+              <td colspan="6" class="text-center">Ihr Warenkorb ist leer.</td>
             </tr>
-          <?php endforeach; ?>
+          <?php else:
+            foreach ($cart as $item) :
+              $sum = $item['price'] * $item['qty'];
+              $total += $sum; ?>
+              <tr>
+                <td><?= htmlspecialchars($item['name']) ?></td>
+                <td><?= (int)$item['qty'] ?></td>
+                <td><?= htmlspecialchars($item['description']) ?></td>
+                <td>€<?= number_format($item['price'], 2, ',', '.') ?></td>
+                <td>€<?= number_format($sum, 2, ',', '.') ?></td>
+                <td><button class="btn btn-sm btn-danger removeFromCart" data-id="<?= htmlspecialchars($item['id']) ?>">Entfernen</button></td>
+              </tr>
+            <?php endforeach;
+          endif; ?>
         </tbody>
         <tfoot>
           <tr>
