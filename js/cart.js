@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'add', id, description, name, price })
       })
-      .then(response => {
-        if (response.ok) {
-          alert(`${name} wurde dem Warenkorb hinzugefügt.`);
-        } else {
-          alert('Fehler beim Hinzufügen zum Warenkorb.');
-        }
-      });
+        .then(response => {
+          if (response.ok) {
+            alert(`${name} wurde dem Warenkorb hinzugefügt.`);
+          } else {
+            alert('Fehler beim Hinzufügen zum Warenkorb.');
+          }
+        });
     });
   });
 
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'remove', id })
       })
-      .then(response => {
-        if (response.ok) {
-          location.reload();
-        } else {
-          alert('Fehler beim Entfernen aus dem Warenkorb.');
-        }
-      });
+        .then(response => {
+          if (response.ok) {
+            location.reload();
+          } else {
+            alert('Fehler beim Entfernen aus dem Warenkorb.');
+          }
+        });
     });
   });
 });

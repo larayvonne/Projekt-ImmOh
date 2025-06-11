@@ -59,7 +59,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
           <button class="button" href="../php/wohnungen/w1.php">Weitere Details</button>
-          <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-description="test" data-price="1250">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-description="Familienwohnung mit Garten" data-price="1250">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 1">
@@ -85,7 +85,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
           <button class=" button"herf= "../php/wohnungen/w2.php" >Weiter Details</button>
-          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-price="790">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description="Kompaktes Apartment mit Loggia" data-price="790">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
@@ -111,7 +111,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
           <button class=" button" herf= "../php/wohnungen/w3.php">Weiter Details</button>
-          <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-price="1150">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-description="Loft mit Dachterrasse" data-price="1150">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung3.jpg" alt="Bild 3">
@@ -137,7 +137,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
           <button class=" button" herf= "../php/wohnungen/w4.php">Weiter Details</button>
-          <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-price="880">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-description="Barrierefreie Generationenwohnung" data-price="880">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung4.jpg" alt="Bild 4">
