@@ -36,7 +36,7 @@
         wirtschaftliche Aspekte miteinander verbindet. Das bedeutet, dass Wien nicht nur versucht, Emissionen zu
         reduzieren und erneuerbare Energien zu nutzen, sondern auch eine Stadt schafft, die für alle Menschen lebenswert
         ist und die Ressourcen schonend behandelt. </p>
-        <h4> Jetzt Anteile zum gewünschten Bauvorhaben zu nur 100€/mq² sichern! </h4>
+        <h4> Jetzt Anteile zum gewünschten Bauvorhaben zu nur 100€/m² sichern! </h4>
       <br>
     </div>
 
@@ -51,7 +51,7 @@
             Geschäften des täglichen Bedarfs, Schulen und dem Simmeringer Markt machen dieses Projekt zu einem besonders
             attraktiven Standort. Die ruhige, aber gleichzeitig zentrale Lage ermöglicht es, das urbane Leben in Wien in
             vollen Zügen zu genießen.</p>
-          <button class="addToCart button" data-id="3">Jetzt Anteile kaufen</button>
+           <button class="addToCart button" data-id="5" data-name="Bauvorhaben Simmering" data-price="100">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/greenliving.png">
@@ -65,7 +65,7 @@
             Wohnungsgrößen von 44-79 m² bietet es zahlreiche Optionen für ein individuelles Wohnen. Durch die
             ausgezeichnete öffentliche Verkehrsanbindung (U4/U6) und umliegende Infrastruktur (Meidlinger Markt,
             Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien.</p>
-          <button class="addToCart button" data-id="3">Jetzt Anteile kaufen</button>
+          <button class="addToCart button" data-id="6" data-name="Bauvorhaben Gutenberg" data-price="100">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/gutenberg.png">
@@ -82,7 +82,7 @@
             damit entweder direkten Zugang oder Blick ins Grüne. Zusätzlich verfügen jene Wohnungen mit eigenem Garten
             über eine Pergola. Besonders hervorzuheben ist die große Freifläche im Süden des Grundstücks, wo ein
             Erholungsareal für alle Bewohner*innen geschaffen wird.</p>
-          <button class="addToCart button" data-id="3">Jetzt Anteile kaufen</button>
+          <button class="addToCart button" data-id="7" data-name="Bauvorhaben Mödling" data-price="100">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/moedling.png">
@@ -136,5 +136,6 @@
       });
     }
   </script>
+  <script src="../js/cart.js"></script>
 </body>
 </html>
