@@ -58,11 +58,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
-<<<<<<< HEAD
-          <button class="button" href="../wohnungen/w1.php">Weitere Details</button>
-=======
           <a class="button" href=../php/wohnungen/w1.php>Weitere Informationen</a>
->>>>>>> 821be2e25a866ded7b0c5df0410be3474ae93e7b
           <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-description="test" data-price="1250">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
@@ -88,8 +84,8 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-          <button class="button"herf= "../php/wohnungen/w2.php" >Weitere Details</button>
-          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-price="790">Zum Warenkorb hinzufügen</button>
+           <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
+          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description='Hier noch Beschreibung hinzufügen'data-price="790">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
@@ -114,7 +110,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-          <button class=" button" herf= "../php/wohnungen/w3.php">Weitere Details</button>
+           <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
           <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-price="1150">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
@@ -140,7 +136,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-          <button class=" button" herf= "../php/wohnungen/w4.php">Weitere Details</button>
+           <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
           <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-price="880">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">

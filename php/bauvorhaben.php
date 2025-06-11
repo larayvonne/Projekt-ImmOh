@@ -22,7 +22,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark replace-text-primary" href="index.html">
+          <a class="text-decoration-none replace-link-dark replace-text-primary" href="index.php">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
@@ -51,7 +51,7 @@
             Geschäften des täglichen Bedarfs, Schulen und dem Simmeringer Markt machen dieses Projekt zu einem besonders
             attraktiven Standort. Die ruhige, aber gleichzeitig zentrale Lage ermöglicht es, das urbane Leben in Wien in
             vollen Zügen zu genießen.</p>
-           <button class="addToCart button" data-id="5" data-name="Bauvorhaben Simmering" data-price="100">Jetzt Anteile kaufen</button>
+           <button class="addToCart button" data-id="5" data-name="Bauvorhaben Simmering" data-description="Bauanteil Simmering €100/m² " data-price="100">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/greenliving.png">
