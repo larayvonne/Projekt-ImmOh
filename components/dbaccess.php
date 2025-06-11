@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "immoh";         // Deine Datenbank
+$dbname = "immoh";         // Datenbank
 $dbuser = "root";          // XAMPP-Standardnutzer
 $dbpass = "";              // Kein Passwort in XAMPP
 

@@ -17,7 +17,7 @@ $stmt->bind_result($vorname, $nachname, $adresse, $plz, $ort, $land, $email, $pr
 $stmt->fetch();
 $stmt->close();
 
-// Standardbild fallback
+// Standardbild setzen
 if (!$profilbild) {
   $profilbild = 'default.jpg';
 }
@@ -104,7 +104,7 @@ if (!$profilbild) {
         </div>
         <div class="col-md-12">
           <label for="profilbild" class="form-label">Profilbild ändern</label>
-          <input type="file" class="form-control" name="profilbild" id="profilbild" accept="image/*">
+          <input type="file" class="form-control" name="profilbild" id="profilbild" accept=".jpg,.jpeg,.png">
         </div>
       </div>
 
