@@ -36,7 +36,7 @@
         wirtschaftliche Aspekte miteinander verbindet. Das bedeutet, dass Wien nicht nur versucht, Emissionen zu
         reduzieren und erneuerbare Energien zu nutzen, sondern auch eine Stadt schafft, die für alle Menschen lebenswert
         ist und die Ressourcen schonend behandelt. </p>
-        <h4> Jetzt Anteile zum gewünschten Bauvorhaben zu nur 100€/mq² sichern! </h4>
+        <h4> Jetzt Anteile zum gewünschten Bauvorhaben zu nur 100€/m² sichern! </h4>
       <br>
     </div>
 

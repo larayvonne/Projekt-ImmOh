@@ -61,13 +61,13 @@ if (session_status() === PHP_SESSION_NONE) {
               Bauprojekte
             </a>
             <ul class="dropdown-menu" aria-labelledby="bauDropdown">
+              <li><a class="dropdown-item" href="../php/wohnungen.php">Wohnungen</a></li>
               <li><a class="dropdown-item" href="../php/bauvorhaben.php">Bauvorhaben</a></li>
-              <li><a class="dropdown-item" href="../php/rothneusiedl.php">Rothneusiedl</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../php/wohnungen.php">Wohnungen</a>
+            <a class="nav-link" href="../php/rothneusiedl.php">Rothneusiedl</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../php/news.php">News</a>
