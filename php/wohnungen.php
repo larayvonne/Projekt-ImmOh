@@ -58,11 +58,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
-<<<<<<< HEAD
-          <button class="button" href="../wohnungen/w1.php">Weitere Details</button>
-=======
           <a class="button" href=../php/wohnungen/w1.php>Weitere Informationen</a>
->>>>>>> 821be2e25a866ded7b0c5df0410be3474ae93e7b
           <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-description="test" data-price="1250">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
