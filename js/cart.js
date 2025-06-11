@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.addToCart').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const id = this.dataset.id;
-      const name = this.dataset.name;
-      const description  = this.dataset.description;
-      const price = this.dataset.price;
+document.addEventListener('DOMContentLoaded', () => {
+  const API_PATH = '../components/cart_api.php';
 
-      fetch('../php/cart_api.php', {
+  document.querySelectorAll('.addToCart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const name = btn.dataset.name;
+      const description = btn.dataset.description;
+      const price = btn.dataset.price;
+
+      fetch(API_PATH, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'add', id, description, name, price })
@@ -22,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.querySelectorAll('.removeFromCart').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const id = this.dataset.id;
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
 
-      fetch('cart_api.php', {
+      fetch(API_PATH, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'remove', id })

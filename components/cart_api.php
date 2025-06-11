@@ -18,6 +18,7 @@ if ($action === 'add') {
             $_SESSION['cart'][$id] = [
                 'id' => $id,
                 'name' => $name,
+                'description' => $description,
                 'price' => $price,
                 'qty' => 1
             ];
