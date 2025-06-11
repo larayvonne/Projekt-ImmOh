@@ -46,7 +46,9 @@
           </tr>
         </thead>
         <tbody>
-          <?php $total = 0; foreach ($cart as $item): $sum = $item['price'] * $item['qty']; $total += $sum; ?>
+          <?php $total = 0;
+          foreach ($cart as $item): $sum = $item['price'] * $item['qty'];
+            $total += $sum; ?>
             <tr>
               <td><?= htmlspecialchars($item['name']) ?></td>
               <td><?= (int)$item['qty'] ?></td>
