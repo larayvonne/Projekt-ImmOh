@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once 'dbaccess.php';
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -26,9 +27,20 @@ if ($action === 'add') {
             $_SESSION['cart'][$id]['qty'] += 1;
         }
 
-        http_response_code(200); // Korrekte bearbeitung prod. hinzugefügt 
-        echo "Produkt hinzugefügt.";
-        return;
+        if (isset($_SESSION['user_id'])) {
+            $uid = (int)$_SESSION['user_id'];
+            $stmt = $conn->prepare(
+                "INSERT INTO cart_items (user_id, item_id, name, description, price, quantity) VALUES (?, ?, ?, ?, ?, 1) " .
+                "ON DUPLICATE KEY UPDATE quantity = quantity + 1"
+            );
+            if ($stmt) {
+                $stmt->bind_param('iissd', $uid, $id, $name, $description, $price);
+                $stmt->execute();
+                $stmt->close();
+            }
+        }
+
+        http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
     }
 
     http_response_code(400); // fehlermeldung 
@@ -39,6 +51,15 @@ if ($action === 'add') {
 if ($action === 'remove') {
     if ($id !== '' && isset($_SESSION['cart'][$id])) {
         unset($_SESSION['cart'][$id]);
+        if (isset($_SESSION['user_id'])) {
+            $uid = (int)$_SESSION['user_id'];
+            $stmt = $conn->prepare('DELETE FROM cart_items WHERE user_id = ? AND item_id = ?');
+            if ($stmt) {
+                $stmt->bind_param('ii', $uid, $id);
+                $stmt->execute();
+                $stmt->close();
+            }
+        }
         http_response_code(200); // Korrekte bearbeitung prod. entfernt
         echo "Produkt entfernt.";
         return;
