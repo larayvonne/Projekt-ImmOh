@@ -18,8 +18,27 @@
   <?php
   include("../components/header.php");
   $cart = $_SESSION['cart'] ?? [];
-  ?>
-
+  if (isset($_SESSION['user_id'])) {
+    $uid = (int)$_SESSION['user_id'];
+    $stmt = $conn->prepare("SELECT item_id, name, description, price, quantity FROM cart_items WHERE user_id = ?");
+    if ($stmt) {
+      $stmt->bind_param("i", $uid);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $cart = [];
+      while ($row = $result->fetch_assoc()) {
+        $cart[$row['item_id']] = [
+          'id' => $row['item_id'],
+          'name' => $row['name'],
+          'description' => $row['description'],
+          'price' => (float)$row['price'],
+          'qty' => (int)$row['quantity']
+        ];
+      }
+      $stmt->close();
+    }
+  }
+   ?>
   <main>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
@@ -52,7 +71,7 @@
             <tr>
               <td colspan="6" class="text-center">Ihr Warenkorb ist leer.</td>
             </tr>
-          <?php else:
+            <?php else:
             foreach ($cart as $item) :
               $sum = $item['price'] * $item['qty'];
               $total += $sum; ?>

@@ -85,7 +85,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
            <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-price="790">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description='Hier noch Beschreibung hinzufügen'data-price="790">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
