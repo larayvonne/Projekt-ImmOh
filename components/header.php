@@ -41,7 +41,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Navigationsinhalt -->
+      <!-- Naviinhalt -->
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
