@@ -68,7 +68,7 @@
         </tfoot>
       </table>
       <div class="text-end">
-        <button class="btn btn-primary" <?= empty($cart) ? 'disabled' : '' ?>>Zur Kasse</button>
+       <a href="kassa.php" class="btn btn-primary <?= empty($cart) ? 'disabled' : '' ?>">Zur Kasse</a>
       </div>
     </div>
   </main>

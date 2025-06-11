@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const description  = this.dataset.description;
       const price = this.dataset.price;
 
-      fetch('../php/cart_api.php', {
+      fetch('../components/cart_api.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'add', id, description, name, price })
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', function () {
       const id = this.dataset.id;
 
-      fetch('cart_api.php', {
+      fetch('../components/cart_api.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ action: 'remove', id })
