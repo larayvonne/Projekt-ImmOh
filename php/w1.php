@@ -1,5 +1,5 @@
 <?php
-require "../../components/dbaccess.php";
+require "../components/dbaccess.php";
 
 ?>
 <!DOCTYPE html>
@@ -11,13 +11,13 @@ require "../../components/dbaccess.php";
   <title>Wohnungen</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="icon" type="image/png" href="../../resources/immohIcon.png">
-  <link rel="stylesheet" href="../../css/cssLayout.css">
-  <link rel="stylesheet" href="../../css/cssWohnungen.css">
+  <link rel="icon" type="image/png" href="../resources/immohIcon.png">
+  <link rel="stylesheet" href="../css/cssLayout.css">
+  <link rel="stylesheet" href="../css/cssWohnungen.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<?php include("../../components/header.php"); ?>
+<?php include("../components/header.php"); ?>
 
 <body class="replace-bg-dark">
 
@@ -37,6 +37,16 @@ require "../../components/dbaccess.php";
       <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
       <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
      
+      <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                One of three columns
+              </div>
+              <div class="col">
+                One of three columns
+              </div>
+            </div>
+       </div>
 
     <div class="end">
       <h2>Ein nachhaltiger Stadtteil für Wien </h2>
@@ -62,14 +72,11 @@ require "../../components/dbaccess.php";
               </svg>
               Ganzheitliche Betrachtung</h5>
             <P>Berücksichtigung der gesamten Lebensdauer eines Gebäudes, von der Planung bis zur Entsorgung, und Optimierung von Ressourcenverbrauch, Flächennutzung und CO2-Ausstoß.</P>
+             </div>
           </div>
-
-        </div>
-      </div>
-    </div>
-
+          </div>
   </main>
-  <?php include("../../components/footer.php"); ?>
+  <?php include("../components/footer.php"); ?>
   <script>
     function scrollToTop() {
       window.scrollTo({
