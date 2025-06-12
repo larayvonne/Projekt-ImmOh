@@ -52,10 +52,10 @@ if (isset($_FILES['profilbild']) && $_FILES['profilbild']['error'] === UPLOAD_ER
     $fileTmp = $_FILES['profilbild']['tmp_name'];
     $fileName = basename($_FILES['profilbild']['name']);
     $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-    $allowedExts = ['jpg', 'jpeg', 'png', 'gif'];
+    $allowedExts = ['jpg', 'jpeg', 'png'];
 
     if (!in_array($fileExt, $allowedExts)) {
-        $errors[] = "Nur JPG, PNG und GIF sind als Profilbild erlaubt.";
+        $errors[] = "Nur .jpg und .png sind als Profilbild erlaubt.";
     } else {
         $newFileName = 'profil_' . $userId . '_' . time() . '.' . $fileExt;
         $filePath = $uploadDir . $newFileName;

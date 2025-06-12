@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id']) || $_SESSION['rolle'] !== 'admin') {
+    // Kein Zugriff für nicht eingeloggte oder nicht-Admins
+    header("Location: index.php?error=unauthorized");
+
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
