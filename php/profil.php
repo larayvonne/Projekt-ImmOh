@@ -118,8 +118,8 @@ if (!$profilbild) {
   <script src="../js/function.js"></script>
   
   <?php if (isset($_GET['update']) && $_GET['update'] === 'success' && isset($_SESSION['vorname'])): ?>
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-      <div id="profilToast" class="toast align-items-center toast-custom-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="position-fixed bottom-0 end-0 p-2" style="z-index: 11">
+      <div id="profilToast" class="toast align-items-center toast-custom-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true" style="min-width: 20rem; max-width: 30rem; font-size: 1rem;">
         <div class="d-flex">
           <div class="toast-body">
             Dein Profil wurde erfolgreich aktualisiert.
