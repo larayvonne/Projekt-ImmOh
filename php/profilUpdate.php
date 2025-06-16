@@ -107,6 +107,7 @@ $stmt->bind_param($types, ...$params);
 
 if ($stmt->execute()) {
     $_SESSION['profilToast'] = "Profil erfolgreich aktualisiert.";
+    $_SESSION['vorname'] = $vorname;
 } else {
     $_SESSION['profilToast'] = "Fehler beim Aktualisieren: " . $stmt->error;
 }

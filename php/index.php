@@ -56,6 +56,7 @@
 
   <main>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quae nemo aut, corrupti quidem ipsum saepe cupiditate quas ea ad debitis eligendi architecto sit esse ullam voluptate. Veniam, incidunt earum?</p>
+    <?php echo $_SESSION['rolle']; ?>
   </main>
   
   <?php include("../components/footer.php"); ?>
