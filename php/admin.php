@@ -41,19 +41,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rolle'] !== 'admin') {
         </nav>
 
         <p>Das ist die Adminseite</p>
-        
+
     </main>
 
     <?php include("../components/footer.php"); ?>
-
-    <script>
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
+    <script src="../js/function.js"></script>
+    
 </body>
 
 </html>

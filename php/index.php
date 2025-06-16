@@ -57,16 +57,10 @@
   <main>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quae nemo aut, corrupti quidem ipsum saepe cupiditate quas ea ad debitis eligendi architecto sit esse ullam voluptate. Veniam, incidunt earum?</p>
   </main>
-
+  
   <?php include("../components/footer.php"); ?>
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
   <script src="../js/parallax.js"></script>
+  <script src="../js/function.js"></script>
+
 </body>
 </html>

@@ -70,7 +70,6 @@ if (isset($_FILES['profilbild']) && $_FILES['profilbild']['error'] === UPLOAD_ER
         if ($user && $user['profilbild'] !== 'default.png' && file_exists($uploadDir . $user['profilbild'])) {
             unlink($uploadDir . $user['profilbild']);
         }
-
         if (!move_uploaded_file($fileTmp, $filePath)) {
             $errors[] = "Fehler beim Hochladen des Profilbildes.";
         } else {
@@ -82,8 +81,8 @@ if (isset($_FILES['profilbild']) && $_FILES['profilbild']['error'] === UPLOAD_ER
 // Wenn keine Fehler –> Datenbank aktualisieren
 if (empty($errors)) {
     if ($profilbildName && isset($hashedPasswort)) {
-        $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=?, profilbild=?, passwort=? WHERE id=?");
-        $stmt->bind_param("ssssssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $profilbildName, $hashedPasswort, $userId);
+        $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=?, profilbild=?, password=? WHERE id=?");
+        $stmt->bind_param("sssssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $profilbildName, $hashedPasswort, $userId);
     } elseif ($profilbildName) {
         $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=?, profilbild=? WHERE id=?");
         $stmt->bind_param("ssssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $profilbildName, $userId);

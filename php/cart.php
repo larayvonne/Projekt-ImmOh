@@ -104,16 +104,9 @@ require_once "../components/dbaccess.php";
   </main>
 
   <?php include("../components/footer.php"); ?>
-
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
+  <script src="../js/function.js"></script>
   <script src="../js/cart.js"></script>
+  
 </body>
 
 </html>

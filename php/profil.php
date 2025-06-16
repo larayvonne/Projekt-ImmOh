@@ -115,15 +115,8 @@ if (!$profilbild) {
   </div>
 
   <?php include("../components/footer.php"); ?>
-
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
+  <script src="../js/function.js"></script>
+  
   <?php if (isset($_GET['update']) && $_GET['update'] === 'success' && isset($_SESSION['vorname'])): ?>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
       <div id="profilToast" class="toast align-items-center toast-custom-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">

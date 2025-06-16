@@ -84,15 +84,8 @@
   </main>
 
   <?php include("../components/footer.php"); ?>
+  <script src="../js/function.js"></script>
 
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
 </body>
 
 </html>
