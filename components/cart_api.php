@@ -20,7 +20,7 @@ if ($action === 'add') {
         return;
     }
 
-    if (!isset($_SESSION['cart'][$id])) {
+        if (!isset($_SESSION['cart'][$id])) {
         $_SESSION['cart'][$id] = [
             'id' => $id,
             'name' => $name,
@@ -32,7 +32,7 @@ if ($action === 'add') {
         $_SESSION['cart'][$id]['qty'] += 1;
     }
 
-    if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id'])) {
         $uid = (int)$_SESSION['user_id'];
         $stmt = $conn->prepare(
             "INSERT INTO cart_items (user_id, item_id, name, description, price, quantity) VALUES (?, ?, ?, ?, ?, 1) " .
@@ -43,9 +43,8 @@ if ($action === 'add') {
             $stmt->execute();
             $stmt->close();
         }
-    }
 
-    http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
+     http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
     echo "Produkt hinzugefügt.";
     return;
 }
@@ -71,6 +70,3 @@ if ($action === 'remove') {
     echo "Produkt nicht gefunden.";
     return;
 }
-
-http_response_code(400); // fehlermeldung 
-echo "Ungültige Aktion.";

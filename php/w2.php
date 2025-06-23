@@ -36,33 +36,38 @@ require "../components/dbaccess.php";
     <div class="headline">
       <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
       <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
-
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-inner  ">
+              <div class="carousel-item active ">
+                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item ">
+                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          </div>
+        <div class="col">
+          Column
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../resources/products/wohnung1.jpg" class="d-block w-50" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="../resources/products/wohnung1.jpg" class="d-block w-50" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="../resources/products/wohnung1.jpg" class="d-block w-50" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+    </div>
+
 
       <div class="end">
         <h2>Ein nachhaltiger Stadtteil für Wien </h2>
@@ -92,7 +97,7 @@ require "../components/dbaccess.php";
           </div>
         </div>
   </main>
-  
+
   <?php include("../components/footer.php"); ?>
   <script src="../js/function.js"></script>
 
