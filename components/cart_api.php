@@ -43,8 +43,9 @@ if ($action === 'add') {
             $stmt->execute();
             $stmt->close();
         }
-
-     http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
+    }
+    
+    http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
     echo "Produkt hinzugefügt.";
     return;
 }

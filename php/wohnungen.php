@@ -84,8 +84,8 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-          <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description='Hier noch Beschreibung hinzufügen' data-price="790">Zum Warenkorb hinzufügen</button>
+           <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
+          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description='Hier noch Beschreibung hinzufügen'data-price="790">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
@@ -110,7 +110,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-          <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
+           <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
           <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-price="1150">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
@@ -136,7 +136,7 @@ require_once "../components/dbaccess.php";
           <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-          <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
+           <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
           <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-price="880">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
@@ -176,10 +176,16 @@ require_once "../components/dbaccess.php";
     </div>
 
   </main>
-
+  <?php include("../components/footer.php"); ?>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
   <script src="../js/cart.js"></script>
-  <script src="../js/function.js"></script>
-
 </body>
 
 </html>

@@ -35,12 +35,11 @@
   text-align: left;
   padding: 50px;
 }
-
-/* Für abwechselnde Reihenfolge */
-.reverse {
-  flex-direction: row-reverse;
-  background-color: #E8E8E8;
+/*carusel */
+.carousel-inner {
+  align-items: center;
 }
+
 
 /* Mobile Ansicht */
 @media (max-width: 768px) {

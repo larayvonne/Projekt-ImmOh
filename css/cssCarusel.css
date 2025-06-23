@@ -36,11 +36,6 @@
   padding: 50px;
 }
 
-/* Für abwechselnde Reihenfolge */
-.reverse {
-  flex-direction: row-reverse;
-  background-color: #E8E8E8;
-}
 
 /* Mobile Ansicht */
 @media (max-width: 768px) {
