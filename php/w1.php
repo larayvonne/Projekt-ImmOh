@@ -34,8 +34,9 @@ require "../components/dbaccess.php";
       </ol>
     </nav>
     <div class="headline">
-      <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
-      <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
+      <h1 class="replace-text-primary">Familienwohnung mit Gartenzugang</h1>
+       <p><strong>4-Zimmer – 95 m² Wohnfläche</strong></p>
+  <p>Ideal für Familien, die naturnah und dennoch urban wohnen möchten.</p>
 
     <div class="container text-center">
       <div class="row">
@@ -63,7 +64,26 @@ require "../components/dbaccess.php";
           </div>
           </div>
         <div class="col">
-          Column
+          <p>
+ 
+
+  <h3>Highlights der Wohnung:</h3>
+  
+    <li>Großzügiger Wohn-Essbereich mit offener Küche – viel Platz für gemeinsame Zeit</li>
+    <li>Drei Schlafzimmer – perfekt für Kinder, Gäste oder ein ruhiges Homeoffice</li>
+    <li>Direkter Zugang zum privaten Gartenanteil – genießen Sie Ihre grüne Oase direkt vor der Tür</li>
+    <li>Barrierefrei und in hochwertiger Holzbauweise errichtet – modern, nachhaltig und komfortabel</li>
+    <li>Kindergarten und Schule sind in wenigen Gehminuten erreichbar – kurze Wege für den Alltag</li>
+    <li>Effiziente Energieversorgung durch Fernwärme und Solarenergie – niedrige Betriebskosten inklusive</li>
+  
+
+  <p><strong>💰 Kaufpreis:</strong> ab € 1.250,- / m²<br>
+     <strong>📐 Gesamtfläche:</strong> 95 m²<br>
+     <strong>🚪 Zimmer:</strong> 4 (inkl. 3 Schlafzimmer)<br>
+     <strong>🌳 Privater Gartenanteil</strong><br>
+     <strong>♿ Barrierefrei</strong><br>
+     <strong>🔆 Nachhaltige Bauweise & Energieversorgung</strong>
+  </p>
         </div>
       </div>
     </div>
