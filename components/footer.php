@@ -25,7 +25,7 @@
 
   <div class="container mt-3"></div>
   <div class="d-flex justify-content-between mb-3">
-    <?php if (isset($_SESSION['rolle']) && $_SESSION['rolle'] === 'Admin'): ?>
+    <?php if (isset($_SESSION['rolle']) && $_SESSION['rolle'] === 'admin'): ?>
       <a href="../php/admin.php" class="btn btn-outline-light btn-sm ms-5">Admin</a>
     <?php endif; ?>
     <button onclick="scrollToTop()" class="btn btn-outline-light btn-sm me-5 d-lg-none" id="back-to-top">↑ Nach oben </button>

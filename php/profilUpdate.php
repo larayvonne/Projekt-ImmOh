@@ -1,111 +1,121 @@
 <?php
 session_start();
-require_once '../components/dbaccess.php';
+require_once "../components/dbaccess.php";
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
-    exit();
+    exit;
 }
 
-$userId = $_SESSION['user_id'];
-$errors = [];
+$user_id = $_SESSION['user_id'];
 
-// Eingabewerte holen & validieren
-$vorname = trim($_POST['vorname'] ?? '');
-$nachname = trim($_POST['nachname'] ?? '');
-$adresse = trim($_POST['adresse'] ?? '');
-$plz = trim($_POST['plz'] ?? '');
-$ort = trim($_POST['ort'] ?? '');
-$land = trim($_POST['land'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$passwort = $_POST['new_password'] ?? '';
-$passwort2 = $_POST['new_password_repeat'] ?? '';
+$vorname  = $_POST['vorname'] ?? '';
+$nachname = $_POST['nachname'] ?? '';
+$adresse  = $_POST['adresse'] ?? '';
+$plz      = $_POST['plz'] ?? '';
+$ort      = $_POST['ort'] ?? '';
+$land     = $_POST['land'] ?? '';
+$email    = $_POST['email'] ?? '';
+$password = $_POST['new_password'] ?? '';
+$repeat   = $_POST['new_password_repeat'] ?? '';
 
-if (!empty($passwort) || !empty($passwort2)) {
-    if ($passwort !== $passwort2) {
-        $errors[] = "Die eingegebenen Passwörter stimmen nicht überein.";
-    } elseif (strlen($passwort) < 6) {
-        $errors[] = "Das neue Passwort muss mindestens 6 Zeichen lang sein.";
-    } else {
-        $hashedPasswort = password_hash($passwort, PASSWORD_DEFAULT);
-    }
-}
+$profilbild_name = '';
 
-
-// Validierung
-if (empty($vorname) || empty($nachname) || empty($adresse) || empty($plz) || empty($ort) || empty($land) || empty($email)) {
-    $errors[] = "Alle Felder müssen ausgefüllt werden.";
-}
-
-if (!preg_match('/^[0-9]{4}$/', $plz)) {
-    $errors[] = "PLZ muss genau vier Ziffern enthalten.";
-}
-
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Ungültige E-Mail-Adresse.";
-}
-
-// Profilbildverarbeitung
-$profilbildName = null;
+// Profilbild prüfen
 if (isset($_FILES['profilbild']) && $_FILES['profilbild']['error'] === UPLOAD_ERR_OK) {
-    $uploadDir = '../uploads/';
-    $fileTmp = $_FILES['profilbild']['tmp_name'];
-    $fileName = basename($_FILES['profilbild']['name']);
-    $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-    $allowedExts = ['jpg', 'jpeg', 'png'];
+    $upload_dir = '../uploads/';
+    $profilbild_name = basename($_FILES['profilbild']['name']);
+    $upload_path = $upload_dir . $profilbild_name;
 
-    if (!in_array($fileExt, $allowedExts)) {
-        $errors[] = "Nur .jpg und .png sind als Profilbild erlaubt.";
-    } else {
-        $newFileName = 'profil_' . $userId . '_' . time() . '.' . $fileExt;
-        $filePath = $uploadDir . $newFileName;
-
-        // Altes Bild löschen, wenn nicht default.png
-        $query = $conn->prepare("SELECT profilbild FROM user WHERE id = ?");
-        $query->bind_param("i", $userId);
-        $query->execute();
-        $result = $query->get_result();
-        $user = $result->fetch_assoc();
-
-        if ($user && $user['profilbild'] !== 'default.png' && file_exists($uploadDir . $user['profilbild'])) {
-            unlink($uploadDir . $user['profilbild']);
-        }
-
-        if (!move_uploaded_file($fileTmp, $filePath)) {
-            $errors[] = "Fehler beim Hochladen des Profilbildes.";
-        } else {
-            $profilbildName = $newFileName;
-        }
+    if (!move_uploaded_file($_FILES['profilbild']['tmp_name'], $upload_path)) {
+        $_SESSION['update_error'] = "Fehler beim Hochladen des Profilbilds.";
+        header("Location: profil.php");
+        exit;
     }
 }
 
-// Wenn keine Fehler –> Datenbank aktualisieren
-if (empty($errors)) {
-    if ($profilbildName && isset($hashedPasswort)) {
-        $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=?, profilbild=?, passwort=? WHERE id=?");
-        $stmt->bind_param("ssssssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $profilbildName, $hashedPasswort, $userId);
-    } elseif ($profilbildName) {
-        $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=?, profilbild=? WHERE id=?");
-        $stmt->bind_param("ssssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $profilbildName, $userId);
-    } elseif (isset($hashedPasswort)) {
-        $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=?, password=? WHERE id=?");
-        $stmt->bind_param("ssssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $hashedPasswort, $userId);
-    } else {
-        $stmt = $conn->prepare("UPDATE user SET vorname=?, nachname=?, adresse=?, plz=?, ort=?, land=?, email=? WHERE id=?");
-        $stmt->bind_param("sssssssi", $vorname, $nachname, $adresse, $plz, $ort, $land, $email, $userId);
-    }
+// Dynamisches SQL vorbereiten
+$updateFields = [];
+$params = [];
+$types = "";
 
-    if ($stmt->execute()) {
-        $_SESSION['vorname'] = $vorname;
-        header("Location: profil.php?update=success");
-        exit();
+// Pflichtfelder
+$updateFields[] = "vorname=?";
+$params[] = $vorname;
+$types .= "s";
+
+$updateFields[] = "nachname=?";
+$params[] = $nachname;
+$types .= "s";
+
+$updateFields[] = "adresse=?";
+$params[] = $adresse;
+$types .= "s";
+
+$updateFields[] = "plz=?";
+$params[] = $plz;
+$types .= "s";
+
+$updateFields[] = "ort=?";
+$params[] = $ort;
+$types .= "s";
+
+$updateFields[] = "land=?";
+$params[] = $land;
+$types .= "s";
+
+$updateFields[] = "email=?";
+$params[] = $email;
+$types .= "s";
+
+// Optional: Profilbild
+if (!empty($profilbild_name)) {
+    $updateFields[] = "profilbild=?";
+    $params[] = $profilbild_name;
+    $types .= "s";
+}
+
+// Optional: Passwort
+if (!empty($password)) {
+    if ($password === $repeat) {
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $updateFields[] = "password=?";
+        $params[] = $password_hash;
+        $types .= "s";
     } else {
-        $errors[] = "Fehler beim Speichern der Änderungen.";
+        $_SESSION['update_error'] = "Die Passwörter stimmen nicht überein.";
+        header("Location: profil.php");
+        exit;
     }
 }
 
-// Bei Fehlern zurück zur Profilseite
-$_SESSION['profil_update_errors'] = $errors;
-header("Location: profil.php?update=fail");
-exit();
+// ID erst jetzt ans Ende anhängen
+$params[] = $user_id;
+$types .= "i";
+
+// SQL aufbauen
+$sql = "UPDATE user SET " . implode(", ", $updateFields) . " WHERE id=?";
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    $_SESSION['update_error'] = "Fehler bei der Datenbankabfrage.";
+    header("Location: profil.php");
+    exit;
+}
+
+$stmt->bind_param($types, ...$params);
+
+if ($stmt->execute()) {
+    $_SESSION['profilToast'] = "Profil erfolgreich aktualisiert.";
+    $_SESSION['vorname'] = $vorname;
+} else {
+    $_SESSION['profilToast'] = "Fehler beim Aktualisieren: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+
+header("Location: profil.php?update=success");
+
+exit;
 ?>
