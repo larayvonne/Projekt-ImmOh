@@ -70,5 +70,3 @@ if ($action === 'remove') {
     echo "Produkt nicht gefunden.";
     return;
 }
-
-
