@@ -14,37 +14,38 @@ if ($action === 'add') {
     $description = $_POST['description'] ?? '';
     $price = (float)($_POST['price'] ?? 0);
 
-    if ($id !== '') {
-        if (!isset($_SESSION['cart'][$id])) {
-            $_SESSION['cart'][$id] = [
-                'id' => $id,
-                'name' => $name,
-                'description' => $description,
-                'price' => $price,
-                'qty' => 1
-            ];
-        } else {
-            $_SESSION['cart'][$id]['qty'] += 1;
-        }
-
-        if (isset($_SESSION['user_id'])) {
-            $uid = (int)$_SESSION['user_id'];
-            $stmt = $conn->prepare(
-                "INSERT INTO cart_items (user_id, item_id, name, description, price, quantity) VALUES (?, ?, ?, ?, ?, 1) " .
-                "ON DUPLICATE KEY UPDATE quantity = quantity + 1"
-            );
-            if ($stmt) {
-                $stmt->bind_param('iissd', $uid, $id, $name, $description, $price);
-                $stmt->execute();
-                $stmt->close();
-            }
-        }
-
-        http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
+    if ($id === '') {
+        http_response_code(400); // fehlermeldung
+        echo "Fehlende Produkt-ID.";
+        return;
     }
 
-    http_response_code(400); // fehlermeldung 
-    echo "Fehlende Produkt-ID.";
+        if (!isset($_SESSION['cart'][$id])) {
+        $_SESSION['cart'][$id] = [
+            'id' => $id,
+            'name' => $name,
+            'description' => $description,
+            'price' => $price,
+            'qty' => 1
+        ];
+    } else {
+        $_SESSION['cart'][$id]['qty'] += 1;
+    }
+
+        if (isset($_SESSION['user_id'])) {
+        $uid = (int)$_SESSION['user_id'];
+        $stmt = $conn->prepare(
+            "INSERT INTO cart_items (user_id, item_id, name, description, price, quantity) VALUES (?, ?, ?, ?, ?, 1) " .
+            "ON DUPLICATE KEY UPDATE quantity = quantity + 1"
+        );
+        if ($stmt) {
+            $stmt->bind_param('iissd', $uid, $id, $name, $description, $price);
+            $stmt->execute();
+            $stmt->close();
+        }
+
+     http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
+    echo "Produkt hinzugefügt.";
     return;
 }
 
@@ -70,5 +71,4 @@ if ($action === 'remove') {
     return;
 }
 
-http_response_code(400); // fehlermeldung 
-echo "Ungültige Aktion.";
+
