@@ -1,3 +1,76 @@
+<?php
+session_start();
+require_once "../components/dbaccess.php";
+
+// Warenkorb laden
+$cart = $_SESSION['cart'] ?? [];
+if (isset($_SESSION['user_id'])) {
+    $uid = (int)$_SESSION['user_id'];
+    $stmt = $conn->prepare("SELECT item_id, name, description, price, quantity FROM cart_items WHERE user_id = ?");
+    if ($stmt) {
+        $stmt->bind_param("i", $uid);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cart = [];
+        while ($row = $result->fetch_assoc()) {
+            $cart[$row['item_id']] = [
+                'id' => $row['item_id'],
+                'name' => $row['name'],
+                'description' => $row['description'],
+                'price' => (float)$row['price'],
+                'qty' => (int)$row['quantity']
+            ];
+        }
+        $stmt->close();
+    }
+}
+
+$vatRate = 0.20; // Mehrwertsteuer Immobilien
+$subtotal = 0;
+foreach ($cart as $item) {
+    $subtotal += $item['price'] * $item['qty'];
+}
+$tax = $subtotal * $vatRate;
+$total = $subtotal + $tax;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
+    $payment = $_POST['payment'] ?? 'karte';
+
+    // Rechnungsdetails erstellen
+    $invoice  = "Vielen Dank fuer Ihre Bestellung bei ImmOH!\n\n";
+    $invoice .= "Produkte:\n";
+    foreach ($cart as $item) {
+        $sum = $item['price'] * $item['qty'];
+        $invoice .= sprintf("%s x%d - %.2f EUR\n", $item['name'], $item['qty'], $sum);
+    }
+    $invoice .= sprintf("\nZwischensumme: %.2f EUR", $subtotal);
+    $invoice .= sprintf("\nMwSt (%.0f%%): %.2f EUR", $vatRate*100, $tax);
+    $invoice .= sprintf("\nGesamt: %.2f EUR", $total);
+    $invoice .= "\nZahlungsart: " . $payment . "\n";
+
+    if (isset($_SESSION['user_email'])) {
+        $to = $_SESSION['user_email'];
+        $subject = 'Ihre Bestellung bei ImmOH';
+        $headers = 'From: noreply@immoh.at';
+        @mail($to, $subject, $invoice, $headers);
+    }
+
+    // Warenkorb leeren
+    $_SESSION['cart'] = [];
+    if (isset($_SESSION['user_id'])) {
+        $stmt = $conn->prepare('DELETE FROM cart_items WHERE user_id = ?');
+        if ($stmt) {
+            $stmt->bind_param('i', $uid);
+            $stmt->execute();
+            $stmt->close();
+        }
+    }
+    $_SESSION['meldung'] = 'Bestellung abgeschlossen. Eine Rechnung wurde per E-Mail gesendet.';
+    header('Location: index.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -29,11 +102,66 @@
       </ol>
     </nav>
 
+    <?php if (empty($cart)): ?>
+      <p>Ihr Warenkorb ist leer.</p>
+    <?php else: ?>
+      <h2>Übersicht</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Produkt</th>
+            <th>Menge</th>
+            <th>Preis</th>
+            <th>Summe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($cart as $item): $sum = $item['price'] * $item['qty']; ?>
+          <tr>
+            <td><?= htmlspecialchars($item['name']) ?></td>
+            <td><?= (int)$item['qty'] ?></td>
+            <td>€<?= number_format($item['price'], 2, ',', '.') ?></td>
+            <td>€<?= number_format($sum, 2, ',', '.') ?></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="3" class="text-end">Zwischensumme:</th>
+            <td>€<?= number_format($subtotal, 2, ',', '.') ?></td>
+          </tr>
+          <tr>
+            <th colspan="3" class="text-end">MwSt (<?= $vatRate*100 ?>%):</th>
+            <td>€<?= number_format($tax, 2, ',', '.') ?></td>
+          </tr>
+          <tr>
+            <th colspan="3" class="text-end">Gesamt:</th>
+            <td>€<?= number_format($total, 2, ',', '.') ?></td>
+          </tr>
+        </tfoot>
+      </table>
+
+  <form method="post">
+        <div class="mb-3">
+          <label class="form-label">Zahlungsart:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="payment" id="paycard" value="bankomatkarte" checked>
+            <label class="form-check-label" for="paycard">Bankomatkarte</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="payment" id="payinvoice" value="rechnung">
+            <label class="form-check-label" for="payinvoice">Rechnung</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="payment" id="paypaypal" value="paypal">
+            <label class="form-check-label" for="paypaypal">PayPal</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Bestellung abschließen</button>
+      </form>
+    <?php endif; ?>
   </main>
-
-  <?php include("../components/footer.php"); ?>
-  <script src="../js/function.js"></script>
-  
+<?php include("../components/footer.php"); ?>
+<script src="../js/function.js"></script>
 </body>
-
 </html>
