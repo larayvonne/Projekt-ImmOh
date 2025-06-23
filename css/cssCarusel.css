@@ -1,25 +1,7 @@
-.section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 50px;
-  background-color: #f7f1f1;
-}
-
-.text,
-.image {
-  flex: 50%;
-  padding: 0px;
-  box-sizing: border-box;
+.text {
+  padding: auto;
   color: #000050 !important;
-}
-
-.image img {
-  max-width: 80%;
-  height: auto;
-  display: block;
-  margin: auto;
-
+ 
 }
 
 .headline {
@@ -44,8 +26,8 @@
     text-align: center;
   }
 
-  .section {
-    flex-direction: column;
+  .container {
+    
     padding: 5%;
     text-align: center;
   }
@@ -55,7 +37,6 @@
     text-align: center;
     padding: 0%;
   }
-
 
 }
 
@@ -69,3 +50,6 @@
   margin: 0 auto;
 }
 
+.carusel {
+  
+}
