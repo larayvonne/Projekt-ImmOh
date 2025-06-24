@@ -36,7 +36,7 @@ $payment = $data['payment'];
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.html">
+          <a class="text-decoration-none replace-link-dark" href="index.php">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
@@ -74,6 +74,12 @@ $payment = $data['payment'];
         <p><strong>Enthaltene MwSt (20%):</strong> <?= number_format($tax, 2, ',', '.') ?> EUR</p>
         <p><strong>Gesamtbetrag (inkl. MwSt):</strong> <?= number_format($total, 2, ',', '.') ?> EUR</p>
         <p><strong>Zahlungsart:</strong> <?= htmlspecialchars($payment) ?></p>
+        <?php if (!empty($iban)): ?>
+            <p><strong>IBAN:</strong> <?= htmlspecialchars($iban) ?></p>
+        <?php endif; ?>
+        <?php if (!empty($bic)): ?>
+            <p><strong>BIC:</strong> <?= htmlspecialchars($bic) ?></p>
+        <?php endif; ?>
     </div>
   </main>
 <?php include("../components/footer.php"); ?>

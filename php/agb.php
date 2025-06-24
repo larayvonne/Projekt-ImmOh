@@ -21,7 +21,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.html">
+          <a class="text-decoration-none replace-link-dark" href="index.php">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
