@@ -13,6 +13,8 @@ $subtotal = $data['subtotal'];
 $tax = $data['tax'];
 $total = $data['total'];
 $payment = $data['payment'];
+$iban = $data['iban'] ?? '';
+$bic = $data['bic'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="de">
