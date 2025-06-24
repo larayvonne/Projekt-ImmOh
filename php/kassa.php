@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     if (!empty($bic)) {
         $invoice .= "\nBIC: $bic";
     }
-    $invoice .= "\n";
+    $invoice .= "\n"; // code für bestätigungsmail hinfällig da kein live server
     if (isset($_SESSION['user_email'])) {
         $to = $_SESSION['user_email'];
         $subject = 'Ihre Bestellung bei ImmOH';
