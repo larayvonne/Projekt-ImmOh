@@ -186,6 +186,7 @@ require_once "../components/dbaccess.php";
     }
   </script>
   <script src="../js/cart.js"></script>
+  
 </body>
 
 </html>

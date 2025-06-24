@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
             <td>€<?= number_format($subtotal, 2, ',', '.') ?></td>
           </tr>
           <tr>
-            <th colspan="3" class="text-end">MwSt (<?= $vatRate*100 ?>%):</th>
+            <th colspan="3" class="text-end">Immonilienabgabe (<?= $vatRate*100 ?>%):</th>
             <td>€<?= number_format($tax, 2, ',', '.') ?></td>
           </tr>
           <tr>
