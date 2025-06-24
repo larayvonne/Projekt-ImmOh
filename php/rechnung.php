@@ -13,6 +13,8 @@ $subtotal = $data['subtotal'];
 $tax = $data['tax'];
 $total = $data['total'];
 $payment = $data['payment'];
+$iban = $data['iban'] ?? '';
+$bic = $data['bic'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -74,6 +76,12 @@ $payment = $data['payment'];
         <p><strong>Enthaltene MwSt (20%):</strong> <?= number_format($tax, 2, ',', '.') ?> EUR</p>
         <p><strong>Gesamtbetrag (inkl. MwSt):</strong> <?= number_format($total, 2, ',', '.') ?> EUR</p>
         <p><strong>Zahlungsart:</strong> <?= htmlspecialchars($payment) ?></p>
+        <?php if (!empty($iban)): ?>
+            <p><strong>IBAN:</strong> <?= htmlspecialchars($iban) ?></p>
+        <?php endif; ?>
+        <?php if (!empty($bic)): ?>
+            <p><strong>BIC:</strong> <?= htmlspecialchars($bic) ?></p>
+        <?php endif; ?>
     </div>
   </main>
 <?php include("../components/footer.php"); ?>
