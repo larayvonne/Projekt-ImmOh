@@ -36,6 +36,8 @@ $total = $subtotal + $tax;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $payment = $_POST['payment'] ?? 'karte';
+    $iban    = $_POST['iban'] ?? '';
+    $bic     = $_POST['bic'] ?? '';
 
     // Rechnungsdetails erstellen
     $invoice  = "Vielen Dank fuer Ihre Bestellung bei ImmOH!\n\n";
@@ -47,7 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $invoice .= sprintf("\nZwischensumme: %.2f EUR", $subtotal);
     $invoice .= sprintf("\nMwSt (%.0f%%): %.2f EUR", $vatRate*100, $tax);
     $invoice .= sprintf("\nGesamt: %.2f EUR", $total);
-    $invoice .= "\nZahlungsart: " . $payment . "\n";
+    $invoice .= "\nZahlungsart: " . $payment;
+    if (!empty($iban)) {
+        $invoice .= "\nIBAN: $iban";
+    }
+    if (!empty($bic)) {
+        $invoice .= "\nBIC: $bic";
+    }
+    $invoice .= "\n";
 
     if (isset($_SESSION['user_email'])) {
         $to = $_SESSION['user_email'];
@@ -55,6 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
         $headers = 'From: noreply@immoh.at';
         @mail($to, $subject, $invoice, $headers);
     }
+
+    $_SESSION['invoice_data'] = [
+        'cart'     => $cart,
+        'subtotal' => $subtotal,
+        'tax'      => $tax,
+        'total'    => $total,
+        'payment'  => $payment,
+        'iban'     => $iban,
+        'bic'      => $bic
+    ];
 
     // Warenkorb leeren
     $_SESSION['cart'] = [];
@@ -157,6 +176,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
             <input class="form-check-input" type="radio" name="payment" id="paypaypal" value="paypal">
             <label class="form-check-label" for="paypaypal">PayPal</label>
           </div>
+          <div id="bank-data" class="mt-3" style="display:none;">
+            <div class="mb-2">
+              <label for="iban" class="form-label">IBAN</label>
+              <input type="text" class="form-control" id="iban" name="iban" placeholder="AT00 0000 0000 0000 0000">
+            </div>
+            <div class="mb-2">
+              <label for="bic" class="form-label">BIC</label>
+              <input type="text" class="form-control" id="bic" name="bic" placeholder="BIC">
+            </div>
+          </div>
         </div>
         <button type="submit" class="btn btn-primary">Bestellung abschließen</button>
       </form>
@@ -164,5 +193,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
   </main>
 <?php include("../components/footer.php"); ?>
 <script src="../js/function.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const invoiceRadio = document.getElementById('payinvoice');
+    const cardRadio = document.getElementById('paycard');
+    const paypalRadio = document.getElementById('paypaypal');
+    const bankData = document.getElementById('bank-data');
+    function toggleBank() {
+      bankData.style.display = invoiceRadio.checked ? 'block' : 'none';
+    }
+    invoiceRadio.addEventListener('change', toggleBank);
+    cardRadio.addEventListener('change', toggleBank);
+    paypalRadio.addEventListener('change', toggleBank);
+    toggleBank();
+  });
+</script>
 </body>
 </html>
