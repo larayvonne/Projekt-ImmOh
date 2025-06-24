@@ -22,7 +22,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark replace-text-primary" href="index.html">
+          <a class="text-decoration-none replace-link-dark replace-text-primary" href="index.php">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
