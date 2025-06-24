@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $payment = $_POST['payment'] ?? 'karte';
      $iban    = $_POST['iban'] ?? '';
     $bic     = $_POST['bic'] ?? '';
-
     // Rechnungsdetails erstellen
     $invoice  = "Vielen Dank fuer Ihre Bestellung bei ImmOH!\n\n";
     $invoice .= "Produkte:\n";
@@ -56,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     if (!empty($bic)) {
         $invoice .= "\nBIC: $bic";
     }
-    $invoice .= "\n"; // code für bestätigungsmail hinfällig da kein live server
+    $invoice .= "\n"; // code für bestätigungsmail hinfällig da kein lib´ve
     if (isset($_SESSION['user_email'])) {
         $to = $_SESSION['user_email'];
         $subject = 'Ihre Bestellung bei ImmOH';
