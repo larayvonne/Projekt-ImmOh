@@ -36,7 +36,11 @@ $total = $subtotal + $tax;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $payment = $_POST['payment'] ?? 'karte';
+
     $iban    = $_POST['iban'] ?? '';
+
+     $iban    = $_POST['iban'] ?? '';
+
     $bic     = $_POST['bic'] ?? '';
 
     // Rechnungsdetails erstellen
@@ -56,7 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     if (!empty($bic)) {
         $invoice .= "\nBIC: $bic";
     }
+
     $invoice .= "\n";
+
+    $invoice .= "\n"; // code für bestätigungsmail hinfällig da kein live server
 
     if (isset($_SESSION['user_email'])) {
         $to = $_SESSION['user_email'];
@@ -64,6 +71,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
         $headers = 'From: noreply@immoh.at';
         @mail($to, $subject, $invoice, $headers);
     }
+    $_SESSION['invoice_data'] = [
+        'cart'     => $cart,
+        'subtotal' => $subtotal,
+        'tax'      => $tax,
+        'total'    => $total,
+        'payment'  => $payment,
+        'iban'     => $iban,
+        'bic'      => $bic
+    ];
 
     $_SESSION['invoice_data'] = [
         'cart'     => $cart,
@@ -113,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
         <li class="breadcrumb-item">
-          <a class="text-decoration-none replace-link-dark" href="index.html">
+          <a class="text-decoration-none replace-link-dark" href="index.php">
             <i class="fas fa-home"></i> ImmOH!
           </a>
         </li>
@@ -176,7 +192,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
             <input class="form-check-input" type="radio" name="payment" id="paypaypal" value="paypal">
             <label class="form-check-label" for="paypaypal">PayPal</label>
           </div>
+
           <div id="bank-data" class="mt-3" style="display:none;">
+
+           <div id="bank-data" class="mt-3" style="display:none;">
+
             <div class="mb-2">
               <label for="iban" class="form-label">IBAN</label>
               <input type="text" class="form-control" id="iban" name="iban" placeholder="AT00 0000 0000 0000 0000">
