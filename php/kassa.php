@@ -36,8 +36,11 @@ $total = $subtotal + $tax;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $payment = $_POST['payment'] ?? 'karte';
-     $iban    = $_POST['iban'] ?? '';
+
+    $iban    = $_POST['iban'] ?? '';
     $bic     = $_POST['bic'] ?? '';
+
+
     // Rechnungsdetails erstellen
     $invoice  = "Vielen Dank fuer Ihre Bestellung bei ImmOH!\n\n";
     $invoice .= "Produkte:\n";
@@ -55,13 +58,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     if (!empty($bic)) {
         $invoice .= "\nBIC: $bic";
     }
+
     $invoice .= "\n"; // code für bestätigungsmail hinfällig da kein lib´ve
+
     if (isset($_SESSION['user_email'])) {
         $to = $_SESSION['user_email'];
         $subject = 'Ihre Bestellung bei ImmOH';
         $headers = 'From: noreply@immoh.at';
         @mail($to, $subject, $invoice, $headers);
     }
+    $_SESSION['invoice_data'] = [
+        'cart'     => $cart,
+        'subtotal' => $subtotal,
+        'tax'      => $tax,
+        'total'    => $total,
+        'payment'  => $payment,
+        'iban'     => $iban,
+        'bic'      => $bic
+    ];
+
     $_SESSION['invoice_data'] = [
         'cart'     => $cart,
         'subtotal' => $subtotal,
@@ -173,7 +188,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
             <input class="form-check-input" type="radio" name="payment" id="paypaypal" value="paypal">
             <label class="form-check-label" for="paypaypal">PayPal</label>
           </div>
+
+
            <div id="bank-data" class="mt-3" style="display:none;">
+
             <div class="mb-2">
               <label for="iban" class="form-label">IBAN</label>
               <input type="text" class="form-control" id="iban" name="iban" placeholder="AT00 0000 0000 0000 0000">
