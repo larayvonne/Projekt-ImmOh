@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
         }
     }
     $_SESSION['meldung'] = 'Bestellung abgeschlossen. Eine Rechnung wurde per E-Mail gesendet.';
-    header('Location: index.php');
+    header('Location: rechnung.php');
     exit;
 }
 ?>
