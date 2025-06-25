@@ -37,9 +37,6 @@ $total = $subtotal + $tax;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $payment = $_POST['payment'] ?? 'karte';
 
-    $iban    = $_POST['iban'] ?? '';
-    $bic     = $_POST['bic'] ?? '';
-
     // Warenkorb leeren
     $_SESSION['cart'] = [];
     if (isset($_SESSION['user_id'])) {
@@ -168,10 +165,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     const paypalRadio = document.getElementById('paypaypal');
     const bankData = document.getElementById('bank-data');
     function toggleBank() {
-      bankData.style.display = invoiceRadio.checked ? 'block' : 'none';
+      bankData.style.display = cardRadio.checked ? 'block' : 'none';
     }
-    invoiceRadio.addEventListener('change', toggleBank);
     cardRadio.addEventListener('change', toggleBank);
+    invoiceRadio.addEventListener('change', toggleBank);
     paypalRadio.addEventListener('change', toggleBank);
     toggleBank();
   });
