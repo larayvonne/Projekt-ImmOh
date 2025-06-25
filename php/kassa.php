@@ -40,53 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $iban    = $_POST['iban'] ?? '';
     $bic     = $_POST['bic'] ?? '';
 
-
-    // Rechnungsdetails erstellen
-    $invoice  = "Vielen Dank fuer Ihre Bestellung bei ImmOH!\n\n";
-    $invoice .= "Produkte:\n";
-    foreach ($cart as $item) {
-        $sum = $item['price'] * $item['qty'];
-        $invoice .= sprintf("%s x%d - %.2f EUR\n", $item['name'], $item['qty'], $sum);
-    }
-    $invoice .= sprintf("\nZwischensumme: %.2f EUR", $subtotal);
-    $invoice .= sprintf("\nMwSt (%.0f%%): %.2f EUR", $vatRate*100, $tax);
-    $invoice .= sprintf("\nGesamt: %.2f EUR", $total);
-    $invoice .= "\nZahlungsart: " . $payment;
-    if (!empty($iban)) {
-        $invoice .= "\nIBAN: $iban";
-    }
-    if (!empty($bic)) {
-        $invoice .= "\nBIC: $bic";
-    }
-
-    $invoice .= "\n"; // code für bestätigungsmail hinfällig da kein live
-
-    if (isset($_SESSION['user_email'])) {
-        $to = $_SESSION['user_email'];
-        $subject = 'Ihre Bestellung bei ImmOH';
-        $headers = 'From: noreply@immoh.at';
-        @mail($to, $subject, $invoice, $headers);
-    }
-    $_SESSION['invoice_data'] = [
-        'cart'     => $cart,
-        'subtotal' => $subtotal,
-        'tax'      => $tax,
-        'total'    => $total,
-        'payment'  => $payment,
-        'iban'     => $iban,
-        'bic'      => $bic
-    ];
-
-    $_SESSION['invoice_data'] = [
-        'cart'     => $cart,
-        'subtotal' => $subtotal,
-        'tax'      => $tax,
-        'total'    => $total,
-        'payment'  => $payment,
-        'iban'     => $iban,
-        'bic'      => $bic
-    ];
-
     // Warenkorb leeren
     $_SESSION['cart'] = [];
     if (isset($_SESSION['user_id'])) {
@@ -97,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
             $stmt->close();
         }
     }
-    $_SESSION['meldung'] = 'Bestellung abgeschlossen. Eine Rechnung wurde per E-Mail gesendet.';
+    $_SESSION['meldung'] = 'Bestellung abgeschlossen. Vielen Dank für Ihre Treue! ';
     header('Location: rechnung.php');
     exit;
 }
