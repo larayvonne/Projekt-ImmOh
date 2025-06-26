@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="de">
 
