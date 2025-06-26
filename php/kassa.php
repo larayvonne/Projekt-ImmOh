@@ -37,6 +37,7 @@ $total = $subtotal + $tax;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($cart)) {
     $payment = $_POST['payment'] ?? 'karte';
 
+
     // Warenkorb leeren
     $_SESSION['cart'] = [];
     if (isset($_SESSION['user_id'])) {
