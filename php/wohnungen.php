@@ -1,6 +1,12 @@
 <?php
 require_once "../components/dbaccess.php";
-
+require_once "../components/products.php";
+$query = isset($_GET['q']) ? $_GET['q'] : '';
+if ($query !== '') {
+  $wohnungen = searchWohnungen($conn, $query);
+} else {
+  $wohnungen = getWohnungen($conn);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,113 +42,33 @@ require_once "../components/dbaccess.php";
     <div class="headline">
       <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
       <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
+      <form method="get" action="wohnungen.php" class="my-3">
+        <input type="text" name="q" placeholder="Suchbegriff..." value="<?= htmlspecialchars($query) ?>">
+        <button type="submit">Suchen</button>
+      </form>
       <br>
     </div>
     <div class="box">
-      <div class="section reverse">
-        <div class="text">
-          <h2>Familienwohnung mit Gartenzugang</h2>
-          <h2>(4-Zimmer, 95 m²)</h2>
-          <h5>Ideal für Familien, die naturnah und dennoch urban wohnen möchten.</h5>
-
-          <p> ⋅ Großzügiger Wohn-Essbereich mit offener Küche</p>
-
-          <p> ⋅ Drei Schlafzimmer, ideal für Kinder oder Homeoffice</p>
-
-          <p> ⋅ Direktzugang zum privaten Gartenanteil</p>
-
-          <p> ⋅ Barrierefrei & mit hochwertiger Holzbauweise</p>
-
-          <p> ⋅ Nur wenige Gehminuten zu Kindergarten und Schule</p>
-
-          <p> ⋅ Fernwärme & Solarenergie sorgen für geringe Betriebskosten</p>
-
-          <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
-          <a class="button" href=../php/w1.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-description="4-Zimmer, 95 m²" data-price="1250">Zum Warenkorb hinzufügen</button>
-        </div>
-        <div class="image">
-          <img src="../resources/products/wohnung1.jpg" alt="Bild 1">
-        </div>
-      </div>
-
-
-      <div class="section">
-        <div class="text">
-          <h2>Smart-Apartment für Singles oder Paare</h2>
-          <h2>(2-Zimmer, 52 m²)</h2>
-          <h5>Perfekt für Berufstätige, Studierende oder Paare mit modernem Lebensstil.</h5>
-
-          <p> ⋅ Effiziente Raumaufteilung mit viel Stauraum</p>
-
-          <p> ⋅ Wohnküche mit Zugang zur Loggia mit Grünblick</p>
-
-          <p> ⋅ Nachhaltige Materialien wie Lehmputz und Ziegel</p>
-
-          <p> ⋅ Nähe zur U1-Endstation: 15 Minuten in die City</p>
-
-          <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
-
-          <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-           <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description="2-Zimmer, 52 m²" data-price="790">Zum Warenkorb hinzufügen</button>
-        </div>
-        <div class="image">
-          <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
-        </div>
-      </div>
-
-
-      <div class="section reverse">
-        <div class="text">
-          <h2>Dachgeschoss-Loft mit Weitblick</h2>
-          <h2>(3-Zimmer, 78 m²)</h2>
-          <h5>Für Individualisten, Kreative oder Paare mit Wunsch nach etwas Besonderem.</h5>
-
-          <p> ⋅ Offenes Loft-Design mit sichtbaren Holzbalken</p>
-
-          <p> ⋅ Große Dachterrasse mit Blick über die Grünräume Rothneusiedls</p>
-
-          <p> ⋅ Begrüntes Dach sorgt für gutes Mikroklima</p>
-
-          <p> ⋅ Smart-Home-Steuerung für Licht, Heizung, Sicherheit</p>
-
-          <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
-
-          <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-           <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-description="3-Zimmer, 78 m²" data-price="1150">Zum Warenkorb hinzufügen</button>
-        </div>
-        <div class="image">
-          <img src="../resources/products/wohnung3.jpg" alt="Bild 3">
-        </div>
-      </div>
-
-
-      <div class="section">
-        <div class="text">
-          <h2>Generationenwohnung – barrierefrei & gemeinschaftsnah</h2>
-          <h2>(3-Zimmer, 68 m²)</h2>
-          <h5>Für Senioren oder generationenübergreifendes Wohnen mit Komfort.</h5>
-
-          <p> ⋅ Ebenerdig mit Zugang zu gemeinschaftlichem Innenhof & Garten</p>
-
-          <p> ⋅ Zwei Schlafzimmer und ein flexibel nutzbarer Raum</p>
-
-          <p> ⋅ Nähe zu Nahversorgung, medizinischer Betreuung & Freizeitangeboten</p>
-
-          <p> ⋅ Teil eines "Mehrgenerationenhauses" mit Gemeinschaftsräumen</p>
-
-          <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
-
-          <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-           <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-description="3-Zimmer, 68 m²" data-price="880">Zum Warenkorb hinzufügen</button>
-        </div>
-        <div class="image">
-          <img src="../resources/products/wohnung4.jpg" alt="Bild 4">
-        </div>
-      </div>
+      <?php if (empty($wohnungen)): ?>
+        <p>Keine Wohnungen gefunden.</p>
+      <?php else: ?>
+        <?php foreach ($wohnungen as $index => $w): ?>
+          <div class="section <?= $index % 2 === 0 ? 'reverse' : '' ?>">
+            <div class="text">
+              <h2><?= htmlspecialchars($w['name']) ?></h2>
+              <h2><?= htmlspecialchars($w['description']) ?></h2>
+              <p>Preis: €<?= number_format((float)$w['price'], 2, ',', '.') ?></p>
+              <?php if (!empty($w['detail_page'])): ?>
+                <a class="button" href="<?= htmlspecialchars($w['detail_page']) ?>">Weitere Informationen</a>
+              <?php endif; ?>
+              <button class="addToCart button" data-id="<?= htmlspecialchars($w['id']) ?>" data-name="<?= htmlspecialchars($w['name']) ?>">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="image">
+              <img src="<?= htmlspecialchars($w['image']) ?>" alt="<?= htmlspecialchars($w['name']) ?>">
+            </div>
+          </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </div>
 
     <div class="end">

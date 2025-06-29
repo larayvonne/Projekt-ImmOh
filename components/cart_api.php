@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once 'dbaccess.php';
+require_once 'products.php';
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -10,15 +11,21 @@ $action = $_POST['action'] ?? '';
 $id = $_POST['id'] ?? '';
 
 if ($action === 'add') {
-    $name = $_POST['name'] ?? '';
-    $description = $_POST['description'] ?? '';
-    $price = (float)($_POST['price'] ?? 0);
-
     if ($id === '') {
         http_response_code(400); // fehlermeldung
         echo "Fehlende Produkt-ID.";
         return;
     }
+
+    $product = getWohnungById($conn, (int)$id);
+    if (!$product) {
+        http_response_code(400);
+        echo "Produkt nicht gefunden.";
+        return;
+    }
+    $name = $product['name'];
+    $description = $product['description'];
+    $price = (float)$product['price'];
 
         if (!isset($_SESSION['cart'][$id])) {
         $_SESSION['cart'][$id] = [
