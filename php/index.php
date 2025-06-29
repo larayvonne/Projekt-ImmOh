@@ -60,31 +60,31 @@
     <div class="row">
       <div class="col">
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="../resources/bau/greenliving.png" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Rothneusiedel</h5>
+            <p class="card-text">Im Süden Wiens entsteht mit Rothneusiedl eines der spannendsten Stadtentwicklungsprojekte der kommenden Jahre.</p>
+            <a href="../php/rothneusiedl.php" class="btn btn-primary">Mehr erfahren</a>
             </div>
           </div>
       </div>
       <div class="col">
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="../resources/bau/gutenberg.png" class="card-img-top" alt="...">
           <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Unsere Bauvorhaben</h5>
+          <p class="card-text">Nachhaltig gebaut, lebenswert gestaltet. Jetzt Banteile zum gewünschten Bauvorhaben sichern! </p>
+          <a href="../php/bauvorhaben.php" class="btn btn-primary">Mehr erfahren</a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="../resources/bau/moedling.png" class="card-img-top" alt="...">
           <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">ImmOh News</h5>
+          <p class="card-text">Aktuelle Beiträge zu Entwicklungen und Tipps rund um Immobilien & Nachhaltigkeit.</p>
+          <a href="../php/news.php" class="btn btn-primary">Mehr erfahren</a>
           </div>
         </div>
       </div>
