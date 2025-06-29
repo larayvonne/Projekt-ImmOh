@@ -1,6 +1,15 @@
 <?php
 session_start();
 require_once "../components/dbaccess.php";
+$wohnungenProdukte = [];
+
+$result = $conn->query("SELECT * FROM wohnungen");
+
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $secondhandProdukte[] = $row;
+    }
+}
 
 // Warenkorb hinzufügen
 if (isset($_GET['add_to_cart'])) {

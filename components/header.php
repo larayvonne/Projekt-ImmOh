@@ -69,6 +69,9 @@ if (session_status() === PHP_SESSION_NONE) {
             <a class="nav-link" href="../php/rothneusiedl.php">Rothneusiedl</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../php/shop.php">Shop</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="../php/news.php">News</a>
           </li>
 
