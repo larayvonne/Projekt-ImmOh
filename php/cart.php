@@ -8,7 +8,7 @@ $products = [];
 if (!empty($cart)) {
     $ids = implode(',', array_map('intval', array_keys($cart)));
     $sql = "SELECT id, name, beschreibung, preis_pro_m2 FROM wohnungen WHERE id IN ($ids)";
-    $result = $db_obj->query($sql);
+    $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
         $row['quantity'] = $cart[$row['id']];
