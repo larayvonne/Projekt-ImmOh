@@ -1,5 +1,6 @@
 document.querySelectorAll('.addToCart').forEach(button => {
   button.addEventListener('click', e => {
+    e.preventDefault(); // 🧠 Verhindert "Nach-oben-Springen"!
     const id = button.dataset.id;
 
     fetch('../components/cart_api.php', {
