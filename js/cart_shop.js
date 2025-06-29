@@ -1,20 +1,16 @@
 document.querySelectorAll('.addToCart').forEach(button => {
   button.addEventListener('click', e => {
-    e.preventDefault();
+    e.preventDefault(); // 🧠 Verhindert "Nach-oben-Springen"!
     const id = button.dataset.id;
 
-    fetch('../components/cart_shop_api.php', {
+    fetch('../components/cart_api.php', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ productId: id })
     })
     .then(res => res.json())
     .then(data => {
-      if (data.success) {
-        alert(data.message); // oder schöner: Toast-Nachricht
-      } else {
-        alert("Fehler: " + data.message);
-      }
+      alert('Zum Warenkorb hinzugefügt!');
     });
   });
 });

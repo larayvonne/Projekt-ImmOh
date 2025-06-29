@@ -2,29 +2,61 @@
 session_start();
 require_once "../components/dbaccess.php";
 
-// Produkt entfernen
-if (isset($_GET['remove'])) {
-    $removeId = intval($_GET['remove']);
-    unset($_SESSION['cart'][$removeId]);
-    header("Location: cart.php"); // vermeidet erneutes Entfernen bei Reload
+// Produkt entfernen (Typ und ID müssen mitgegeben werden!)
+if (isset($_GET['remove']) && isset($_GET['type'])) {
+    $type = $_GET['type'];
+    $id = intval($_GET['remove']);
+    unset($_SESSION['cart'][$type][$id]);
+    header("Location: cart.php");
     exit;
 }
 
 $cart = $_SESSION['cart'] ?? [];
 $products = [];
+$total = 0;
 
-if (!empty($cart)) {
-    $ids = implode(',', array_map('intval', array_keys($cart)));
-    $sql = "SELECT id, name, beschreibung, preis FROM wohnungen WHERE id IN ($ids)";
+// Hilfsfunktion zum Laden aus Tabellen mit individuellen ID-Feldern
+function ladeProdukte($conn, $tabelle, $idSpalte, $cartTeilstück, $typ) {
+    $daten = [];
+    $ids = implode(',', array_map('intval', array_keys($cartTeilstück)));
+    if (!$ids) return [];
+
+    $sql = "SELECT $idSpalte, name, beschreibung, preis FROM $tabelle WHERE $idSpalte IN ($ids)";
     $result = $conn->query($sql);
 
     if ($result) {
         while ($row = $result->fetch_assoc()) {
-            $row['quantity'] = $cart[$row['id']] ?? 1;
-            $products[] = $row;
+            $produktId = $row[$idSpalte];
+            $menge = $cartTeilstück[$produktId] ?? 1;
+            $daten[] = [
+                'id' => $produktId,
+                'name' => $row['name'],
+                'beschreibung' => $row['beschreibung'],
+                'preis' => $row['preis'],
+                'quantity' => $menge,
+                'subtotal' => $menge * $row['preis'],
+                'type' => $typ
+            ];
         }
     }
+    return $daten;
 }
+
+// Wohnungen laden
+if (!empty($cart['wohnungen'])) {
+    $products = array_merge($products, ladeProdukte($conn, 'wohnungen', 'wohnung_id', $cart['wohnungen'], 'wohnungen'));
+}
+
+// Secondhand-Produkte laden
+if (!empty($cart['secondhand'])) {
+    $products = array_merge($products, ladeProdukte($conn, 'secondhand', 'second_id', $cart['secondhand'], 'secondhand'));
+}
+
+// Gesamtsumme berechnen
+foreach ($products as $p) {
+    $total += $p['subtotal'];
+}
+?>
 ?>
 
 <!DOCTYPE html>
@@ -61,14 +93,14 @@ if (!empty($cart)) {
       <h1 class="replace-text-primary"> Dein Warenkorb</h1>
       <p class="mb-4">Hier findest du alle Wohnungen, die du vorgemerkt hast.</p>
     </div>
-
     <?php if (empty($products)): ?>
       <div class="alert alert-warning text-dark">Dein Warenkorb ist leer.</div>
     <?php else: ?>
-      <table class="table"> 
+      <table class="table">
         <thead>
           <tr>
-            <th>Wohnung</th>
+            <th>Typ</th>
+            <th>Name</th>
             <th>Beschreibung</th>
             <th>Menge</th>
             <th>Preis</th>
@@ -77,20 +109,16 @@ if (!empty($cart)) {
           </tr>
         </thead>
         <tbody>
-          <?php $total = 0; ?>
           <?php foreach ($products as $product): ?>
-            <?php
-              $subtotal = $product['preis'] * $product['quantity'];
-              $total += $subtotal;
-            ?>
             <tr>
+              <td><?= ucfirst($product['type']) ?></td>
               <td><?= htmlspecialchars($product['name']) ?></td>
               <td><?= htmlspecialchars($product['beschreibung']) ?></td>
               <td><?= $product['quantity'] ?></td>
               <td>€<?= number_format($product['preis'], 2, ',', '.') ?></td>
-              <td>€<?= number_format($subtotal, 2, ',', '.') ?></td>
+              <td>€<?= number_format($product['subtotal'], 2, ',', '.') ?></td>
               <td>
-                <a href="cart.php?remove=<?= $product['id'] ?>" class="btn btn-sm " title="Entfernen">
+                <a href="cart.php?remove=<?= $product['id'] ?>&type=<?= $product['type'] ?>" class="btn btn-sm btn-danger">
                   <i class="fas fa-trash-alt"></i>
                 </a>
               </td>
@@ -100,8 +128,7 @@ if (!empty($cart)) {
       </table>
 
       <p class="fs-4">Gesamtsumme: <strong>€<?= number_format($total, 2, ',', '.') ?></strong></p>
-
-      <a href="kassa.php" class="btn btn-success ms-2">Zur Kassa gehen</a>
+      <a href="kassa.php" class="btn btn-success">Zur Kassa gehen</a>
     <?php endif; ?>
 
   </main>
