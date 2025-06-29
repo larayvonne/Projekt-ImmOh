@@ -56,7 +56,6 @@
   </div>
 
   <main>
-    <p>
   <div class="container text-center">
     <div class="row">
       <div class="col">
@@ -91,9 +90,8 @@
       </div>
   </div>
 </div>
-    </p>
     <div class="end">
-      <div class="container end">
+      <div class="container end ">
         <div class="row row-cols-1 row-cols-md-3">
           <div class="col">
             <h5><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-tree"
