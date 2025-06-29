@@ -4,22 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.addToCart').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id;
-      const name = btn.dataset.name;
-      const description = btn.dataset.description;
-      const price = btn.dataset.price;
 
       fetch(API_PATH, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ action: 'add', id, description, name, price })
+        body: new URLSearchParams({ action: 'add', id })
       })
-      .then(response => {
-        if (response.ok) {
-          alert(`${name} wurde dem Warenkorb hinzugefügt.`);
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(`${data.name} wurde dem Warenkorb hinzugefügt.`);
         } else {
           alert('Fehler beim Hinzufügen zum Warenkorb.');
         }
-      });
+      })
+      .catch(() => alert('Fehler beim Hinzufügen zum Warenkorb.'));
     });
   });
 
