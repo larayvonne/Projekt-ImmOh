@@ -1,6 +1,18 @@
 <?php
+session_start();
 require_once "../components/dbaccess.php";
 
+// Warenkorb hinzufügen
+if (isset($_GET['add_to_cart'])) {
+    $productId = intval($_GET['add_to_cart']);
+    $prev = isset($_SESSION['cart'][$productId]) && is_numeric($_SESSION['cart'][$productId])
+    ? $_SESSION['cart'][$productId]
+    : 0;
+
+    $_SESSION['cart'][$productId] = $prev + 1;
+
+    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +67,7 @@ require_once "../components/dbaccess.php";
             Geschäften des täglichen Bedarfs, Schulen und dem Simmeringer Markt machen dieses Projekt zu einem besonders
             attraktiven Standort. Die ruhige, aber gleichzeitig zentrale Lage ermöglicht es, das urbane Leben in Wien in
             vollen Zügen zu genießen.</p>
-          <button class="addToCart button" data-id="5" data-name="Bauvorhaben Simmering" data-description="Bauanteil Simmering €100/m² " data-price="100">Jetzt Anteile kaufen</button>
+          <button class="addToCart" data-id="5">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/greenliving.png">
@@ -69,7 +81,7 @@ require_once "../components/dbaccess.php";
             Wohnungsgrößen von 44-79 m² bietet es zahlreiche Optionen für ein individuelles Wohnen. Durch die
             ausgezeichnete öffentliche Verkehrsanbindung (U4/U6) und umliegende Infrastruktur (Meidlinger Markt,
             Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien.</p>
-          <button class="addToCart button" data-id="6" data-name="Bauvorhaben Gutenberg" data-price="100">Jetzt Anteile kaufen</button>
+          <button class="addToCart" data-id="6">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/gutenberg.png">
@@ -86,7 +98,7 @@ require_once "../components/dbaccess.php";
             damit entweder direkten Zugang oder Blick ins Grüne. Zusätzlich verfügen jene Wohnungen mit eigenem Garten
             über eine Pergola. Besonders hervorzuheben ist die große Freifläche im Süden des Grundstücks, wo ein
             Erholungsareal für alle Bewohner*innen geschaffen wird.</p>
-          <button class="addToCart button" data-id="7" data-name="Bauvorhaben Mödling" data-price="100">Jetzt Anteile kaufen</button>
+          <button class="addToCart" data-id="7" data-price="100">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/moedling.png">
@@ -132,14 +144,7 @@ require_once "../components/dbaccess.php";
     </div>
   </main>
   <?php include("../components/footer.php"); ?>
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
+  <script src="../js/function.js"></script>
   <script src="../js/cart.js"></script>
 </body>
 

@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </nav>
 
     <div class="headline mb-4">
-      <h1 class="replace-text-primary">🧾 Kassa – Bestellung abschließen</h1>
+      <h1 class="replace-text-primary">Kassa – Bestellung abschließen</h1>
       <p>Bitte geben Sie Ihre Daten ein und wählen Sie eine Zahlungsmethode.</p>
     </div>
 
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </main>
 
   <?php include("../components/footer.php"); ?>
-
+ <script src="../js/function.js"></script>
   <script>
     // IBAN-Feld nur zeigen bei "Banküberweisung"
     document.querySelectorAll('input[name="zahlungsmethode"]').forEach(input => {
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Bestätigungs-Popup bei Abschicken
     document.getElementById('checkoutForm').addEventListener('submit', function (e) {
-  const confirmed = confirm('Möchten Sie die Bestellung verbindlich abschicken?');
+  const confirmed = confirm('Möchten Sie die Bestellung abschicken?');
   if (!confirmed) {
     e.preventDefault(); // wird NICHT abgeschickt
     window.location.href = 'Kassa.php'; // auf seite bleiben

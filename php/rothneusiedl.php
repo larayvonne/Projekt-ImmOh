@@ -115,7 +115,9 @@
 
   </main>
 
+  <?php include("../components/footer.php"); ?>
   <script src="../js/function.js"></script>
+
 
 </body>
 
