@@ -1,26 +1,36 @@
 <?php 
 session_start();
 require_once 'dbaccess.php';
+require_once 'products.php';
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
 $action = $_POST['action'] ?? '';
-$id = $_POST['id'] ?? '';
+$id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+
+header('Content-Type: application/json');
 
 if ($action === 'add') {
-    $name = $_POST['name'] ?? '';
-    $description = $_POST['description'] ?? '';
-    $price = (float)($_POST['price'] ?? 0);
-
+    if ($id <= 0) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Fehlende Produkt-ID.']);
+        return;
+    }
     if ($id === '') {
-        http_response_code(400); // fehlermeldung
-        echo "Fehlende Produkt-ID.";
+        $item = getWohnungById($conn, $id);
+    if (!$item) {
+        http_response_code(404);
+        echo json_encode(['success' => false, 'message' => 'Produkt nicht gefunden.']);
         return;
     }
 
-        if (!isset($_SESSION['cart'][$id])) {
+        $name = $item['name'];
+    $description = $item['description'];
+    $price = (float)$item['price'];
+
+    if (!isset($_SESSION['cart'][$id])) {
         $_SESSION['cart'][$id] = [
             'id' => $id,
             'name' => $name,
@@ -32,7 +42,7 @@ if ($action === 'add') {
         $_SESSION['cart'][$id]['qty'] += 1;
     }
 
-        if (isset($_SESSION['user_id'])) {
+         if (isset($_SESSION['user_id'])) {
         $uid = (int)$_SESSION['user_id'];
         $stmt = $conn->prepare(
             "INSERT INTO cart_items (user_id, item_id, name, description, price, quantity) VALUES (?, ?, ?, ?, ?, 1) " .
@@ -45,13 +55,13 @@ if ($action === 'add') {
         }
     }
     
-    http_response_code(200); // Korrekte Bearbeitung prod. hinzugefügt
-    echo "Produkt hinzugefügt.";
+    http_response_code(200);
+    echo json_encode(['success' => true, 'name' => $name]);
     return;
 }
 
 if ($action === 'remove') {
-    if ($id !== '' && isset($_SESSION['cart'][$id])) {
+     if ($id > 0 && isset($_SESSION['cart'][$id])) {
         unset($_SESSION['cart'][$id]);
         if (isset($_SESSION['user_id'])) {
             $uid = (int)$_SESSION['user_id'];
@@ -62,12 +72,12 @@ if ($action === 'remove') {
                 $stmt->close();
             }
         }
-        http_response_code(200); // Korrekte bearbeitung prod. entfernt
-        echo "Produkt entfernt.";
+        http_response_code(200);
+        echo json_encode(['success' => true]);
         return;
     }
 
-    http_response_code(400); // fehlermeldung 
-    echo "Produkt nicht gefunden.";
+     http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Produkt nicht gefunden.']);
     return;
 }
