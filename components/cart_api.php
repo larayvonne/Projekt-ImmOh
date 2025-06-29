@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once "../components/dbaccess.php";
 header('Content-Type: application/json');
 
 $data = json_decode(file_get_contents("php://input"), true);

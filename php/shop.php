@@ -10,17 +10,7 @@ if ($result && $result->num_rows > 0) {
         $secondhandProdukte[] = $row;
     }
 }
-// Warenkorb hinzufügen
-if (isset($_GET['add_to_cart'])) {
-    $productId = intval($_GET['add_to_cart']);
-    $prev = isset($_SESSION['cart'][$productId]) && is_numeric($_SESSION['cart'][$productId])
-    ? $_SESSION['cart'][$productId]
-    : 0;
 
-    $_SESSION['cart'][$productId] = $prev + 1;
-
-    
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,12 +53,16 @@ if (isset($_GET['add_to_cart'])) {
             <?php foreach ($secondhandProdukte as $produkt): ?>
             <div class="col mb-4">
                 <div class="card" style="width: 18rem;">
-                <img src="<?= htmlspecialchars($produkt['bild_url']) ?>" class="card-img-top" alt="<?= htmlspecialchars($produkt['name']) ?>">
+                <?php
+                $bild = !empty($produkt['bild']) ? htmlspecialchars($produkt['bild']) : '../resources/platzhalter.png';
+                $name = htmlspecialchars($produkt['name']);
+                ?>
+                <img src="<?= $bild ?>" class="card-img-top" alt="<?= $name ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?= htmlspecialchars($produkt['name']) ?></h5>
                     <p class="card-text"><?= htmlspecialchars($produkt['beschreibung']) ?></p>
                     <p class="card-text"><strong>€<?= number_format($produkt['preis'], 2, ',', '.') ?></strong></p>
-                    <button class="addToCart btn btn-primary" data-id="<?= $produkt['id'] ?>">Zum Warenkorb hinzufügen</button>
+                    <button class="addToCart btn btn-primary" data-id="<?= $produkt['id'] ?>" data-type= "secondhand">Zum Warenkorb hinzufügen</button>
                 </div>
                 </div>
             </div>
@@ -107,15 +101,7 @@ if (isset($_GET['add_to_cart'])) {
 
   </main>
   <?php include("../components/footer.php"); ?>
-  <script src="../js/cart.js"></script>
+  <script src="../js/cart_shop.js"></script>
   <script src="../js/function.js"></script>
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
 </body>
 </html>
