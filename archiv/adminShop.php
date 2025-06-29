@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require_once "../components/dbaccess.php";
 
@@ -13,17 +13,18 @@ if (
 ) {
   $name = $_POST['name'] ?? '';
   $beschreibung = $_POST['beschreibung'] ?? '';
-  $bild_url = $_POST['bild'] ?? '';
+  $bild_url = $_POST['bild_url'] ?? '';
   $preis = floatval($_POST['preis'] ?? 0);
 
   if ($name && $bild_url && $preis > 0) {
-    $stmt = $conn->prepare("INSERT INTO wohnungen (name, beschreibung, preis, bild, typ) VALUES (?, ?, ?, ?, 'secondhand')");
-    $stmt->bind_param("ssds", $name, $beschreibung, $preis, $bild);
+    $stmt = $conn->prepare("INSERT INTO secondhand (name, beschreibung, preis, bild) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssds", $name, $beschreibung, $preis, $bild_url);
     $stmt->execute();
+    $successMessage = "Produkt erfolgreich hinzugefügt.";
   }
 }
 
-// Warenkorb (optional)
+// Warenkorb-Funktion
 if (isset($_GET['add_to_cart'])) {
   $productId = intval($_GET['add_to_cart']);
   $prev = isset($_SESSION['cart'][$productId]) && is_numeric($_SESSION['cart'][$productId]) ? $_SESSION['cart'][$productId] : 0;
@@ -31,7 +32,7 @@ if (isset($_GET['add_to_cart'])) {
 }
 
 // SecondHand-Produkte laden
-$result = $conn->query("SELECT * FROM wohnungen WHERE typ = 'secondhand'");
+$result = $conn->query("SELECT * FROM secondhand");
 $produkte = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 ?>
 
@@ -68,6 +69,11 @@ $produkte = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
   <?php if ($isAdmin): ?>
     <div class="bg-light text-dark p-4 rounded mb-5">
       <h4>Admin: Neues SecondHand-Produkt hinzufügen</h4>
+
+      <?php if (isset($successMessage)): ?>
+        <div class="alert alert-success"><?= htmlspecialchars($successMessage) ?></div>
+      <?php endif; ?>
+
       <form method="POST">
         <input type="hidden" name="add_product" value="1">
         <div class="mb-2">
@@ -95,7 +101,7 @@ $produkte = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
     <?php foreach ($produkte as $prod): ?>
       <div class="col">
         <div class="card h-100">
-          <img src="<?= htmlspecialchars($prod['bild_url']) ?>" class="card-img-top" alt="...">
+          <img src="<?= htmlspecialchars($prod['bild']) ?>" class="card-img-top" alt="Produktbild">
           <div class="card-body">
             <h5 class="card-title"><?= htmlspecialchars($prod['name']) ?></h5>
             <p class="card-text"><?= htmlspecialchars($prod['beschreibung']) ?></p>
@@ -109,6 +115,6 @@ $produkte = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 </main>
 
 <?php include("../components/footer.php"); ?>
-<script src="../js/cart.js"></script>
+<script src="../js/cart_shop.js"></script>
 </body>
 </html>
