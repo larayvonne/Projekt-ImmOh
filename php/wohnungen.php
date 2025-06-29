@@ -59,7 +59,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
           <a class="button" href=../php/w1.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="1" data-name="Familienwohnung mit Gartenzugang" data-description="4-Zimmer, 95 m²" data-price="1250">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="1">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 1">
@@ -85,7 +85,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
            <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="2" data-name="Smart-Apartment" data-description="2-Zimmer, 52 m²" data-price="790">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="2">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
@@ -111,7 +111,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
            <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="3" data-name="Dachgeschoss-Loft" data-description="3-Zimmer, 78 m²" data-price="1150">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung3.jpg" alt="Bild 3">
@@ -137,7 +137,7 @@ require_once "../components/dbaccess.php";
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
            <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
-          <button class="addToCart button" data-id="4" data-name="Generationenwohnung" data-description="3-Zimmer, 68 m²" data-price="880">Zum Warenkorb hinzufügen</button>
+          <button class="addToCart button" data-id="4">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung4.jpg" alt="Bild 4">
