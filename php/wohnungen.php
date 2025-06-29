@@ -188,6 +188,7 @@ if (isset($_GET['add_to_cart'])) {
 
   </main>
   <?php include("../components/footer.php"); ?>
+  <script src="../js/cart.js"></script>
   <script src="../js/function.js"></script>
   <script>
     function scrollToTop() {
