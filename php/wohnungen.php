@@ -5,11 +5,13 @@ require_once "../components/dbaccess.php";
 // Warenkorb hinzufügen
 if (isset($_GET['add_to_cart'])) {
     $productId = intval($_GET['add_to_cart']);
-    $_SESSION['cart'][$productId] = ($_SESSION['cart'][$productId] ?? 0) + 1;
+    $prev = isset($_SESSION['cart'][$productId]) && is_numeric($_SESSION['cart'][$productId])
+    ? $_SESSION['cart'][$productId]
+    : 0;
 
-    // Weiterleitung ohne GET-Parameter zur Vermeidung von Doppeleintrag
-    header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
-    exit;
+    $_SESSION['cart'][$productId] = $prev + 1;
+
+    
 }
 ?>
 <!DOCTYPE html>
@@ -69,7 +71,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
           <a class="button" href=../php/w1.php>Weitere Informationen</a>
-          <a class="button" href="?add_to_cart=1">Zum Warenkorb hinzufügen</a>
+          <button class="addToCart" data-id="1">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 1">
@@ -95,7 +97,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
            <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
-          <a class="button" href="?add_to_cart=2">Zum Warenkorb hinzufügen</a>
+           <button class="addToCart" data-id="2">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
@@ -121,7 +123,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
            <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
-          <a class="button" href="?add_to_cart=3">Zum Warenkorb hinzufügen</a>
+           <button class="addToCart" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung3.jpg" alt="Bild 3">
@@ -147,7 +149,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
            <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
-          <a class="button" href="?add_to_cart=4">Zum Warenkorb hinzufügen</a>
+           <button class="addToCart" data-id="4">Zum Warenkorb hinzufügen</button>
         <div class="image">
           <img src="../resources/products/wohnung4.jpg" alt="Bild 4">
         </div>
