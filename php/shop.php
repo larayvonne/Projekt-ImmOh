@@ -2,24 +2,6 @@
 session_start();
 require_once "../components/dbaccess.php";
 
-// SecondHand-Produkt zum Warenkorb hinzufügen
-if (isset($_GET['add_to_cart']) && isset($_GET['type']) && $_GET['type'] === 'secondhand') {
-    $productId = intval($_GET['add_to_cart']);
-
-    if (!isset($_SESSION['cart']['secondhand'])) {
-        $_SESSION['cart']['secondhand'] = [];
-    }
-
-    if (!isset($_SESSION['cart']['secondhand'][$productId])) {
-        $_SESSION['cart']['secondhand'][$productId] = 1;
-    } else {
-        $_SESSION['cart']['secondhand'][$productId]++;
-    }
-
-    header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
-    exit();
-}
-
 // Produkte laden
 $secondhandProdukte = [];
 $result = $conn->query("SELECT * FROM secondhand");
@@ -79,7 +61,9 @@ if ($result && $result->num_rows > 0) {
                 <h5 class="card-title"><?= $name ?></h5>
                 <p class="card-text"><?= htmlspecialchars($produkt['beschreibung']) ?></p>
                 <p class="card-text"><strong>€<?= number_format($produkt['preis'], 2, ',', '.') ?></strong></p>
-                <a href="?add_to_cart=<?= $produkt['second_id'] ?>&type=secondhand" class="btn btn-primary">Zum Warenkorb hinzufügen</a>
+                <button class="btn btn-primary addToCart" data-id="<?= $produkt['second_id'] ?>">
+  Zum Warenkorb hinzufügen
+</button>
               </div>
             </div>
           </div>

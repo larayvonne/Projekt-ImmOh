@@ -1,25 +1,23 @@
-document.querySelectorAll('.addToCart').forEach(button => {
+document.querySelectorAll('.addToCartWohnung').forEach(button => {
   button.addEventListener('click', (event) => {
-    event.preventDefault(); //  Verhindert "Nach-oben-Springen"!
+    event.preventDefault(); // Kein Reload
     const id = button.dataset.id;
 
-    fetch('../components/cart_api.php', {
+    fetch('../components/add_to_cart_ajax_wohnungen.php', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ productId: id })
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'wohnung_id=' + encodeURIComponent(id)
     })
     .then(res => res.json())
     .then(data => {
-      alert('Zum Warenkorb hinzugefügt!');
+      if (data.success) {
+        alert(`Wohnung hinzugefügt!`);
+      } else {
+        alert('Fehler beim Hinzufügen');
+      }
+    })
+    .catch(err => {
+      console.error('AJAX Fehler:', err);
     });
-  });
-});
-
-
-document.querySelectorAll('.addToCartWohnung').forEach(button => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    const id = button.getAttribute('data-id');
-    window.location.href = `${window.location.pathname}?wohnung_id=${id}`;
   });
 });

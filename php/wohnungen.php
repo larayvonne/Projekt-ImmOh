@@ -16,9 +16,7 @@ if (isset($_GET['wohnung_id'])) {
         $_SESSION['cart']['wohnungen'][$wohnungId]++;
     }
 
-    // Nach Hinzufügen Weiterleitung zur selben Seite ohne GET-Parameter
-    header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
-    exit();
+    
 }
 ?>
 <!DOCTYPE html>
