@@ -47,6 +47,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "❌ Bitte ein Bild hochladen.";
     }
 }
+
+      // Produktliste laden
+      $secondhandProdukte = [];
+      $result = $conn->query("SELECT * FROM secondhand");
+      if ($result && $result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              $secondhandProdukte[] = $row;
+          }
+      }
+
+      // Feedback-Meldung aus delete_product.php
+      if (isset($_GET['msg'])) {
+          switch ($_GET['msg']) {
+              case 'deleted':
+                  $message = "✅ Produkt erfolgreich gelöscht.";
+                  break;
+              case 'error':
+                  $message = "❌ Fehler beim Löschen.";
+                  break;
+              case 'invalid':
+                  $message = "❌ Ungültiger Löschversuch.";
+                  break;
+          }
+      }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -112,10 +138,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </button>
     </form>
 
+    <h2 class="mt-5 headline text">Vorhandene Produkte</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($secondhandProdukte as $produkt): ?>
+          <?php
+            $bildPfad = !empty($produkt['bild']) && file_exists($produkt['bild']) 
+              ? htmlspecialchars($produkt['bild']) 
+              : '../resources/platzhalter.png';
+          ?>
+          <div class="col">
+            <div class="card h-100">
+              <img src="<?= $bildPfad ?>" class="card-img-top" alt="<?= htmlspecialchars($produkt['name']) ?>">
+              <div class="card-body">
+                <h5 class="card-title"><?= htmlspecialchars($produkt['name']) ?></h5>
+                <p class="card-text"><?= htmlspecialchars($produkt['beschreibung']) ?></p>
+                <p class="card-text"><strong>€<?= number_format($produkt['preis'], 2, ',', '.') ?></strong></p>
+              </div>
+              <div class="card-footer text-center">
+                <form method="POST" action="delete_product.php" onsubmit="return confirm('Wirklich löschen?');">
+                  <input type="hidden" name="produkt_id" value="<?= $produkt['second_id'] ?>">
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Löschen
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
     <a href="index.php" class="btn btn-link mt-3 text">
       <i class="fas fa-arrow-left"></i> Zurück zur Startseite
     </a>
   </main>
+
+
 
   <?php include("../components/footer.php"); ?>
   <script src="../js/function.js"></script>
