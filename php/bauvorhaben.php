@@ -112,6 +112,7 @@ if (isset($_GET['wohnung_id'])) {
     </div>
 
     <div class="end">
+      <h2>Ein nachhaltiger Stadtteil für Wien </h2>
       <div class="container end">
         <div class="row row-cols-1 row-cols-md-3">
           <div class="col">
