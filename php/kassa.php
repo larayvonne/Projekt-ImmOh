@@ -47,13 +47,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="headline mb-4">
       <h1 class="replace-text-primary">Kassa – Bestellung abschließen</h1>
-      <p>Bitte geben Sie Ihre Daten ein und wählen Sie eine Zahlungsmethode.</p>
+      <p class="text">Bitte geben Sie Ihre Daten ein und wählen Sie eine Zahlungsmethode.</p>
     </div>
 
     <form method="POST" class="bg-light p-4 rounded border border-light shadow" id="checkoutForm">
       <div class="mb-3">
         <label for="name" class="text">Name*</label>
         <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="text">Adresse*</label>
+        <input type="text" class="form-control" id="adresse" name="adresse" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="text">Adresszusatz*</label>
+        <input type="text" class="form-control" id="adresse" name="adresse" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="text">Postleitzahl*</label>
+        <input type="text" class="form-control" id="plz" name="plz" required>
       </div>
 
       <div class="mb-3">
