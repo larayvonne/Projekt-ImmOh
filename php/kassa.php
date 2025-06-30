@@ -50,31 +50,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <p>Bitte geben Sie Ihre Daten ein und wählen Sie eine Zahlungsmethode.</p>
     </div>
 
-    <form method="POST" class="bg-dark p-4 rounded border border-light shadow" id="checkoutForm">
+    <form method="POST" class="bg-light p-4 rounded border border-light shadow" id="checkoutForm">
       <div class="mb-3">
-        <label for="name" class="form-label">Name*</label>
+        <label for="name" class="text">Name*</label>
         <input type="text" class="form-control" id="name" name="name" required>
       </div>
 
       <div class="mb-3">
-        <label for="email" class="form-label">E-Mail-Adresse*</label>
+        <label for="email" class="text">E-Mail-Adresse*</label>
         <input type="email" class="form-control" id="email" name="email" required>
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Zahlungsmethode*</label>
-        <div class="form-check">
+        <label class="text">Zahlungsmethode*</label>
+        <div class="text">
           <input class="form-check-input" type="radio" name="zahlungsmethode" id="bank" value="Banküberweisung" required>
           <label class="form-check-label" for="bank">Banküberweisung</label>
         </div>
-        <div class="form-check">
+        <div class="text">
           <input class="form-check-input" type="radio" name="zahlungsmethode" id="rechnung" value="Rechnung" required>
           <label class="form-check-label" for="rechnung">Kauf auf Rechnung</label>
         </div>
       </div>
 
       <div class="mb-3" id="ibanField" style="display: none;">
-        <label for="iban" class="form-label">IBAN*</label>
+        <label for="iban" class="text">IBAN*</label>
         <input type="text" class="form-control" id="iban" name="iban" placeholder="DE00 1234 5678 9000 0000 00">
       </div>
 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </button>
     </form>
 
-    <a href="cart.php" class="btn btn-outline-light mt-3">← Zurück zum Warenkorb</a>
+    <a href="cart.php" class="btn btn-outline text">← Zurück zum Warenkorb</a>
   </main>
 
   <?php include("../components/footer.php"); ?>

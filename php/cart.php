@@ -68,7 +68,7 @@ foreach ($products as $p) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
-  <link rel="stylesheet" href="../css/cssWohnungen.css">
+  <link rel="stylesheet" href="../css/cssCart.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -90,12 +90,12 @@ foreach ($products as $p) {
 
     <div class="headline">
       <h1 class="replace-text-primary"> Dein Warenkorb</h1>
-      <p class="mb-4">Hier findest du alle Wohnungen, die du vorgemerkt hast.</p>
+      <p class="text">Hier findest du alle Wohnungen, die du vorgemerkt hast.</p>
     </div>
     <?php if (empty($products)): ?>
-      <div class="alert alert-warning text-dark">Dein Warenkorb ist leer.</div>
+      <div class="alert alert-warning text">Dein Warenkorb ist leer.</div>
     <?php else: ?>
-      <table class="table">
+      <table class="table ">
         <thead>
           <tr>
             <th>Typ</th>
@@ -126,7 +126,7 @@ foreach ($products as $p) {
         </tbody>
       </table>
 
-      <p class="fs-4">Gesamtsumme: <strong>€<?= number_format($total, 2, ',', '.') ?></strong></p>
+      <p class="text">Gesamtsumme: <strong>€<?= number_format($total, 2, ',', '.') ?></strong></p>
       <a href="kassa.php" class="btn btn-success">Zur Kassa gehen</a>
     <?php endif; ?>
 

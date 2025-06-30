@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
-  <link rel="stylesheet" href="../css/cssWohnungen.css">
+  <link rel="stylesheet" href="../css/cssDanke.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -28,24 +28,24 @@
     </ol>
   </nav>
 
-  <div class="headline mb-4">
+  <div class="headline text">
     <h1 class="replace-text-primary">Vielen Dank für Ihre Bestellung!</h1>
-    <p class="fs-5">Ihre Anfrage wurde erfolgreich übermittelt.</p>
+    <p class="text">Ihre Anfrage wurde erfolgreich übermittelt.</p>
   </div>
 
-  <div class="bg-dark p-4 rounded border border-light shadow">
-    <p class="mb-3">Wir haben Ihre Bestellung erhalten und werden uns in Kürze mit weiteren Informationen bei Ihnen melden.</p>
+  <div class="bg-light p-4 rounded border border-light shadow">
+    <p class="text">Wir haben Ihre Bestellung erhalten und werden uns in Kürze mit weiteren Informationen bei Ihnen melden.</p>
 
-    <ul>
+    <ul class="text ">
       <li>Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.</li>
       <li>Unsere Berater prüfen Ihre Auswahl und melden sich zeitnah bei Ihnen.</li>
       <li>Bei Fragen stehen wir Ihnen jederzeit zur Verfügung.</li>
     </ul>
 
-    <p class="mt-4">Vielen Dank, dass Sie sich für <strong>ImmOH!</strong> entschieden haben. Gemeinsam bauen wir nachhaltig an Ihrer Zukunft.</p>
+    <p class="text">Vielen Dank, dass Sie sich für <strong>ImmOH!</strong> entschieden haben. Gemeinsam bauen wir nachhaltig an Ihrer Zukunft.</p>
 
-    <a href="index.php" class="btn btn-outline-light mt-4">
-      <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+    <a href="index.php" class="btn btn-outline mt-4">
+      <i class="fas fa-arrow-left text"></i> Zurück zur Startseite
     </a>
   </div>
 

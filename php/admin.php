@@ -54,17 +54,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin – SecondHand hinzufügen</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>SecondHand</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
+  <link rel="stylesheet" href="../css/cssAdmin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="replace-bg-dark text-white">
-  <?php include("../components/header.php"); ?>
+<?php include("../components/header.php"); ?>
 
+<body class="replace-bg-dark">
+  <main>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mt-3 ms-2">
+        <li class="breadcrumb-item">
+          <a class="text-decoration-none replace-link-dark" href="index.php">
+            <i class="fas fa-home"></i> ImmOH!
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">SecondHand</li>
+      </ol>
+    </nav>
+ 
   <main class="container mt-5">
-    <h1 class="mb-4">🛒 SecondHand-Artikel hinzufügen</h1>
+    <h1 class="headline text"> SecondHand-Artikel hinzufügen</h1>
 
     <?php if ($message): ?>
       <div class="alert <?= str_starts_with($message, '✅') ? 'alert-success' : 'alert-danger' ?>">
@@ -72,23 +86,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     <?php endif; ?>
 
-    <form method="POST" enctype="multipart/form-data" class="bg-dark p-4 rounded shadow border border-secondary">
-      <div class="mb-3">
+    <form method="POST" enctype="multipart/form-data" class="bg-light p-4 rounded shadow border border-secondary">
+      <div class="text">
         <label for="name" class="form-label">Produktname</label>
         <input type="text" name="name" id="name" class="form-control" required>
       </div>
 
-      <div class="mb-3">
+      <div class="text">
         <label for="beschreibung" class="form-label">Beschreibung</label>
         <textarea name="beschreibung" id="beschreibung" class="form-control" rows="4" required></textarea>
       </div>
 
-      <div class="mb-3">
+      <div class="text">
         <label for="preis" class="form-label">Preis (€)</label>
         <input type="number" name="preis" id="preis" class="form-control" step="0.01" required>
       </div>
 
-      <div class="mb-3">
+      <div class="text">
         <label for="bild" class="form-label">Bild hochladen (JPG, PNG, GIF)</label>
         <input type="file" name="bild" id="bild" class="form-control" accept="image/*" required>
       </div>
@@ -98,11 +112,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </button>
     </form>
 
-    <a href="index.php" class="btn btn-link mt-3 text-light">
+    <a href="index.php" class="btn btn-link mt-3 text">
       <i class="fas fa-arrow-left"></i> Zurück zur Startseite
     </a>
   </main>
 
   <?php include("../components/footer.php"); ?>
+  <script src="../js/function.js"></script>
 </body>
 </html>
