@@ -2,16 +2,23 @@
 session_start();
 require_once "../components/dbaccess.php";
 
-// Warenkorb hinzufügen
-if (isset($_GET['add_to_cart'])) {
-    $productId = intval($_GET['add_to_cart']);
-    $prev = isset($_SESSION['cart'][$productId]) && is_numeric($_SESSION['cart'][$productId])
-    ? $_SESSION['cart'][$productId]
-    : 0;
+// Wohnung zum Warenkorb hinzufügen
+if (isset($_GET['wohnung_id'])) {
+    $wohnungId = intval($_GET['wohnung_id']);
 
-    $_SESSION['cart'][$productId] = $prev + 1;
+    if (!isset($_SESSION['cart']['wohnungen'])) {
+        $_SESSION['cart']['wohnungen'] = [];
+    }
 
-    
+    if (!isset($_SESSION['cart']['wohnungen'][$wohnungId])) {
+        $_SESSION['cart']['wohnungen'][$wohnungId] = 1;
+    } else {
+        $_SESSION['cart']['wohnungen'][$wohnungId]++;
+    }
+
+    // Nach Hinzufügen Weiterleitung zur selben Seite ohne GET-Parameter
+    header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -71,7 +78,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 1.250,- / m²</p>
           <a class="button" href=../php/w1.php>Weitere Informationen</a>
-          <button class="addToCart" data-id="1">Zum Warenkorb hinzufügen</button>
+          <button type="button" class="addToCartWohnung" data-id="1">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung1.jpg" alt="Bild 1">
@@ -97,7 +104,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
            <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
-           <button class="addToCart" data-id="2">Zum Warenkorb hinzufügen</button>
+           <button type="button" class="addToCartWohnung" data-id="2">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung2.jpg" alt="Bild 2">
@@ -123,7 +130,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
            <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
-           <button class="addToCart" data-id="3">Zum Warenkorb hinzufügen</button>
+           <button type="button" class="addToCartWohnung" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
           <img src="../resources/products/wohnung3.jpg" alt="Bild 3">
@@ -149,7 +156,7 @@ if (isset($_GET['add_to_cart'])) {
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
            <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
-           <button class="addToCart" data-id="4">Zum Warenkorb hinzufügen</button>
+           <button type="button" class="addToCartWohnung" data-id="4">Zum Warenkorb hinzufügen</button>
         <div class="image">
           <img src="../resources/products/wohnung4.jpg" alt="Bild 4">
         </div>

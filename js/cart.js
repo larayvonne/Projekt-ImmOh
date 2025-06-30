@@ -1,6 +1,6 @@
 document.querySelectorAll('.addToCart').forEach(button => {
-  button.addEventListener('click', e => {
-    e.preventDefault(); // 🧠 Verhindert "Nach-oben-Springen"!
+  button.addEventListener('click', (event) => {
+    event.preventDefault(); //  Verhindert "Nach-oben-Springen"!
     const id = button.dataset.id;
 
     fetch('../components/cart_api.php', {
@@ -12,5 +12,14 @@ document.querySelectorAll('.addToCart').forEach(button => {
     .then(data => {
       alert('Zum Warenkorb hinzugefügt!');
     });
+  });
+});
+
+
+document.querySelectorAll('.addToCartWohnung').forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const id = button.getAttribute('data-id');
+    window.location.href = `${window.location.pathname}?wohnung_id=${id}`;
   });
 });

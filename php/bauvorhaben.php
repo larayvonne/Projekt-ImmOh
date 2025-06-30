@@ -2,16 +2,23 @@
 session_start();
 require_once "../components/dbaccess.php";
 
-// Warenkorb hinzufügen
-if (isset($_GET['add_to_cart'])) {
-    $productId = intval($_GET['add_to_cart']);
-    $prev = isset($_SESSION['cart'][$productId]) && is_numeric($_SESSION['cart'][$productId])
-    ? $_SESSION['cart'][$productId]
-    : 0;
+// Wohnung zum Warenkorb hinzufügen
+if (isset($_GET['wohnung_id'])) {
+    $wohnungId = intval($_GET['wohnung_id']);
 
-    $_SESSION['cart'][$productId] = $prev + 1;
+    if (!isset($_SESSION['cart']['wohnungen'])) {
+        $_SESSION['cart']['wohnungen'] = [];
+    }
 
-    
+    if (!isset($_SESSION['cart']['wohnungen'][$wohnungId])) {
+        $_SESSION['cart']['wohnungen'][$wohnungId] = 1;
+    } else {
+        $_SESSION['cart']['wohnungen'][$wohnungId]++;
+    }
+
+    // Nach Hinzufügen Weiterleitung zur selben Seite ohne GET-Parameter
+    header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -67,7 +74,7 @@ if (isset($_GET['add_to_cart'])) {
             Geschäften des täglichen Bedarfs, Schulen und dem Simmeringer Markt machen dieses Projekt zu einem besonders
             attraktiven Standort. Die ruhige, aber gleichzeitig zentrale Lage ermöglicht es, das urbane Leben in Wien in
             vollen Zügen zu genießen.</p>
-          <button class="addToCart" data-id="5">Jetzt Anteile kaufen</button>
+            <button type="button" class="addToCartWohnung" data-id="5">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/greenliving.png">
@@ -81,7 +88,7 @@ if (isset($_GET['add_to_cart'])) {
             Wohnungsgrößen von 44-79 m² bietet es zahlreiche Optionen für ein individuelles Wohnen. Durch die
             ausgezeichnete öffentliche Verkehrsanbindung (U4/U6) und umliegende Infrastruktur (Meidlinger Markt,
             Geschäfte des täglichen Bedarfs, etc.) ist die Immobilie ein attraktiver Standort im Herzen der Stadt Wien.</p>
-          <button class="addToCart" data-id="6">Jetzt Anteile kaufen</button>
+          <button type="button" class="addToCartWohnung" data-id="6">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/gutenberg.png">
@@ -98,7 +105,7 @@ if (isset($_GET['add_to_cart'])) {
             damit entweder direkten Zugang oder Blick ins Grüne. Zusätzlich verfügen jene Wohnungen mit eigenem Garten
             über eine Pergola. Besonders hervorzuheben ist die große Freifläche im Süden des Grundstücks, wo ein
             Erholungsareal für alle Bewohner*innen geschaffen wird.</p>
-          <button class="addToCart" data-id="7" data-price="100">Jetzt Anteile kaufen</button>
+          <button type="button" class="addToCartWohnung" data-id="7">Jetzt Anteile kaufen</button>
         </div>
         <div class="image">
           <img src="../resources/bau/moedling.png">

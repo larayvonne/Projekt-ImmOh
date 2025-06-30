@@ -57,7 +57,6 @@ foreach ($products as $p) {
     $total += $p['subtotal'];
 }
 ?>
-?>
 
 <!DOCTYPE html>
 <html lang="de">
