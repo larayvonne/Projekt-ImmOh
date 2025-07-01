@@ -2,6 +2,12 @@
 session_start();
 require_once "../components/dbaccess.php";
 
+// nicht eingeloggter User wird auf login.php geleitet
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
 // Produkt entfernen (Typ und ID müssen mitgegeben werden!)
 if (isset($_GET['remove']) && isset($_GET['type'])) {
     $type = $_GET['type'];
