@@ -13,7 +13,7 @@ require "../components/dbaccess.php";
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
-  <link rel="stylesheet" href="../css/cssCarusel.css">
+  <link rel="stylesheet" href="../css/cssWohnungen.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -36,43 +36,16 @@ require "../components/dbaccess.php";
     <div class="headline">
       <h1 class="replace-text-primary">Familienwohnung mit Gartenzugang</h1>
       <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
-
-    <div class="container text-center">
-      <div class="row">
-        <div class="col">
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-inner  ">
-              <div class="carousel-item active ">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item ">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          </div>
-        <div class="col text">
         
         <h3>Highlights der Wohnung:</h3>
-        <ul>
-          <li>Großzügiger Wohn-Essbereich mit offener Küche – viel Platz für gemeinsame Zeit</li>
-          <li>Drei Schlafzimmer – perfekt für Kinder, Gäste oder ein ruhiges Homeoffice</li>
-          <li>Direkter Zugang zum privaten Gartenanteil – genießen Sie Ihre grüne Oase direkt vor der Tür</li>
-          <li>Barrierefrei und in hochwertiger Holzbauweise errichtet – modern, nachhaltig und komfortabel</li>
-          <li>Kindergarten und Schule sind in wenigen Gehminuten erreichbar – kurze Wege für den Alltag</li>
-          <li>Effiziente Energieversorgung durch Fernwärme und Solarenergie – niedrige Betriebskosten inklusive</li>
-        </ul>
+       
+          <p>Großzügiger Wohn-Essbereich mit offener Küche – viel Platz für gemeinsame Zeit</p>
+          <p>Drei Schlafzimmer – perfekt für Kinder, Gäste oder ein ruhiges Homeoffice</p>
+          <p>Direkter Zugang zum privaten Gartenanteil – genießen Sie Ihre grüne Oase direkt vor der Tür</p>
+          <p>Barrierefrei und in hochwertiger Holzbauweise errichtet – modern, nachhaltig und komfortabel</p>
+          <p>Kindergarten und Schule sind in wenigen Gehminuten erreichbar – kurze Wege für den Alltag</p>
+          <p>Effiziente Energieversorgung durch Fernwärme und Solarenergie – niedrige Betriebskosten inklusive</p>
+        
 
         <p><strong>💰 Kaufpreis:</strong> ab € 1.250,- / m²<br>
           <strong>📐 Gesamtfläche:</strong> 95 m²<br>

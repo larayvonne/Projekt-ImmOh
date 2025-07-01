@@ -13,7 +13,7 @@ require "../components/dbaccess.php";
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
-  <link rel="stylesheet" href="../css/cssCarusel.css">
+  <link rel="stylesheet" href="../css/cssWohnungen.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -34,39 +34,30 @@ require "../components/dbaccess.php";
       </ol>
     </nav>
     <div class="headline">
-      <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
-      <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
+      <h1 class="replace-text-primary">Generationenwohnung – barrierefrei & gemeinschaftsnah</h1>
+      <p>Für Senioren oder generationenübergreifendes Wohnen mit Komfort und Anschluss. </p>
 
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-inner  ">
-            <div class="carousel-item active ">
-              <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item ">
-              <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        </div>
-      <div class="col">
-        Column
-      </div>
-    </div>
-    </div>
+      <h3>Wohnen mit Weitblick & Herz:</h3>
+      
+        <p>benerdig gelegen mit direktem Zugang zum gemeinschaftlichen Innenhof & Garten – sicher und bequem</p>
+        <p>Zwei Schlafzimmer plus ein flexibel nutzbarer Raum – z. B. als Büro, Gästezimmer oder Hobbyraum</p>
+        <p>Zentrale Lage mit Nähe zu Nahversorgern, medizinischer Betreuung und vielfältigen Freizeitangeboten</p>
+        <p>Teil eines „Mehrgenerationenhauses“ mit Gemeinschaftsräumen, die Austausch und Unterstützung fördern</p>
+        <p>Nachhaltige Bauweise mit natürlichen Materialien wie Lehm und Holz – für ein gesundes Raumklima</p>
+    
+
+      <h3>Wohnungsdaten:</h3>
+      
+        <li>💰 <strong>Kaufpreis:</strong> ab € 880,- / m²</li>
+        <li>📐 <strong>Wohnfläche:</strong> 68 m²</li>
+        <li>🚪 <strong>Zimmer:</strong> 3</li>
+        <li>♿ <strong>Barrierefreiheit:</strong> ebenerdig & schwellenlos</li>
+        <li>🌳 <strong>Außenbereich:</strong> Innenhof & Garten zur Mitnutzung</li>
+        <li>👥 <strong>Gemeinschaft:</strong> Gemeinschaftsräume im Haus</li>
+      </ul>
+
+      <h3>📞 Leben in Gemeinschaft – informieren Sie sich jetzt und vereinbaren Sie einen Besichtigungstermin!</h3>
+      <p><strong>Ein Zuhause mit Herz und Anschluss wartet auf Sie.</strong></p>
 
       <div class="end">
         <h2>Ein nachhaltiger Stadtteil für Wien </h2>

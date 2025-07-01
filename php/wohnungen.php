@@ -100,7 +100,7 @@ if (isset($_GET['wohnung_id'])) {
           <p> ⋅ Fahrradabstellraum & E-Ladestation im Haus</p>
 
           <p> ⋅ Kaufpreis: ab € 790,- / m²</p>
-           <a class="button" href=../php/wohnungen/w2.php>Weitere Informationen</a>
+           <a class="button" href=../php/w2.php>Weitere Informationen</a>
            <button type="button" class="addToCartWohnung" data-id="2">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
@@ -125,7 +125,7 @@ if (isset($_GET['wohnung_id'])) {
           <p> ⋅ Nähe zu Ateliers, Co-Working-Spaces & Cafés</p>
 
           <p> ⋅ Kaufpreis: ab € 1.150,- / m²</p>
-           <a class="button" href=../php/wohnungen/w3.php>Weitere Informationen</a>
+           <a class="button" href=../php/w3.php>Weitere Informationen</a>
            <button type="button" class="addToCartWohnung" data-id="3">Zum Warenkorb hinzufügen</button>
         </div>
         <div class="image">
@@ -150,7 +150,7 @@ if (isset($_GET['wohnung_id'])) {
           <p> ⋅ Nachhaltige Bauweise mit Lehm und Holz</p>
 
           <p> ⋅ Kaufpreis: ab € 880,- / m²</p>
-           <a class="button" href=../php/wohnungen/w4.php>Weitere Informationen</a>
+           <a class="button" href=../php/w4.php>Weitere Informationen</a>
            <button type="button" class="addToCartWohnung" data-id="4">Zum Warenkorb hinzufügen</button>
         <div class="image">
           <img src="../resources/products/wohnung4.jpg" alt="Bild 4">

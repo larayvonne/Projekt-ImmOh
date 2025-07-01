@@ -13,7 +13,7 @@ require "../components/dbaccess.php";
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
-  <link rel="stylesheet" href="../css/cssCarusel.css">
+  <link rel="stylesheet" href="../css/cssWohnungen.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -34,39 +34,29 @@ require "../components/dbaccess.php";
       </ol>
     </nav>
     <div class="headline">
-      <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
-      <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
-      
-    <div class="container text-center">
-      <div class="row">
-        <div class="col">
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-inner  ">
-              <div class="carousel-item active ">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item ">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          </div>
-        <div class="col">
-          Column
-        </div>
-      </div>
+      <h1 class="replace-text-primary">Smart-Apartment für Singles oder Paare</h1>
+      <p>Perfekt für Berufstätige, Studierende oder Paare mit modernem Lebensstil.</p>
     </div>
+    
+    <h3 class="wtext">Highlights des Apartments:</h3>
+
+    <p>Effiziente Raumaufteilung mit durchdachtem Stauraum – jeder Quadratmeter zählt</p>
+    <p>Helle Wohnküche mit Zugang zur Loggia – entspannter Grünblick inklusive</p>
+    <p>Nachhaltig gebaut mit natürlichen Materialien wie Lehmputz und Ziegel – für ein gesundes Wohnklima</p>
+    <p>Top Anbindung: nur wenige Minuten zur U1-Endstation – in 15 Minuten direkt in der City</p>
+    <p>Fahrradabstellraum und E-Ladestation im Haus – modern und zukunftsorientiert</p>
+  
+
+  <h3>Wohnungsdaten:</h3>
+  <p>💰 <strong>Kaufpreis:</strong> ab € 790,- / m²</p>
+  <p>📐 <strong>Wohnfläche:</strong> 52 m²</p>
+  <p>🚪 <strong>Zimmer:</strong> 2 (inkl. offener Wohnküche)</p>
+  <p>🌿 <strong>Loggia:</strong> mit Grünblick</p>
+  <p>⚡ <strong>Ausstattung:</strong> E-Ladestation & Fahrradraum</p>
+  <p>🏗️ <strong>Bauweise:</strong> Nachhaltig</p>
+
+  <h3>📞 Jetzt informieren & Besichtigungstermin sichern!</h3>
+  <p>Ihr neues Zuhause wartet auf Sie.</p>
 
       <div class="end">
         <h2>Ein nachhaltiger Stadtteil für Wien </h2>

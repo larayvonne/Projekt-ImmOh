@@ -13,7 +13,7 @@ require "../components/dbaccess.php";
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../resources/immohIcon.png">
   <link rel="stylesheet" href="../css/cssLayout.css">
-  <link rel="stylesheet" href="../css/cssCarusel.css">
+  <link rel="stylesheet" href="../css/cssWohnungen.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -34,39 +34,31 @@ require "../components/dbaccess.php";
       </ol>
     </nav>
     <div class="headline">
-      <h1 class="replace-text-primary">ImmOH! KlimaWohnungen - nachhaltig und günstig wohnen</h1>
-      <p>Leistbares und umweldfreundliches Wohnen, damit Sie im Altag Gutes für die Umwelt und Ihre Geldbörse tun. </p>
+      <h1 class="replace-text-primary">Dachgeschoss-Loft mit Weitblick</h1>
+      <p>Für Individualisten, Kreative oder Paare mit dem Wunsch nach etwas Besonderem.</p>
       
-    <div class="container text-center">
-      <div class="row">
-        <div class="col">
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-inner  ">
-              <div class="carousel-item active ">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item ">
-                <img src="../resources/products/wohnung1.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          </div>
-        <div class="col">
-          Column
-        </div>
-      </div>
-    </div>
+    
+      <h3>Das erwartet Sie:</h3>
+     
+        <p>Offenes Loft-Design mit charmanten sichtbaren Holzbalken – urbaner Charakter mit Wärme</p>
+        <p>Große Dachterrasse mit traumhaftem Ausblick über die Grünräume von Rothneusiedl</p>
+        <p>Begrüntes Dach – für ein angenehmes Mikroklima und nachhaltiges Wohnen</p>
+        <p>Modernes Smart-Home-System zur Steuerung von Licht, Heizung und Sicherheit – bequem per App</p>
+        <p>Perfekte Lage: fußläufig zu Ateliers, Co-Working-Spaces und gemütlichen Cafés – kreative Umgebung inklusive</p>
+      
+
+      <h3>Wohnungsdaten:</h3>
+      <ul>
+        <li>💰 <strong>Kaufpreis:</strong> ab € 1.150,- / m²</li>
+        <li>📐 <strong>Wohnfläche:</strong> 78 m²</li>
+        <li>🚪 <strong>Zimmer:</strong> 3</li>
+        <li>🌿 <strong>Dachterrasse:</strong> Begrünte Terrasse mit Weitblick</li>
+        <li>🧠 <strong>Ausstattung:</strong> Smart-Home-System</li>
+        <li>🎨 <strong>Umfeld:</strong> Kreatives Viertel mit urbanem Flair</li>
+      </ul>
+
+      <h3>📞 Jetzt entdecken und das Besondere finden – Besichtigung auf Anfrage!</h3>
+      <p><strong>Vereinbaren Sie noch heute einen Termin!</strong></p>
 
       <div class="end">
         <h2>Ein nachhaltiger Stadtteil für Wien </h2>
