@@ -19,6 +19,7 @@ require_once "../components/dbaccess.php";
   <link rel="icon" type="image/png" href="resources/immohIcon.png" />
   <link rel="stylesheet" href="../css/cssLayout.css" />
   <link rel="stylesheet" href="../css/cssAdmin.css" />
+  <link rel="stylesheet" href="../css/cssBenutzer.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -64,13 +65,20 @@ require_once "../components/dbaccess.php";
             echo "<td>{$row['rolle']}</td>";
             echo "<td>$statusText</td>";
             echo "<td>";
-            if ($row['aktiv']) {
-              echo "<form method='POST' action='deactivate_user.php' onsubmit='return confirm(\"Benutzer wirklich deaktivieren?\");'>";
-              echo "<input type='hidden' name='id' value='{$row['id']}'>";
-              echo "<button type='submit' class='btn btn-sm btn-danger'>Deaktivieren</button>";
-              echo "</form>";
+            if ($row['rolle'] !== 'admin') {
+                if ($row['aktiv']) {
+                    echo "<form method='POST' action='benutzerInaktiv.php' onsubmit='return confirm(\"Benutzer wirklich deaktivieren?\");'>";
+                    echo "<input type='hidden' name='id' value='{$row['id']}'>";
+                    echo "<button type='submit' class='btn btn-sm btn-danger'>Deaktivieren</button>";
+                    echo "</form>";
+                } else {
+                    echo "<form method='POST' action='benutzerAktiv.php' onsubmit='return confirm(\"Benutzer reaktivieren?\");'>";
+                    echo "<input type='hidden' name='id' value='{$row['id']}'>";
+                    echo "<button type='submit' class='btn btn-sm btn-success'>Reaktivieren</button>";
+                    echo "</form>";
+                }
             } else {
-              echo "-";
+                echo "-";
             }
             echo "</td></tr>";
           }
