@@ -80,25 +80,6 @@ if ($result && $result->num_rows > 0) {
       </div>
     </div>
 
-    <div class="end mt-5">
-      <h2>Ein nachhaltiger Stadtteil für Wien</h2>
-      <div class="container">
-        <div class="row row-cols-1 row-cols-md-3">
-          <div class="col">
-            <h5><i class="bi bi-tree"></i> Nachhaltige Materialien</h5>
-            <p>Verwendung von Holz, Lehm, Ziegeln und anderen Naturbaustoffen mit niedrigem Energieverbrauch und guter Recycelbarkeit.</p>
-          </div>
-          <div class="col">
-            <h5><i class="bi bi-brightness-high"></i> Energieeffizienz</h5>
-            <p>Optimale Wärmedämmung, passive Solarwärme und Einsatz erneuerbarer Energiequellen wie Solar- oder Wärmepumpen.</p>
-          </div>
-          <div class="col">
-            <h5><i class="bi bi-houses"></i> Ganzheitliche Betrachtung</h5>
-            <p>Berücksichtigung der gesamten Lebensdauer eines Gebäudes und Optimierung von Ressourcen, Fläche und CO₂-Ausstoß.</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </main>
 
   <?php include("../components/footer.php"); ?>
