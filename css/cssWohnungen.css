@@ -105,3 +105,14 @@ button:hover {
   box-shadow: 0 0 0 5px #00005043;
   color: #fff;
 }
+
+.replace-btn-primary {
+  background-color: #000050;
+  color: #fff;
+}
+
+.replace-btn-primary:hover {
+  background-color: #000050;
+  box-shadow: 0 0 0 5px #00005043;
+  color: #fff;
+}

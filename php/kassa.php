@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
       <div class="mb-3">
-        <label for="name" class="text">Adresszusatz*</label>
-        <input type="text" class="form-control" id="adresse" name="adresse" required>
+        <label for="name" class="text">Adresszusatz</label>
+        <input type="text" class="form-control" id="adresse" name="adresse">
       </div>
 
       <div class="mb-3">
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="mb-3" id="ibanField" style="display: none;">
         <label for="iban" class="text">IBAN*</label>
-        <input type="text" class="form-control" id="iban" name="iban" placeholder="DE00 1234 5678 9000 0000 00">
+        <input type="text" class="form-control" id="iban" name="iban" placeholder="AT00 1234 5678 9000 0000">
       </div>
 
       <button type="submit" class="btn btn-success w-100">

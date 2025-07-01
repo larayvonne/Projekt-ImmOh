@@ -7,7 +7,7 @@
   <title>Hauptseite</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="icon" type="image/png" href="resources/immohIcon.png" />
+  <link rel="icon" type="image/png" href="../resources/immohIcon.png" />
   <link rel="stylesheet" href="../css/cssLayout.css" />
   <link rel="stylesheet" href="../css/cssIndex.css" />
   <link rel="stylesheet" href="../css/cssParalax.css" />
@@ -28,6 +28,7 @@
 </script>
 
 <?php include("../components/header.php"); ?>
+
 <body class="replace-bg-dark">
 
   <?php if (isset($_SESSION['meldung'])): ?>
@@ -46,7 +47,7 @@
 
   <div class="position-relative overflow-hidden">
     <div class="geo-bg">
-    <img src="../resources/immoh.webp" class="w-100 h-100 object-fit-cover z-n1" draggable="false">
+      <img src="../resources/immoh.webp" class="w-100 h-100 object-fit-cover z-n1" draggable="false">
     </div>
     <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
     <div class="text-container position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end align-items-center text-center text-white p-3">
@@ -56,40 +57,40 @@
   </div>
 
   <main>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-          <div class="card" style="width: 18rem;">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <div class="card my-3" style="width: 18rem;">
             <img src="../resources/bau/greenliving.png" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">Rothneusiedel</h5>
-            <p class="card-text">Im Süden Wiens entsteht mit Rothneusiedl eines der spannendsten Stadtentwicklungsprojekte der kommenden Jahre.</p>
-            <a href="../php/rothneusiedl.php" class="btn btn-primary">Mehr erfahren</a>
+              <h5 class="card-title">Rothneusiedel</h5>
+              <p class="card-text">Im Süden Wiens entsteht mit Rothneusiedl eines der spannendsten Stadtentwicklungsprojekte der kommenden Jahre.</p>
+              <a href="../php/rothneusiedl.php" class="btn replace-btn-primary">Mehr erfahren</a>
             </div>
           </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="../resources/bau/gutenberg.png" class="card-img-top" alt="...">
-          <div class="card-body">
-        <h5 class="card-title">Unsere Bauvorhaben</h5>
-          <p class="card-text">Nachhaltig gebaut, lebenswert gestaltet. Jetzt Banteile zum gewünschten Bauvorhaben sichern! </p>
-          <a href="../php/bauvorhaben.php" class="btn btn-primary">Mehr erfahren</a>
+        </div>
+        <div class="col">
+          <div class="card my-3" style="width: 18rem;">
+            <img src="../resources/bau/gutenberg.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Unsere Bauvorhaben</h5>
+              <p class="card-text">Nachhaltig gebaut, lebenswert gestaltet. Jetzt Banteile zum gewünschten Bauvorhaben sichern! </p>
+              <a href="../php/bauvorhaben.php" class="btn replace-btn-primary">Mehr erfahren</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card my-3" style="width: 18rem;">
+            <img src="../resources/bau/moedling.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ImmOh News</h5>
+              <p class="card-text">Aktuelle Beiträge zu Entwicklungen und Tipps rund um Immobilien & Nachhaltigkeit.</p>
+              <a href="../php/news.php" class="btn replace-btn-primary">Mehr erfahren</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="../resources/bau/moedling.png" class="card-img-top" alt="...">
-          <div class="card-body">
-          <h5 class="card-title">ImmOh News</h5>
-          <p class="card-text">Aktuelle Beiträge zu Entwicklungen und Tipps rund um Immobilien & Nachhaltigkeit.</p>
-          <a href="../php/news.php" class="btn btn-primary">Mehr erfahren</a>
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
+    </div>
     <div class="end">
       <div class="container end ">
         <div class="row row-cols-1 row-cols-md-3">
@@ -127,12 +128,12 @@
       </div>
     </div>
 
-    <?php echo $_SESSION['rolle']; ?>
   </main>
-  
+
   <?php include("../components/footer.php"); ?>
   <script src="../js/parallax.js"></script>
   <script src="../js/function.js"></script>
 
 </body>
+
 </html>

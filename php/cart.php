@@ -75,7 +75,6 @@ foreach ($products as $p) {
 <?php include("../components/header.php"); ?>
 
 <body class="replace-bg-dark">
-  <main class="container mt-4 text-white">
 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mt-3 ms-2">
@@ -87,6 +86,8 @@ foreach ($products as $p) {
         <li class="breadcrumb-item active" aria-current="page">Warenkorb</li>
       </ol>
     </nav>
+
+  <main class="container mt-4 text-white">
 
     <div class="headline">
       <h1 class="replace-text-primary"> Dein Warenkorb</h1>
@@ -127,7 +128,7 @@ foreach ($products as $p) {
       </table>
 
       <p class="text">Gesamtsumme: <strong>€<?= number_format($total, 2, ',', '.') ?></strong></p>
-      <a href="kassa.php" class="btn btn-success">Zur Kassa gehen</a>
+      <a href="kassa.php" class="btn replace-btn-primary">Zur Kassa gehen</a>
     <?php endif; ?>
 
   </main>

@@ -51,8 +51,6 @@ if (!$profilbild) {
     </ol>
   </nav>
 
-
-
   <div class="container py-5">
     <h2 class="mb-4">Profil bearbeiten</h2>
 
@@ -60,7 +58,7 @@ if (!$profilbild) {
       <img src="../uploads/<?= htmlspecialchars($profilbild) ?>" alt="Profilbild" class="rounded-circle" width="120">
     </div>
 
-    <form action="profilUpdate.php" method="post" enctype="multipart/form-data">
+    <form action="profilUpdate.php" method="post" enctype="multipart/form-data" class="bg-light p-4 rounded shadow border border-secondary">
       <div class="row g-3">
         <div class="col-md-6">
           <label for="vorname" class="form-label">Vorname</label>

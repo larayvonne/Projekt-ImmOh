@@ -1,14 +1,12 @@
 .text {
   padding: auto;
   color: #000050 !important;
- 
 }
 
 .headline {
   text-align: center;
   padding: 50px;
   width: 100%;
-
 }
 
 .end {
@@ -18,7 +16,6 @@
   padding: 50px;
 }
 
-
 /* Mobile Ansicht */
 @media (max-width: 768px) {
   .headline {
@@ -27,7 +24,6 @@
   }
 
   .container {
-    
     padding: 5%;
     text-align: center;
   }
@@ -37,7 +33,6 @@
     text-align: center;
     padding: 0%;
   }
-
 }
 
 .replace-text-primary {
@@ -48,8 +43,4 @@
 .carousel-inner {
   max-width: 75%; 
   margin: 0 auto;
-}
-
-.carusel {
-  
 }
