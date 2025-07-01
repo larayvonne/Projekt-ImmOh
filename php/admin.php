@@ -47,6 +47,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = "❌ Bitte ein Bild hochladen.";
   }
 }
+
+      // Produktliste laden
+      $secondhandProdukte = [];
+      $result = $conn->query("SELECT * FROM secondhand");
+      if ($result && $result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              $secondhandProdukte[] = $row;
+          }
+      }
+
+      // Feedback-Meldung aus delete_product.php
+      if (isset($_GET['msg'])) {
+          switch ($_GET['msg']) {
+              case 'deleted':
+                  $message = "✅ Produkt erfolgreich gelöscht.";
+                  break;
+              case 'error':
+                  $message = "❌ Fehler beim Löschen.";
+                  break;
+              case 'invalid':
+                  $message = "❌ Ungültiger Löschversuch.";
+                  break;
+          }
+      }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -112,10 +138,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <i class="fas fa-plus"></i> Produkt hinzufügen</button>
       </form>
 
-      <a href="benutzerverwaltung.php" class="btn replace-btn-primary my-3">Benutzerverwaltung</a>
-    </div>
-    
-    </main>
+    <a href="index.php" class="btn btn-link mt-3 text">
+      <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+    </a>
+  </main>
 
     <script src="../js/function.js"></script>
     <?php include("../components/footer.php"); ?>
