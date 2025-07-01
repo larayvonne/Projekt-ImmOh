@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $meldung = "Konto gesperrt. Bitte wenden Sie sich an den Kundendienst.";
         } elseif (password_verify($password, $hashedPassword)) {
 
-          //Login erfolgreich → Session setzen
+          //Session setzen
           $_SESSION['user_id'] = $userid;
           $_SESSION['user_email'] = $email;
           $_SESSION['rolle'] = $rolle;

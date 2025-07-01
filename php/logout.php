@@ -8,7 +8,7 @@ setcookie('remember_me', '', time() - 3600, "/");
 session_unset();
 session_destroy();
 
-// Toast-Meldung für erfolgreichen Logout
+// Toast für Logout
 session_start(); // neue Session starten, um die Meldung zu setzen
 $_SESSION['meldung'] = "Du wurdest erfolgreich ausgeloggt.";
 
