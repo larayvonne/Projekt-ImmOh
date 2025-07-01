@@ -20,7 +20,8 @@
     const toastEl = document.getElementById('toastRegistrierung');
     if (toastEl) {
       const toast = new bootstrap.Toast(toastEl, {
-        delay: 3000
+        delay: 3000,
+        autohide: true
       });
       toast.show();
     }
@@ -33,7 +34,7 @@
 
   <?php if (isset($_SESSION['meldung'])): ?>
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div class="toast show align-items-center toast-custom-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div id="toastRegistrierung" class="toast align-items-center toast-custom-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body">
             <?= htmlspecialchars($_SESSION['meldung']) ?>
@@ -83,7 +84,7 @@
           <div class="card my-3" style="width: 18rem;">
             <img src="../resources/bau/moedling.png" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">ImmOh News</h5>
+              <h5 class="card-title">ImmOH! News</h5>
               <p class="card-text">Aktuelle Beiträge zu Entwicklungen und Tipps rund um Immobilien & Nachhaltigkeit.</p>
               <a href="../php/news.php" class="btn replace-btn-primary">Mehr erfahren</a>
             </div>

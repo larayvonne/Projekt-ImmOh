@@ -3,12 +3,15 @@ session_start();
 require_once "../components/dbaccess.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $email = trim($_POST['email'] ?? '');
-  $password = $_POST['password'] ?? '';
 
-  if (empty($email) || empty($password)) {
+  //Eingabeprüfung
+  if (empty($_POST['email']) || empty($_POST['password'])) {
     $meldung = "Bitte E-Mail und Passwort eingeben.";
   } else {
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    //Benutzer aus Datenbank holen
     $stmt = $conn->prepare("SELECT id, vorname, password, rolle, aktiv FROM user WHERE email = ?");
     if ($stmt) {
       $stmt->bind_param("s", $email);
@@ -19,16 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bind_result($userid, $vorname, $hashedPassword, $rolle, $aktiv);
         $stmt->fetch();
 
+        //Kontoaktivität und Passwort prüfen
         if (!$aktiv) {
           $meldung = "Konto gesperrt. Bitte wenden Sie sich an den Kundendienst.";
         } elseif (password_verify($password, $hashedPassword)) {
+
+          //Login erfolgreich → Session setzen
           $_SESSION['user_id'] = $userid;
           $_SESSION['user_email'] = $email;
           $_SESSION['rolle'] = $rolle;
           $_SESSION['vorname'] = $vorname;
-
           $_SESSION['meldung'] = "$vorname wurde erfolgreich eingeloggt!";
 
+          //Cookie setzen
           if (isset($_POST['remember'])) {
             $cookieWert = base64_encode("$userid:$hashedPassword");
             setcookie('remember_me', $cookieWert, time() + (30 * 24 * 60 * 60), "/");
@@ -36,14 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           header("Location: index.php");
           exit;
+
         } else {
           $meldung = "E-Mail oder Passwort falsch";
         }
       }
       $stmt->close();
     }
+    $conn->close();
   }
-  $conn->close();
 }
 ?>
 
