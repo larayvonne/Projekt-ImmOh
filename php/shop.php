@@ -10,16 +10,6 @@ if ($result && $result->num_rows > 0) {
         $secondhandProdukte[] = $row;
     }
 }
-
-// Produkte aus DB laden 
-$secondhandProdukte = [];
-$result = $conn->query("SELECT * FROM secondhand");
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $secondhandProdukte[] = $row;
-    }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="de">

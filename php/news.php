@@ -32,7 +32,7 @@
           <h2 class="mb-4 replace-text-primary">Aktuelles aus Klimaschutz & Immobilien</h2>
 
           <div class="row g-4">
-            <!-- News 1 -->
+            
             <div class="col-md-6">
               <div class="card">
                 <img src="../resources/news/news1.png" class="card-img-top" alt="Klimaneutrale Neubauten">
@@ -43,7 +43,7 @@
               </div>
             </div>
 
-            <!-- News 2 -->
+            
             <div class="col-md-6">
               <div class="card">
                 <img src="../resources/news/news2.png" class="card-img-top" alt="Solarpflicht für Neubauten">
@@ -54,7 +54,7 @@
               </div>
             </div>
 
-            <!-- News 3 -->
+            
             <div class="col-md-6">
               <div class="card">
                 <img src="../resources/news/news3.png" class="card-img-top" alt="Holzbauten in Städten">
@@ -65,7 +65,7 @@
               </div>
             </div>
 
-            <!-- News 4 -->
+            
             <div class="col-md-6">
               <div class="card">
                 <img src="../resources/news/news4.png" class="card-img-top" alt="Energieeffizienz gefragt">
@@ -76,7 +76,7 @@
               </div>
             </div>
 
-            <!-- News 5 -->
+            
             <div class="col-md-6">
               <div class="card">
                 <img src="../resources/news/news5.png" class="card-img-top" alt="Kooperation mit Klimaschutzagentur">
@@ -89,7 +89,7 @@
               </div>
             </div>
 
-            <!-- News 6 -->
+            
             <div class="col-md-6">
               <div class="card">
                 <img src="../resources/news/news6.png" class="card-img-top" alt="Gründächer in Wien">

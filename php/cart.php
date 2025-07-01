@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Produkt entfernen (Typ und ID müssen mitgegeben werden!)
+// Produkt entfernen 
 if (isset($_GET['remove']) && isset($_GET['type'])) {
     $type = $_GET['type'];
     $id = intval($_GET['remove']);
@@ -21,7 +21,7 @@ $cart = $_SESSION['cart'] ?? [];
 $products = [];
 $total = 0;
 
-// Hilfsfunktion zum Laden aus Tabellen mit individuellen ID-Feldern
+// Hilfe zum Laden aus Tabellen 
 function ladeProdukte($conn, $tabelle, $idSpalte, $cartTeilstück, $typ) {
     $daten = [];
     $ids = implode(',', array_map('intval', array_keys($cartTeilstück)));
@@ -58,7 +58,7 @@ if (!empty($cart['secondhand'])) {
     $products = array_merge($products, ladeProdukte($conn, 'secondhand', 'second_id', $cart['secondhand'], 'secondhand'));
 }
 
-// Gesamtsumme berechnen
+// Summe berechnen
 foreach ($products as $p) {
     $total += $p['subtotal'];
 }

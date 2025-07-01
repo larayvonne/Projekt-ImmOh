@@ -2,17 +2,17 @@
 session_start();
 require_once "../components/dbaccess.php";
 
-// Zugriffsschutz – nur für eingeloggte Admins
+// Zugriff nur für admin
 if (!isset($_SESSION['user_id']) || $_SESSION['rolle'] !== 'admin') {
     header("Location: ../pages/index.php?error=unauthorized");
     exit();
 }
 
-// Prüfen ob Produkt-ID übergeben wurde
+// Produkt-ID überprüft
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['produkt_id'])) {
     $produkt_id = intval($_POST['produkt_id']);
 
-    // Bildpfad ermitteln und ggf. löschen
+    // Pfad suchen 
     $stmtBild = $conn->prepare("SELECT bild FROM secondhand WHERE second_id = ?");
     $stmtBild->bind_param("i", $produkt_id);
     $stmtBild->execute();
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['produkt_id'])) {
         }
     }
 
-    // Produkt aus der Datenbank löschen
+    // Produkt aus der DB löschen
     $stmt = $conn->prepare("DELETE FROM secondhand WHERE second_id = ?");
     $stmt->bind_param("i", $produkt_id);
     if ($stmt->execute()) {

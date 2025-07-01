@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $zahlungsmethode = $_POST['zahlungsmethode'] ?? '';
     $iban = $_POST['iban'] ?? '';
 
-    // Beispiel: hier könntest du alles in DB speichern
 
     $_SESSION['cart'] = []; // Warenkorb leeren
     header('Location: danke.php');
@@ -104,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <?php include("../components/footer.php"); ?>
  <script src="../js/function.js"></script>
   <script>
-    // IBAN-Feld nur zeigen bei "Banküberweisung"
+    // IBAN-Feld nur  bei Banküberweisung
     document.querySelectorAll('input[name="zahlungsmethode"]').forEach(input => {
       input.addEventListener('change', function () {
         const ibanField = document.getElementById('ibanField');
@@ -115,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Bestätigungs-Popup bei Abschicken
     document.getElementById('checkoutForm').addEventListener('submit', function (e) {
-  const confirmed = confirm('Möchten Sie die Bestellung abschicken?');
+  const confirmed = confirm('Möchtest du die Bestellung abschließen?');
   if (!confirmed) {
     e.preventDefault(); // wird NICHT abgeschickt
     window.location.href = 'Kassa.php'; // auf seite bleiben
