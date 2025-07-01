@@ -9,17 +9,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (empty($email) || empty($password)) {
     $meldung = "Bitte E-Mail und Passwort eingeben.";
   } else {
-    $stmt = $conn->prepare("SELECT id, vorname, password, rolle FROM user WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, vorname, password, rolle, aktiv FROM user WHERE email = ?");
     if ($stmt) {
       $stmt->bind_param("s", $email);
       $stmt->execute();
       $stmt->store_result();
 
       if ($stmt->num_rows === 1) {
-        $stmt->bind_result($userid, $vorname, $hashedPassword, $rolle);
+        $stmt->bind_result($userid, $vorname, $hashedPassword, $rolle, $aktiv);
         $stmt->fetch();
 
-        if (password_verify($password, $hashedPassword)) {
+        if (!$aktiv) {
+          $meldung = "Konto gesperrt. Bitte wenden Sie sich an den Kundendienst.";
+        } elseif (password_verify($password, $hashedPassword)) {
           $_SESSION['user_id'] = $userid;
           $_SESSION['user_email'] = $email;
           $_SESSION['rolle'] = $rolle;
@@ -28,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $_SESSION['meldung'] = "$vorname wurde erfolgreich eingeloggt!";
 
           if (isset($_POST['remember'])) {
-            $cookieWert = base64_encode("$user_id:$passwort_hash");
+            $cookieWert = base64_encode("$userid:$hashedPassword");
             setcookie('remember_me', $cookieWert, time() + (30 * 24 * 60 * 60), "/");
           }
 
@@ -37,12 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
           $meldung = "E-Mail oder Passwort falsch";
         }
-      } else {
-        $meldung = "E-Mail oder Passwort falsch";
       }
       $stmt->close();
-    } else {
-      $meldung = "Datenbankfehler.";
     }
   }
   $conn->close();
