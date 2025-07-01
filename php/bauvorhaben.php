@@ -15,10 +15,9 @@ if (isset($_GET['wohnung_id'])) {
     } else {
         $_SESSION['cart']['wohnungen'][$wohnungId]++;
     }
-
-  
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

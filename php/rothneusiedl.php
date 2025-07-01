@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="../css/cssLayout.css">
   <link rel="stylesheet" href="../css/cssRothneusiedl.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
 
-  </style>
 </head>
 
 <body class="replace-bg-dark">
@@ -47,7 +45,6 @@
         </div>
       </div>
 
-
       <div class="section">
         <div class="text">
           <h2>Gut angebunden – umweltfreundlich unterwegs</h2>
@@ -58,7 +55,6 @@
         </div>
       </div>
 
-
       <div class="section reverse">
         <div class="text">
           <h2>Nachhaltig und klimaresilient gebaut</h2>
@@ -68,7 +64,6 @@
           <img src="../resources/roth/rothklima.png" alt="Bild 2">
         </div>
       </div>
-
 
       <div class="section">
         <div class="text">

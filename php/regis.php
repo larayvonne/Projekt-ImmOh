@@ -6,7 +6,6 @@ $meldung = $_SESSION['meldung'] ?? null;
 unset($_SESSION['meldung'], $_SESSION['fehler']);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="de">
 

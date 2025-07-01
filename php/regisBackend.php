@@ -84,7 +84,6 @@ if ($stmt->execute()) {
   header("Location: index.php");
   exit;
 }
-
 ?>
 
 <?php if (isset($meldung)) echo "<script>alert('$meldung');</script>"; ?>

@@ -76,10 +76,6 @@ if (session_status() === PHP_SESSION_NONE) {
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../php/kontakt.php">Kontakt</a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href="../php/cart.php">Warenkorb</a>
           </li>
         </ul>

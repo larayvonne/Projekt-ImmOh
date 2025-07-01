@@ -15,10 +15,9 @@ if (isset($_GET['wohnung_id'])) {
     } else {
         $_SESSION['cart']['wohnungen'][$wohnungId]++;
     }
-
-    
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,7 +108,6 @@ if (isset($_GET['wohnung_id'])) {
         </div>
       </div>
 
-
       <div class="section reverse">
         <div class="text">
           <h2>Dachgeschoss-Loft mit Weitblick</h2>
@@ -134,7 +132,6 @@ if (isset($_GET['wohnung_id'])) {
           <img src="../resources/products/wohnung3.jpg" alt="Bild 3">
         </div>
       </div>
-
 
       <div class="section">
         <div class="text">

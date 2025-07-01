@@ -87,7 +87,6 @@ require "../components/dbaccess.php";
       </div>
     </div>
 
-
       <div class="end">
         <h2>Ein nachhaltiger Stadtteil für Wien </h2>
         <div class="container end">

@@ -16,11 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     if ($stmt->execute()) {
         header("Location: benutzerverwaltung.php?success=1");
         exit();
-    } else {
-        echo "Fehler beim Deaktivieren.";
     }
 } else {
     http_response_code(400);
     echo "Ungültige Anfrage.";
-} 
+}
 ?>

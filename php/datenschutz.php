@@ -80,7 +80,6 @@
         Internetseiten von immOH! dürfen ohne unsere schriftliche Genehmigung weder in ihrer Gesamtheit
         (Struktur, Grafik, Design, Texte) noch in Teilen reproduziert oder unter Verwendung elektronischer
         Systeme gespeichert, verarbeitet, vervielfältigt oder verbreitet werden.</p>
-
       <br>
       <p>Alle Rechte bleiben vorbehalten.</p>
     </div>

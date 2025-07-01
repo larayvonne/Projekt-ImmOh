@@ -48,31 +48,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-      // Produktliste laden
-      $secondhandProdukte = [];
-      $result = $conn->query("SELECT * FROM secondhand");
-      if ($result && $result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-              $secondhandProdukte[] = $row;
-          }
-      }
+// Produktliste laden
+$secondhandProdukte = [];
+$result = $conn->query("SELECT * FROM secondhand");
+if ($result && $result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $secondhandProdukte[] = $row;
+  }
+}
 
-      // Feedback-Meldung aus delete_product.php
-      if (isset($_GET['msg'])) {
-          switch ($_GET['msg']) {
-              case 'deleted':
-                  $message = "✅ Produkt erfolgreich gelöscht.";
-                  break;
-              case 'error':
-                  $message = "❌ Fehler beim Löschen.";
-                  break;
-              case 'invalid':
-                  $message = "❌ Ungültiger Löschversuch.";
-                  break;
-          }
-      }
-
-
+// Feedback-Meldung aus delete_product.php
+if (isset($_GET['msg'])) {
+  switch ($_GET['msg']) {
+    case 'deleted':
+      $message = "✅ Produkt erfolgreich gelöscht.";
+      break;
+    case 'error':
+      $message = "❌ Fehler beim Löschen.";
+      break;
+    case 'invalid':
+      $message = "❌ Ungültiger Löschversuch.";
+      break;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -103,6 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <li class="breadcrumb-item active" aria-current="page">Admin</li>
       </ol>
     </nav>
+
+    <div class="container">
+      <a href="benutzerverwaltung.php" class="btn replace-btn-primary my-3">Benutzerverwaltung</a>
+    </div>
 
     <div class="container">
       <h1 class="headline text mb-3"> SecondHand-Artikel hinzufügen</h1>
@@ -142,11 +144,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($secondhandProdukte as $produkt): ?>
           <?php
-            $bildPfad = !empty($produkt['bild']) && file_exists($produkt['bild']) 
-              ? htmlspecialchars($produkt['bild']) 
-              : '../resources/platzhalter.png';
+          $bildPfad = !empty($produkt['bild']) && file_exists($produkt['bild'])
+            ? htmlspecialchars($produkt['bild'])
+            : '../resources/platzhalter.png';
           ?>
-          <div class="col">
+          <div class="col mb-3">
             <div class="card h-100">
               <img src="<?= $bildPfad ?>" class="card-img-top" alt="<?= htmlspecialchars($produkt['name']) ?>">
               <div class="card-body">
@@ -157,25 +159,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div class="card-footer text-center">
                 <form method="POST" action="delete_product.php" onsubmit="return confirm('Wirklich löschen?');">
                   <input type="hidden" name="produkt_id" value="<?= $produkt['second_id'] ?>">
-                  <button type="submit" class="btn btn-danger">
-                    <i class="fas fa-trash-alt"></i> Löschen
-                  </button>
+                  <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Löschen</button>
                 </form>
               </div>
             </div>
           </div>
         <?php endforeach; ?>
-      </div>
 
-    <a href="benutzerverwaltung.php" class="btn replace-btn-primary my-3">Benutzerverwaltung</a>
-    </div>
-    
-    </main>
+  </main>
 
-
-
-    <script src="../js/function.js"></script>
-    <?php include("../components/footer.php"); ?>
+  <script src="../js/function.js"></script>
+  <?php include("../components/footer.php"); ?>
 
 </body>
 
