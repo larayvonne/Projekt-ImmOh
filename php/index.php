@@ -92,7 +92,7 @@
         </div>
       </div>
     </div>
-    <div class="end">
+    <div class="end pt-3">
       <div class="container end ">
         <div class="row row-cols-1 row-cols-md-3">
           <div class="col">

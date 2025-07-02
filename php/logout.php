@@ -14,3 +14,4 @@ $_SESSION['meldung'] = "Du wurdest erfolgreich ausgeloggt.";
 
 header("Location: index.php");
 exit;
+?>
